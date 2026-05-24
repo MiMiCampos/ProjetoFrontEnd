@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes da Disciplina - UFAC</title>
+    <link rel="stylesheet" href="/css/prof.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <div class="header-blue">
+            <div class="logo-wrapper">
+                <img src="/componentes/logo_ufac.png" alt="UFAC" style="width: 45px; height: 45px; border-radius: 8px;">
+            </div>
+            <button class="btn-back" onclick="window.location.href='/html/prof_turmas.html'">
+                <svg viewBox="0 0 24 24"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11"/></svg>
+            </button>
+
+            <div style="display: flex; align-items: center; gap: 15px; margin-top: 15px;">
+                <div class="card-icon bg-white" style="color: #1a6ced; margin:0;"><i class="fa-solid fa-book-open"></i></div>
+                <div>
+                    <h1 class="page-title" style="margin-top:0;">Algoritmos</h1>
+                    <p class="page-subtitle">CCET005 • Bacharelado em Computação</p>
+                </div>
+            </div>
+
+            <div class="stats-header-grid">
+                <div class="stat-box"><strong>42</strong><span>Alunos</span></div>
+                <div class="stat-box"><strong>91%</strong><span>Frequência</span></div>
+                <div class="stat-box"><strong>7.8</strong><span>Média</span></div>
+            </div>
+        </div>
+
+        <div class="content-list">
+            <a href="/html/prof_chamada.html" class="card-item">
+                <div class="card-icon bg-green"><i class="fa-solid fa-user-check"></i></div>
+                <div class="card-info">
+                    <h3>Chamada</h3>
+                    <p>Registrar frequência diária</p>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </a>
+
+            <a href="/html/prof_notas.html" class="card-item">
+                <div class="card-icon bg-blue"><i class="fa-solid fa-chart-simple"></i></div>
+                <div class="card-info">
+                    <h3>Notas</h3>
+                    <p>Lançar e editar notas (N1, N2, Final)</p>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </a>
+
+            <a href="#" onclick="alert('Funcionalidade de Material Didático em breve!')" class="card-item">
+                <div class="card-icon bg-purple"><i class="fa-solid fa-book"></i></div>
+                <div class="card-info">
+                    <h3>Material Didático</h3>
+                    <p>PDFs, vídeos e arquivos de aula</p>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </a>
+
+            <a href="/html/prof_avisos.html" class="card-item">
+                <div class="card-icon bg-yellow"><i class="fa-solid fa-bullhorn"></i></div>
+                <div class="card-info">
+                    <h3>Avisos</h3>
+                    <p>Enviar comunicados para a turma</p>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </a>
+
+            <a href="/html/prof_lista_alunos.html" class="card-item">
+                <div class="card-icon bg-pink"><i class="fa-solid fa-users-viewfinder"></i></div>
+                <div class="card-info">
+                    <h3>Lista de Alunos</h3>
+                    <p>Visualizar perfis e situação acadêmica</p>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>

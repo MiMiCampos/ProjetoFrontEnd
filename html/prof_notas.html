@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lançar Notas</title>
+    <link rel="stylesheet" href="/css/prof.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <div class="header-blue">
+            <div class="logo-wrapper">
+                <img src="/componentes/logo_ufac.png" alt="UFAC" style="width: 45px; height: 45px;">
+            </div>
+            <button class="btn-back" onclick="window.location.href='/html/prof_disciplinas.html'">
+                <svg viewBox="0 0 24 24"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11"/></svg>
+            </button>
+
+            <h1 class="page-title">Lançar Notas</h1>
+            <p class="page-subtitle">Algoritmos - CCET005</p>
+
+            <div class="stats-header-grid" style="margin-top: 20px;">
+                <div class="stat-box" style="background-color: white; color: #1a6ced;"><strong>N1</strong></div>
+                <div class="stat-box"><strong>N2</strong></div>
+                <div class="stat-box"><strong>Final</strong></div>
+            </div>
+        </div>
+
+        <div class="content-list">
+            <div class="student-row">
+                <div class="student-name">Ana Silva</div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <input type="text" class="grade-input" value="8.5">
+                    <input type="checkbox" checked style="width: 18px; height: 18px; accent-color: #1a6ced;">
+                    <div class="grade-avg">Média: 8.5</div>
+                </div>
+            </div>
+
+            <div class="student-row">
+                <div class="student-name">Bruno Costa</div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <input type="text" class="grade-input" value="6.0">
+                    <input type="checkbox" checked style="width: 18px; height: 18px; accent-color: #1a6ced;">
+                    <div class="grade-avg" style="background-color: #f8d7da; color: #dc3545;">Média: 6.0</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-action-large">Publicar Notas</button>
+
+    </div>
+</body>
+</html>

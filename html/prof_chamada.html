@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Chamada</title>
+    <link rel="stylesheet" href="/css/prof.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <div class="header-blue">
+            <div class="logo-wrapper">
+                <img src="/componentes/logo_ufac.png" alt="UFAC" style="width: 45px; height: 45px;">
+            </div>
+            <button class="btn-back" onclick="window.location.href='/html/prof_disciplinas.html'">
+                <svg viewBox="0 0 24 24"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11"/></svg>
+            </button>
+
+            <h1 class="page-title">Chamada</h1>
+            <p class="page-subtitle">Algoritmos - CCET005</p>
+
+            <div style="margin-top: 15px; display: flex; gap: 20px; font-size: 0.9rem;">
+                <span>🟢 Presentes: 35</span>
+                <span>🔴 Ausentes: 7</span>
+            </div>
+        </div>
+
+        <div class="content-list">
+            <div class="student-row">
+                <div class="student-name">
+                    <div class="student-avatar"><i class="fa-regular fa-user"></i></div>
+                    Ana Silva
+                </div>
+                <div class="toggle-group">
+                    <button id="pres-1" class="btn-toggle active present" onclick="setAttendance(1, 'present')">Presente</button>
+                    <button id="abs-1" class="btn-toggle" onclick="setAttendance(1, 'absent')">Ausente</button>
+                </div>
+            </div>
+
+            <div class="student-row">
+                <div class="student-name">
+                    <div class="student-avatar"><i class="fa-regular fa-user"></i></div>
+                    Bruno Costa
+                </div>
+                <div class="toggle-group">
+                    <button id="pres-2" class="btn-toggle" onclick="setAttendance(2, 'present')">Presente</button>
+                    <button id="abs-2" class="btn-toggle active absent" onclick="setAttendance(2, 'absent')">Ausente</button>
+                </div>
+            </div>
+            
+            </div>
+
+        <button class="btn-action-large">Salvar Chamada</button>
+
+    </div>
+    <script src="/javascript/prof.js"></script>
+</body>
+</html>

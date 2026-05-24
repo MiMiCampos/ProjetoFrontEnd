@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Minhas Turmas</title>
+    <link rel="stylesheet" href="/css/prof.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <div class="header-blue">
+            <div class="logo-wrapper">
+                <img src="/componentes/logo_ufac.png" alt="UFAC" style="width: 45px; height: 45px;">
+            </div>
+            <button class="btn-back" onclick="window.location.href='/html/prof_tela_inicial.html'">
+                <svg viewBox="0 0 24 24"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11"/></svg>
+            </button>
+
+            <h1 class="page-title">Minhas Turmas <i class="fa-solid fa-magnifying-glass" style="font-size: 1rem; margin-left: 10px;"></i></h1>
+            <p class="page-subtitle">2026.1 - 5 turmas ativas</p>
+        </div>
+
+        <div class="content-list">
+            <a href="/html/prof_disciplinas.html" class="card-item">
+                <div class="card-icon bg-green"><i class="fa-solid fa-book-open"></i></div>
+                <div class="card-info">
+                    <h3>Algoritmos</h3>
+                    <p>CCET005</p>
+                    <div class="card-stats">
+                        <span><i class="fa-solid fa-users"></i> 42 alunos</span>
+                        <span><i class="fa-solid fa-chart-bar"></i> 91% freq.</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </a>
+
+            <a href="#" class="card-item">
+                <div class="card-icon bg-blue"><i class="fa-solid fa-book-open"></i></div>
+                <div class="card-info">
+                    <h3>Lógica Computacional</h3>
+                    <p>CCET010</p>
+                    <div class="card-stats">
+                        <span><i class="fa-solid fa-users"></i> 30 alunos</span>
+                        <span><i class="fa-solid fa-chart-bar"></i> 89% freq.</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </a>
+
+            <a href="#" class="card-item">
+                <div class="card-icon bg-yellow"><i class="fa-solid fa-book-open"></i></div>
+                <div class="card-info">
+                    <h3>Engenharia de SW I</h3>
+                    <p>CCET204</p>
+                    <div class="card-stats">
+                        <span><i class="fa-solid fa-users"></i> 35 alunos</span>
+                        <span><i class="fa-solid fa-chart-bar"></i> 95% freq.</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>
