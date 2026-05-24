@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Huninn&display=swap');
+/* Caso não tenha importado a 'Inclusive Sans' no HTML, adicione o import dela também se necessário */
+
+/* 1. Variáveis Nativas: Facilita alterar as cores do site inteiro em um só lugar */
+:root {
+  --azul-ufac: #1B6DE1;
+  --amarelo-ufac: #e3d530;
+  --branco: #ffffff;
+  --fonte-primaria: 'Huninn', sans-serif;
+  --fonte-secundaria: 'Inclusive Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--azul-ufac);
+}
