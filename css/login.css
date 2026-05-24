@@ -41,10 +41,35 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Container que centraliza o logotipo e elementos */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Classe customizada para a imagem da logo enviada */
+.ufac-logo {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.ufac-logo.small-logo {
+    width: 60px;
+    margin-bottom: 5px;
+}
+
 .brand-title {
     font-size: 2rem;
     font-weight: 700;
-    margin-top: 18px;
+    margin-top: 10px;
 }
 
 #sidebar-subtitle {
@@ -54,29 +79,6 @@ body {
     line-height: 1.4;
     max-width: 240px;
 }
-
-/* Escudo da UFAC feito em CSS Puro */
-.shield-logo {
-    margin: 0 auto;
-    width: 75px;
-    height: 82px;
-    position: relative;
-    background: #0b51b7;
-    border-bottom-left-radius: 38px;
-    border-bottom-right-radius: 38px;
-    border: 5px solid #f2b705;
-    overflow: hidden;
-}
-
-.shield-logo::before, .shield-logo::after {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    background: #ffffff;
-}
-.shield-logo::before { top: 0; right: 0; }
-.shield-logo::after { bottom: 0; left: 0; }
 
 /* --- Painel Direito de Ações --- */
 .main-panel {
@@ -110,7 +112,40 @@ body {
     margin-bottom: 25px;
 }
 
-/* --- Grid de Perfis (Tela Inicial do Processo) --- */
+/* --- Botão de Voltar Quarto de Círculo (Quina Superior Esquerda) --- */
+.back-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 75px;
+    height: 75px;
+    background-color: #f1f5f9;
+    border: none;
+    border-bottom-right-radius: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 18px 0 0 18px;
+    z-index: 10;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.back-button:hover {
+    background-color: #e2eefe;
+}
+
+.back-button svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: #1a6ced;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* --- Grid de Perfis --- */
 .profile-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -186,7 +221,6 @@ body {
     cursor: pointer;
 }
 
-/* Área de rolagem para o cadastro */
 .scroll-form {
     max-height: 340px;
     overflow-y: auto;
@@ -234,7 +268,6 @@ body {
 }
 .btn-primary:hover { background-color: #0b51b7; }
 
-/* Divisores estruturais */
 .divider {
     text-align: center;
     margin: 18px 0;
@@ -251,7 +284,7 @@ body {
     color: #777; font-size: 0.9rem; position: relative; z-index: 2;
 }
 
-/* SSO Botões (Google / Gov) */
+/* SSO Botões Largos Padrão */
 .btn-sso {
     width: 100%;
     padding: 12px;
@@ -266,43 +299,18 @@ body {
     gap: 10px;
     margin-bottom: 12px;
     background-color: #fff;
+    transition: background-color 0.2s;
 }
+.btn-sso:hover { background-color: #f8f9fa; }
+
 .btn-govbr { background-color: #13315c; border: none; }
+.btn-govbr:hover { background-color: #0b1f3f; }
 .gov-text { font-size: 1.1rem; font-weight: bold; color: #fff; }
 .gov-text .blue { color: #00a8e8; }
 .gov-text .green { color: #39b54a; }
 
-.footer-text {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 0.9rem;
-    color: #555;
-}
+.footer-text { text-align: center; margin-top: 15px; font-size: 0.9rem; color: #555; }
 .footer-text a { color: #1a6ced; font-weight: 600; text-decoration: none; }
-
-/* --- Botões de Voltar --- */
-.back-button {
-    background: none;
-    border: none;
-    color: #1a6ced;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    align-self: flex-start;
-}
-
-/* --- Badge Dinâmico do Perfil --- */
-#register-role-badge {
-    background-color: #e2eefe;
-    color: #1a6ced;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-weight: 700;
-}
 
 /* --- Tela de Sucesso --- */
 .success-step { text-align: center; align-items: center; justify-content: center; }
@@ -312,62 +320,33 @@ body {
 .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
 .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
 
-
-/* =========================================
-   TELA GOOGLE CORRIGIDA (DESIGN MATERIAL)
-   ========================================= */
+/* --- Tela Interna Google --- */
 .google-step { padding: 10px 40px; }
 .google-big-logo { display: flex; justify-content: center; margin-bottom: 15px; }
 .google-step h3 { text-align: center; font-weight: 400; font-size: 1.5rem; color: #202124; margin-bottom: 8px; }
 .google-subtitle { text-align: center; margin-bottom: 35px; color: #5f6368; font-size: 1rem; }
 
-.google-input-container {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-/* Input idêntico ao da imagem */
+.google-input-container { width: 100%; margin-bottom: 10px; }
 .google-input {
     width: 100%;
     padding: 14px 15px !important;
-    border: 1px solid #747775 !important; /* Borda cinza escura */
+    border: 1px solid #747775 !important;
     border-radius: 4px !important;
     font-size: 1rem !important;
     color: #1f1f1f !important;
     background: #fff !important;
     transition: padding 0.1s, border 0.1s;
 }
-
 .google-input:focus {
-    border: 2px solid #1a73e8 !important; /* Borda azul mais grossa no foco */
-    padding: 13px 14px !important; /* Compensa a borda de 2px para não pular */
+    border: 2px solid #1a73e8 !important;
+    padding: 13px 14px !important;
     outline: none;
 }
 
-.google-link-forgot {
-    display: block;
-    color: #1a73e8;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 40px;
-    text-align: left; /* Alinhado à esquerda como na imagem */
-}
-
-.google-info {
-    font-size: 0.9rem;
-    color: #5f6368;
-    margin-bottom: 40px;
-    line-height: 1.5;
-    text-align: left;
-}
+.google-link-forgot { display: block; color: #1a73e8; text-decoration: none; font-weight: 600; font-size: 0.95rem; margin-bottom: 40px; text-align: left; }
+.google-info { font-size: 0.9rem; color: #5f6368; margin-bottom: 40px; line-height: 1.5; text-align: left; }
 .google-info a { color: #1a73e8; text-decoration: none; font-weight: 600; }
-
-.google-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+.google-footer { display: flex; justify-content: space-between; align-items: center; }
 .google-link { color: #1a73e8; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
 
 .btn-google-next {
@@ -379,25 +358,17 @@ body {
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
-    transition: background 0.2s;
 }
 .btn-google-next:hover { background-color: #1557b0; }
 
-
-/* --- Mock do Gov.br --- */
+/* --- Tela Gov.br --- */
 .gov-header { text-align: center; margin-bottom: 20px; display: flex; flex-direction: column; align-items: center; width: 100%; }
-.small-shield { width: 50px; height: 55px; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; }
 .btn-gov-blue { background-color: #13315c; }
-.btn-gov-blue:hover { background-color: #0b1f3f; }
 .btn-gov-outline { width: 100%; padding: 12px; border: 1px solid #13315c; background: transparent; color: #13315c; border-radius: 8px; font-weight: 600; margin-bottom: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
 
 /* --- Animações --- */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes bounce { to { transform: translateY(-6px); } }
 
-/* Scrollbar */
 .scroll-form::-webkit-scrollbar { width: 6px; }
 .scroll-form::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
