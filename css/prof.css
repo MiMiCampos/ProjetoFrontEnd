@@ -226,3 +226,28 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(26,108,237,0.3);
 }
+
+/* --- Abas de Notas (N1, N2, Final) --- */
+.btn-aba {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-aba.active-aba {
+    background-color: white;
+    color: #1a6ced;
+}
+
+/* Remove as setinhas feias de dentro do input de número */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
