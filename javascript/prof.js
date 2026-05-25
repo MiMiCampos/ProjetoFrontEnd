@@ -1,20 +1,11 @@
 // Aguarda a página carregar completamente
 document.addEventListener('DOMContentLoaded', () => {
-    // Se a página tiver a lista de chamada, constrói a chamada
-    if (document.getElementById('lista-chamada')) {
-        renderizarChamada();
-    }
-    // Se a página tiver a lista de notas, constrói as notas
-    if (document.getElementById('lista-notas')) {
-        renderizarNotas('N1');
-    }
-    // Se a página tiver a lista geral de alunos, constrói a listagem
-    if (document.getElementById('lista-alunos-geral')) {
-        renderizarListaAlunos();
-    }
+    if (document.getElementById('lista-chamada')) { renderizarChamada(); }
+    if (document.getElementById('lista-notas')) { renderizarNotas('N1'); }
+    if (document.getElementById('lista-alunos-geral')) { renderizarListaAlunos(); }
 });
 
-// Lista de nomes base para alimentar o protótipo
+// Exatamente 10 nomes base para a demonstração
 const nomesBase = [
     "Ana Beatriz Silva", "Bruno Henrique Costa", "Carla Miranda Souza",
     "Daniel Vieira", "Edmundo Alves", "Élida Campos", "Paula Fernandes",
@@ -30,9 +21,9 @@ function renderizarListaAlunos() {
 
     let htmlCompleto = '';
 
-    for (let i = 1; i <= 42; i++) {
-        let nomeAluno = nomesBase[i - 1] || `Aluno(a) Matriculado ${i}`;
-        // Gera um número de matrícula sequencial fictício
+    // Loop alterado para 10 alunos
+    for (let i = 1; i <= 10; i++) {
+        let nomeAluno = nomesBase[i - 1];
         let matriculaSimulada = 202601000 + i;
 
         htmlCompleto += `
@@ -62,8 +53,10 @@ function renderizarChamada() {
     if (!container) return; 
 
     let htmlCompleto = '';
-    for (let i = 1; i <= 42; i++) {
-        let nomeAluno = nomesBase[i - 1] || `Aluno(a) Matriculado ${i}`;
+    
+    // Loop alterado para 10 alunos
+    for (let i = 1; i <= 10; i++) {
+        let nomeAluno = nomesBase[i - 1];
         htmlCompleto += `
         <div class="student-row">
             <div class="student-name">
@@ -95,8 +88,7 @@ function setAttendance(studentId, status) {
 
 function salvarChamada() {
     alert("✅ Sucesso! A chamada foi salva e registrada no sistema.");
-    // Corrigido para a sua página no plural
-    window.location.href = './prof_disciplinas.html';
+    window.location.href = './prof_disciplina.html';
 }
 
 // ==========================================
@@ -116,8 +108,10 @@ function renderizarNotas(aba) {
     if (!container) return;
 
     let htmlCompleto = '';
-    for (let i = 1; i <= 42; i++) {
-        let nomeAluno = nomesBase[i - 1] || `Aluno(a) Matriculado ${i}`;
+    
+    // Loop alterado para 10 alunos
+    for (let i = 1; i <= 10; i++) {
+        let nomeAluno = nomesBase[i - 1];
         let notaSimulada = (Math.random() * 5 + 5).toFixed(1); 
         
         htmlCompleto += `
@@ -133,7 +127,8 @@ function renderizarNotas(aba) {
     }
     container.innerHTML = htmlCompleto;
 
-    for (let i = 1; i <= 42; i++) {
+    // Loop de cores alterado para 10
+    for (let i = 1; i <= 10; i++) {
         atualizarCorMedia(i);
     }
 }
@@ -164,6 +159,5 @@ function atualizarCorMedia(alunoId) {
 function publicarNotas() {
     const abaAtual = document.querySelector('.active-aba').innerText;
     alert(`✅ Sucesso! As notas da etapa [${abaAtual}] foram publicadas no sistema.`);
-    // Corrigido para a sua página no plural e sem a pasta /html/
-    window.location.href = './prof_disciplinas.html';
+    window.location.href = './prof_disciplina.html';
 }
