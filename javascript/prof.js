@@ -169,3 +169,4 @@ function publicarNotas() {
     alert(`✅ Sucesso! As notas da etapa [${abaAtual}] foram publicadas no sistema.`);
     window.location.href = './prof_disciplina.html';
 }
+
