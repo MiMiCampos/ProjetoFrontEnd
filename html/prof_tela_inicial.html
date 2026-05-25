@@ -2,55 +2,70 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard Professor</title>
+    <title>Portal da Ufac - Professor</title>
     <link rel="stylesheet" href="/css/prof.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="app-container bg-white">
+    <div class="app-container">
         
-        <div class="header-blue">
-            <div class="logo-wrapper">
-                <img src="/componentes/logo_ufac.png" alt="UFAC" style="width: 45px; height: 45px; border-radius: 8px;">
-            </div>
-            <button class="btn-back" onclick="window.location.href='login.html'">
+        <div class="header-portal">
+            
+            <a href="/html/login.html" class="btn-back">
                 <svg viewBox="0 0 24 24"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11"/></svg>
-            </button>
+            </a>
 
-            <div class="dashboard-user-info">
-                <div class="user-text">
-                    <p>Professor(a)</p>
-                    <h2>Maria Clara!</h2>
+            <div class="portal-top-bar">
+                <div class="portal-logo-center">
+                    <img src="/componentes/logo_ufac.png" alt="Escudo UFAC">
+                    <h1>Portal da Ufac</h1>
                 </div>
-                <div style="font-size: 3rem;">🦦</div> 
+
+                <div class="portal-widgets">
+                    <div class="widget-pill">Terça-feira 26 de maio de 2026</div>
+                    <div class="widget-pill weather-pill"><i class="fa-solid fa-sun"></i> 31°C</div>
+                </div>
             </div>
+
+            <div class="portal-user-area">
+                <div class="user-profile-badge">
+                    <div class="avatar"><i class="fa-regular fa-user"></i></div>
+                    <div class="info">
+                        <p>Professor(a)</p>
+                        <h3>Maria Clara</h3>
+                    </div>
+                </div>
+                <img src="/componentes/capivara.png" alt="Mascote Capivara" class="capybara-mascot">
+            </div>
+
         </div>
 
         <div class="white-board">
+            
             <input type="text" class="search-bar" placeholder="🔍 O que você deseja buscar hoje?">
             
             <div class="grid-menu">
                 <a href="/html/prof_turmas.html" class="menu-item">
-                    <i class="fa-solid fa-chalkboard-user"></i>
-                    Minhas Turmas
+                    <i class="fa-solid fa-chalkboard-user"></i> Minhas Turmas
                 </a>
-                
                 <a href="/html/prof_chamada.html" class="menu-item">
-                    <i class="fa-solid fa-pen-to-square"></i> 
-                    Chamada
+                    <i class="fa-solid fa-pen-to-square"></i> Chamada Rápida
                 </a>
-                
-                <a href="#" class="menu-item"><i class="fa-solid fa-file-lines"></i> Atividades</a>
-                <a href="#" class="menu-item"><i class="fa-regular fa-clock"></i> Horários</a>
-                <a href="#" class="menu-item"><i class="fa-solid fa-utensils"></i> Restaurante Universitário</a>
-                <a href="#" class="menu-item"><i class="fa-solid fa-building-columns"></i> Biblioteca</a>
-                <a href="#" class="menu-item"><i class="fa-solid fa-folder-open"></i> Editais</a>
-                <a href="#" class="menu-item"><i class="fa-solid fa-file-contract"></i> Documentos</a>
-                <a href="#" class="menu-item"><i class="fa-solid fa-newspaper"></i> Notícias</a>
-                <a href="#" class="menu-item"><i class="fa-regular fa-comments"></i> Fórum</a>
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-file-lines"></i> Atividades
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-utensils"></i> Cardápio RU
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-building-columns"></i> Biblioteca
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-newspaper"></i> Notícias
+                </a>
             </div>
-        </div>
 
+        </div>
     </div>
 </body>
 </html>
