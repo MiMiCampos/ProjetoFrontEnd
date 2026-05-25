@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal da Ufac</title>
+    <link rel="stylesheet" href="tela_inicial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <button class="btn-back" onclick="window.history.back()">
+        <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
+    <div class="top-info">
+        <div class="date-badge">Terça-feira, 26 de maio de 2026</div>
+        <div class="weather-badge">
+            <i class="fa-solid fa-sun"></i> 31°C
+        </div>
+    </div>
+
+    <div class="main-container">
+        
+        <header class="portal-header">
+            <img src="ufac_logotipo.png" alt="Logo Ufac" class="logo-ufac">
+            <h1>Portal da Ufac</h1>
+        </header>
+
+        <div class="user-section">
+            <div class="user-badge">
+                <div class="user-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="user-info">
+                    <span class="user-title">Aluno(a)</span>
+                    <span class="user-name">João</span>
+                </div>
+            </div> 
+            
+        </div>
+
+        <main class="content-card">
+            
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="search-input" placeholder="O que você deseja buscar hoje?">
+            </div>
+
+            <div class="quick-tags">
+                <button class="tag-btn">Atestado de matrícula</button>
+                <button class="tag-btn">Visualizar o cardápio</button>
+                <button class="tag-btn">Histórico escolar</button>
+                <button class="tag-btn">Recarregar e-ticket</button>
+                <button class="tag-btn">Histórico de integralização</button>
+            </div>
+
+            <div class="features-grid">
+                <button class="feature-card">
+                    <div class="icon-box"><i class="fa-regular fa-pen-to-square"></i></div>
+                    <span>Matrícula</span>
+                </button>
+                <button class="feature-card">
+                    <div class="icon-box"><i class="fa-solid fa-utensils"></i></div>
+                    <span>Restaurante Universitário</span>
+                </button>
+                <button class="feature-card">
+                    <div class="icon-box"><i class="fa-regular fa-file-lines"></i></div>
+                    <span>Documentos</span>
+                </button>
+                <button class="feature-card">
+                    <div class="icon-box"><i class="fa-regular fa-clock"></i></div>
+                    <span>Horários</span>
+                </button>
+                <button class="feature-card">
+                    <div class="icon-box"><i class="fa-solid fa-building-columns"></i></div>
+                    <span>Biblioteca</span>
+                </button>
+            </div>
+
+            <div class="news-divider">
+                <span>Últimas notícias</span>
+            </div>
+
+            <section class="news-grid">
+                <article class="news-item" onclick="location.href='#enade'">
+                    <img src="noticia1.jpeg" alt="Notícia 1" class="news-img-placeholder">
+                    <div class="news-content">
+                        <span class="news-date">22/05/2026 04h45</span>
+                        <h3>Ufac celebra desempenho após divulgação dos resultados do Enade 2025</h3>
+                    </div>
+                </article>
+
+                <article class="news-item" onclick="location.href='#recepcao'">
+                    <img src="noticia2.jpeg" alt="Notícia 2" class="news-img-placeholder dark-bg">
+                    <div class="news-content">
+                        <span class="news-date">15/05/2026 09h01</span>
+                        <h3>Ufac realiza recepção institucional para novos estudantes no Teatro Universitário</h3>
+                    </div>
+                </article>
+
+                <article class="news-item" onclick="location.href='#laboratorio'">
+                    <img src="noticia3.jpeg" alt="Notícia 3" class="news-img-placeholder group-bg">
+                    <div class="news-content">
+                        <span class="news-date">15/05/2026 08h33</span>
+                        <h3>Ufac celebra trajetória de dez anos do Laboratório de Discriminação Racial</h3>
+                    </div>
+                    <div class="news-content">
+                    </div>
+                </article>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="tela_inicial.js"></script>
+</body>
+</html>
