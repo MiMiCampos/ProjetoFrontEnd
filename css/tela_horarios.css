@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #1a73e8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+/* Header e Logo */
+.portal-header {
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.logo-ufac {
+    width: 65px;
+    margin: 0 auto 8px auto;
+    display: block;
+    background: white;
+    border-radius: 12px;
+    padding: 4px;
+}
+
+/* Botões e Badges de topo */
+.btn-back {
+    position: absolute; top: 20px; left: 20px;
+    background: white; border: none; width: 40px; height: 40px;
+    border-radius: 50%; color: #1a73e8; cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.top-info { position: absolute; top: 20px; right: 20px; text-align: right; }
+.date-badge { background: rgba(255,255,255,0.2); color: white; padding: 5px 15px; border-radius: 20px; margin-bottom: 5px; font-size: 13px; }
+.weather-badge { border: 2px solid #ffd166; color: white; padding: 3px 10px; border-radius: 20px; display: inline-block; }
+
+/* Container */
+.main-container { width: 100%; max-width: 850px; }
+
+/* Abas */
+.tabs-container { display: flex; gap: 2px; }
+.tab-blue, .tab-yellow {
+    padding: 12px 25px;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    min-width: 160px;
+}
+.tab-blue { background-color: #4285f4; }
+.tab-yellow { background-color: #fbc02d; color: white; }
+.clickable { cursor: pointer; transition: opacity 0.2s; }
+.clickable:hover { opacity: 0.9; }
+
+/* Card Branco */
+.content-card {
+    background: white;
+    border-radius: 16px;
+    border-top-left-radius: 0;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    min-height: 400px;
+}
+
+/* Itens da Lista */
+.subject-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.subject-item:hover { background-color: #f8f9fa; }
+
+.subject-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #1a73e8;
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.subject-details h3 { font-size: 18px; color: #333; }
+.subject-details .code { font-size: 14px; color: #666; }
+.subject-details .status { font-size: 14px; color: #333; margin-top: 5px; }
+.status span { color: #2ecc71; font-weight: bold; }
+
+/* Detalhes da Tela 2 */
+.active-detail { border: none; padding: 0; margin-bottom: 30px; cursor: default; }
+.active-detail:hover { background: none; }
+
+.details-grid {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #444;
+}
+.highlight { color: #e74c3c; font-weight: bold; }

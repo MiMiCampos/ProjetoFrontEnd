@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes Horário - Portal da Ufac</title>
+    <link rel="stylesheet" href="tela_horarios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <button class="btn-back" onclick="location.href='tela_inicial.html'">
+        <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
+    <div class="top-info">
+        <div class="date-badge">Terça-feira, 26 de maio de 2026</div>
+        <div class="weather-badge">
+            <i class="fa-solid fa-sun"></i> 31°C
+        </div>
+    </div>
+
+    <div class="main-container">
+        <header class="portal-header">
+            <img src="ufac_logotipo.png" alt="Logo Ufac" class="logo-ufac">
+            <h1>Portal da Ufac</h1>
+        </header>
+
+        <div class="tabs-container">
+            <div class="tab-blue clickable" onclick="location.href='tela_horarios1.html'">
+                <span>Meus<br>Horários</span>
+            </div>
+            <div class="tab-yellow clickable" onclick="location.href='tela_horarios1.html'">
+                <span>Banco de<br>Dados I</span>
+            </div>
+        </div>
+
+        <main class="content-card">
+            <div class="subject-item active-detail">
+                <div class="subject-icon">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+                <div class="subject-details">
+                    <h3>Banco de Dados I</h3>
+                    <p class="code">CCET023</p>
+                    <p class="status">Situação: <span>Matrícula</span></p>
+                </div>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-row">
+                    <p><strong>Curso:</strong> Bacharelado em Sistemas de Informação</p>
+                    <p><strong>Vagas Totais:</strong> 50</p>
+                </div>
+                <div class="detail-row">
+                    <p><strong>Ano:</strong> 2026</p>
+                    <p><strong>Vagas Ocupadas:</strong> <span class="highlight">39</span></p>
+                </div>
+                <div class="detail-row">
+                    <p><strong>Período:</strong> 1º Semestre</p>
+                    <p><strong>Total de Matrículas:</strong> 39</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

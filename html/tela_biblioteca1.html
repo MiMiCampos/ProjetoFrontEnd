@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Biblioteca - Portal da Ufac</title>
+    <link rel="stylesheet" href="tela_biblioteca.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <button class="btn-back" onclick="location.href='tela_inicial.html'">
+        <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
+    <div class="top-info">
+        <div class="date-badge">Terça-feira, 26 de maio de 2026</div>
+        <div class="weather-badge">
+            <i class="fa-solid fa-sun"></i> 31°C
+        </div>
+    </div>
+
+    <div class="main-container">
+        
+        <header class="portal-header">
+            <img src="ufac_logotipo.png" alt="Logo Ufac" class="logo-ufac" onerror="this.style.display='none'">
+            <h1>Portal da Ufac</h1>
+        </header>
+
+        <div class="section-badge-container">
+            <div class="section-badge">
+                <span>Minha<br>Biblioteca</span>
+            </div>
+        </div>
+
+        <main class="content-card">
+            
+            <div class="search-bar-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Estou buscando por livros, periódicos...">
+            </div>
+
+            <div class="library-layout">
+                
+                <div class="library-menu">
+                    
+                    <button class="menu-btn btn-reservas" onclick="location.href='tela_biblioteca2.html'">
+                        <div class="icon-box"><i class="fa-solid fa-calendar-days"></i></div>
+                        <span>Reservas</span>
+                    </button>
+
+                    <button class="menu-btn btn-renovacao" onclick="location.href='tela_biblioteca3.html'">
+                        <div class="icon-box"><i class="fa-solid fa-book-open"></i></div>
+                        <span>Renovação</span>
+                    </button>
+
+                    <button class="menu-btn btn-historico" onclick="location.href='tela_erro.html'">
+                        <div class="icon-box"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                        <span>Histórico</span>
+                    </button>
+
+                    <button class="menu-btn btn-nadaconsta" onclick="location.href='tela_erro.html'">
+                        <div class="icon-box"><i class="fa-solid fa-id-card-clip"></i></div>
+                        <span>Emitir "Nada consta"</span>
+                    </button>
+
+                </div>
+
+                <div class="books-grid">
+
+                <div class="suggestions-panel">
+                    <fieldset class="suggestions-fieldset">
+                        <legend>Sugestão</legend>
+                        
+                        <div class="books-grid">
+                            <div class="book-item cover-dark">
+                                <i class="fa-solid fa-square-matrix"></i>
+                                <span>ÁLGEBRA LINEAR</span>
+                            </div>
+                            <div class="book-item cover-blue">
+                                <i class="fa-solid fa-calculator"></i>
+                                <span>CÁLCULO I</span>
+                            </div>
+                            <div class="book-item cover-cyan">
+                                <i class="fa-brands fa-python"></i>
+                                <span>PYTHON BÁSICO</span>
+                            </div>
+                            <div class="book-item cover-orange">
+                                <i class="fa-solid fa-diagram-project"></i>
+                                <span>ESTRUTURA DE DADOS</span>
+                            </div>
+                            <div class="book-item cover-yellow">
+                                <i class="fa-solid fa-gears"></i>
+                                <span>SISTEMAS & MÉTODOS</span>
+                            </div>
+                            <div class="book-item cover-black">
+                                <i class="fa-solid fa-laptop-code"></i>
+                                <span>SIST. DE INFORMAÇÃO</span>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+    <script src="tela_biblioteca.js"></script>
+</body>
+</html>
+
+</body>
+</html>
