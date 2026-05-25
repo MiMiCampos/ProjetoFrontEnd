@@ -1,39 +1,77 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Interatividade na Barra de Pesquisa
-    const searchInput = document.getElementById('search-input');
-    
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter' && searchInput.value.trim() !== '') {
-            alert(`Buscando por: "${searchInput.value}" no Portal...`);
-            // Aqui você redirecionaria para uma página de busca, ex:
-            // window.location.href = `/busca?q=${encodeURIComponent(searchInput.value)}`;
-        }
-    });
-
-    // Interatividade nos botões rápidos (Tags azuis)
+    // ==============================================================
+    // 1. GERENCIAMENTO DOS BOTÕES AZUIS (PÍLULAS DE ATALHO)
+    // ==============================================================
     const tagButtons = document.querySelectorAll('.tag-btn');
+    
     tagButtons.forEach(button => {
         button.addEventListener('click', () => {
-            alert(`Redirecionando para a seção: ${button.textContent}`);
+            const buttonText = button.textContent.trim();
+            
+            // Redirecionamentos para a Tela de Documentos
+            if (buttonText === 'Atestado de matrícula' || 
+                buttonText === 'Histórico escolar' || 
+                buttonText === 'Histórico de integralização') {
+                window.location.href = './tela_documentos.html';
+            } 
+            // Redirecionamentos para a Tela do Restaurante
+            else if (buttonText === 'Visualizar o cardápio' || 
+                     buttonText === 'Recarregar e-ticket') {
+                window.location.href = './tela_restaurante.html';
+            }
         });
     });
 
-    // Interatividade nas Funcionalidades Principais (Cards Grandes)
+
+    // ==============================================================
+    // 2. GERENCIAMENTO DOS CARDS GRANDES (FUNCIONALIDADES)
+    // ==============================================================
     const featureCards = document.querySelectorAll('.feature-card');
+    
     featureCards.forEach(card => {
         card.addEventListener('click', () => {
-            const featureName = card.querySelector('span').textContent;
-            alert(`Abrindo o módulo: ${featureName}`);
+            const featureName = card.querySelector('span').textContent.trim();
+            
+            // Redirecionamento para a nova Tela de Erro (tela_erro.html)
+            if (featureName === 'Matrícula') {
+                window.location.href = './tela_erro.html';
+            } 
+            // Redirecionamento para a Tela do Restaurante
+            else if (featureName === 'Restaurante Universitário') {
+                window.location.href = './tela_restaurante.html';
+            } 
+            // Redirecionamento para a Tela de Documentos
+            else if (featureName === 'Documentos') {
+                window.location.href = './tela_documentos.html';
+            }
+            // Dentro da função dos featureCards no seu tela_inicial.js
+            else if (featureName === 'Horários') {
+                window.location.href = './tela_horarios1.html';
+            }
+            // Adicione essa verificação dentro do bloco de cliques do featureCards no seu tela_inicial.js
+            else if (featureName === 'Biblioteca') {
+                window.location.href = './tela_biblioteca1.html';
+            }
+            // Outros cards que ainda não possuem telas próprias
+            else {
+                alert(`Abrindo o módulo: ${featureName}`);
+            }
         });
     });
 
-    // Animação extra ao clicar nas notícias além do link padrão
-    const newsItems = document.querySelectorAll('.news-item');
-    newsItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            const title = item.querySelector('h3').textContent;
-            console.log(`Abrindo notícia: ${title}`);
+
+    // ==============================================================
+    // 3. BARRA DE PESQUISA (INTERATIVIDADE ADICIONAL)
+    // ==============================================================
+    const searchInput = document.getElementById('search-input');
+    
+    if (searchInput) {
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && searchInput.value.trim() !== '') {
+                alert(`Buscando por: "${searchInput.value}" no Portal...`);
+            }
         });
-    });
+    }
+
 });

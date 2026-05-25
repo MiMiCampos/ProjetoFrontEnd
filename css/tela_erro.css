@@ -1,0 +1,88 @@
+/* Reset Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #1a73e8; /* Mesmo azul royal do Portal */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza o card vertical e horizontalmente na tela */
+    position: relative;
+    padding: 20px;
+}
+
+/* Botão Voltar (Canto Superior Esquerdo) */
+.btn-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a73e8;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-back:hover {
+    background-color: #f1f3f4;
+    transform: scale(1.05);
+}
+
+.btn-back:active {
+    transform: scale(0.95);
+}
+
+/* Container da Mensagem */
+.maintenance-container {
+    width: 100%;
+    max-width: 650px; /* Limita a largura máxima do aviso */
+    display: flex;
+    justify-content: center;
+}
+
+/* Card de Aviso Branco */
+.message-card {
+    background-color: #edf2f9; /* Tom levemente acinzentado/azulado muito claro */
+    width: 100%;
+    padding: 24px 40px;
+    border-radius: 20px; /* Bordas arredondadas idênticas à imagem */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Estilização do Texto interno */
+.message-card p {
+    color: #000000;
+    font-size: 22px; /* Fonte em tamanho de destaque confortável */
+    font-weight: 500;
+}
+
+/* Responsividade para telas de celulares */
+@media (max-width: 480px) {
+    .message-card {
+        padding: 20px 15px;
+    }
+    .message-card p {
+        font-size: 18px;
+    }
+    .btn-back {
+        top: 15px;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+    }
+}

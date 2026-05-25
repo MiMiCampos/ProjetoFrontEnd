@@ -1,0 +1,393 @@
+/* Reset Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #1a73e8; /* Mesmo azul padrão do portal */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente igual à tela_restaurante corrigida */
+    padding: 40px 20px;
+    position: relative;
+}
+
+/* Botão Voltar (Canto Superior Esquerdo) */
+.btn-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a73e8;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+/* Informações de Clima e Data (Canto Superior Direito) */
+.top-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 10;
+}
+
+.date-badge {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    backdrop-filter: blur(5px);
+}
+
+.weather-badge {
+    background-color: transparent;
+    border: 2px solid #ffd166;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.weather-badge i {
+    color: #ffd166;
+}
+
+/* Container Estrutural (Mesma largura máxima padrão de 850px) */
+.main-container {
+    width: 100%;
+    max-width: 850px;
+    margin-top: 20px;
+}
+
+/* Cabeçalho Centralizado */
+.portal-header {
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.logo-ufac {
+    width: 65px;
+    height: auto;
+    margin: 0 auto 8px auto;
+    display: block;
+    background: white;
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.portal-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Aba Indicadora da Seção */
+.section-badge-container {
+    padding: 0;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 2;
+}
+
+.section-badge {
+    background-color: #4285f4;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 12px 24px;
+    color: white;
+    display: inline-block;
+    min-width: 200px;
+}
+
+.section-badge span {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.3;
+    display: block;
+}
+
+/* Card Branco de Fundo */
+.content-card {
+    background: white;
+    border-radius: 16px;
+    border-top-left-radius: 0;
+    padding: 35px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    width: 100%;
+}
+
+/* Grid Organizador dos Documentos (2 colunas perfeitas) */
+.documents-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 30px; /* Espaçamento idêntico à imagem do layout */
+}
+
+/* Elemento Individual de Documento */
+.doc-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    border: 1px solid #e8eaed;
+}
+
+/* Área superior de texto e ícone */
+.doc-info {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    flex-grow: 1;
+    min-height: 85px;
+}
+
+.doc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #202124;
+    line-height: 1.3;
+}
+
+/* Grupo especial de subtítulo para o Histórico Escolar */
+.title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.doc-subtitle {
+    font-size: 11px;
+    color: #5f6368;
+    font-weight: 500;
+}
+
+/* Ícones Laranja */
+.doc-icon {
+    font-size: 36px;
+    color: #f2994a; /* Tom dourado/alaranjado dos ícones originais */
+    opacity: 0.9;
+}
+
+/* Botão de Download Inferior (Faixa Azul) */
+.btn-download {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.btn-download:hover {
+    background-color: #1557b0;
+}
+
+.btn-download i {
+    font-size: 11px;
+}
+
+/* Responsividade para telas menores (Tablets e Smartphones) */
+@media (max-width: 768px) {
+    .documents-grid {
+        grid-template-columns: 1fr; /* Transforma em 1 coluna em telas estreitas */
+        gap: 20px;
+    }
+    .top-info {
+        position: static;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    body {
+        padding: 40px 15px;
+    }
+}
+
+/* ==========================================================================
+   COMPLEMENTO PARA AS TELAS 2 E 3 (RESERVAS E RENOVAÇÃO)
+   ========================================================================== */
+
+/* Abas superiores da Biblioteca */
+.tabs-container-lib {
+    display: flex;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 2;
+}
+
+.tab-lib-blue {
+    background-color: #4285f4;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 12px 24px;
+    color: white;
+    display: inline-block;
+    min-width: 200px;
+}
+
+.tab-lib-blue span {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.3;
+    display: block;
+}
+
+.clickable {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.clickable:hover {
+    opacity: 0.9;
+}
+
+/* Faixa de cabeçalho interno das seções (Reservas/Renovação) */
+.sub-section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    width: 100%;
+}
+
+.header-green { background-color: #2ecc71; }
+.header-orange { background-color: #f39c12; }
+
+/* Box grande colorido que envelopa os cards */
+.status-panel-box {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 25px;
+    min-height: 240px;
+    width: 100%;
+}
+
+.bg-green { background-color: #58d68d; }
+.bg-orange { background-color: #f5b041; }
+
+/* Grid para alinhar os dois cards lado a lado na tela de Renovação */
+.cards-inline-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+/* O Card Branco Flutuante dos Livros */
+.book-status-card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    position: relative;
+    max-width: 340px;
+    width: 100%;
+}
+
+/* Informações internas de texto do livro */
+.card-book-details strong {
+    display: block;
+    font-size: 14px;
+    color: #202124;
+    margin-bottom: 8px;
+    font-weight: 600;
+    line-height: 1.3;
+    padding-right: 15px;
+}
+
+.card-book-details p {
+    font-size: 11px;
+    color: #5f6368;
+    margin-bottom: 3px;
+}
+
+/* Pequena seta cinza no canto do card */
+.arrow-detail {
+    color: #dadce0;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Alinhamento dos botões flutuantes à direita */
+.action-icons-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 75px;
+}
+
+/* Botões Circulares de Sincronização/Renovação (Faixa Inferior Direita) */
+.btn-sync-refresh {
+    border: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+}
+
+.btn-sync-refresh:hover {
+    transform: rotate(180deg);
+}
+
+.sync-green { background-color: #2ecc71; }
+.sync-red { background-color: #e74c3c; }
+
+/* Ajuste Responsivo para telas de celulares */
+@media (max-width: 768px) {
+    .cards-inline-container {
+        grid-template-columns: 1fr; /* Quebra para uma coluna no mobile */
+    }
+    .book-status-card {
+        max-width: 100%;
+    }
+}
