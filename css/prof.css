@@ -31,7 +31,7 @@ body {
    CABEÇALHOS INTERNOS (MINHAS TURMAS, ETC) - SEM 3D
    ========================================================================== */
 .header-blue {
-    background-color: #1a6ced;
+    background-color: #1a73e8;
     width: 100%;
     padding: 40px 40px 60px 40px; /* Mais espaço embaixo para os cartões sobreporem um pouco */
     color: white;
@@ -165,7 +165,7 @@ body {
    TELA INICIAL PORTAL (CORREÇÃO DA SOBREPOSIÇÃO)
    ========================================================================== */
 .header-portal {
-    background-color: #1a6ced;
+    background-color: #1a73e8;
     width: 100%;
     padding: 30px 40px 100px 40px; /* Muito espaço inferior para apoiar a caixa branca */
     color: white;
@@ -211,7 +211,7 @@ body {
     align-items: center;
     gap: 15px;
 }
-.user-profile-badge .avatar { background-color: white; color: #1a6ced; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.user-profile-badge .avatar { background-color: white; color: #1a73e8; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 .user-profile-badge .info p { margin: 0; font-size: 0.95rem; opacity: 0.9; }
 .user-profile-badge .info h3 { margin: 0; font-size: 1.4rem; font-weight: bold; }
 
@@ -245,7 +245,7 @@ body {
     color: #333; 
     transition: border-color 0.2s; 
 }
-.search-bar:focus { border-color: #1a6ced; }
+.search-bar:focus { border-color: #1a73e8; }
 
 .grid-menu { 
     display: grid; 
@@ -261,7 +261,7 @@ body {
     flex-direction: column; 
     align-items: center; 
     text-decoration: none; 
-    color: #1a6ced; 
+    color: #1a73e8; 
     font-weight: 600; 
     text-align: center; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
@@ -346,7 +346,7 @@ body {
     max-width: 760px;         /* Limita para bater exato com os cartões */
     margin: 20px auto 40px auto; 
     padding: 15px;
-    background-color: #1a6ced;
+    background-color: #1a73e8;
     color: white;
     border: none;
     border-radius: 12px;
@@ -359,7 +359,7 @@ body {
 }
 
 .btn-action-large:hover { 
-    background-color: #1455c0; 
+    background-color: #1a73e8; 
     transform: translateY(-2px);
 }
 
@@ -392,7 +392,7 @@ body {
 /* Efeito ao selecionar a aba */
 .btn-aba.active-aba {
     background-color: white;
-    color: #1a6ced;
+    color: #1a73e8;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
@@ -419,7 +419,7 @@ body {
 }
 
 .grade-input:focus {
-    border-color: #1a6ced;
+    border-color: #1a73e8;
     box-shadow: 0 0 0 3px rgba(26,108,237,0.1);
 }
 
@@ -489,10 +489,82 @@ body {
 /* Estado ativo */
 .btn-aba-pill.active-aba {
     background: white;
-    color: #1a6ced;
+    color: #1a73e8;
 }
 
 /* Efeito hover */
 .btn-aba-pill:hover:not(.active-aba) {
     background: rgba(255, 255, 255, 0.3);
 }
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA MATERIAL DIDÁTICO
+   ========================================================================== */
+
+/* Botão de Adicionar Padronizado (Cabeçalhos)*/
+.btn-add-header {
+    background-color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 20px;
+    color: #1a73e8;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-add-header:hover {
+    background-color: #f1f5f9;
+    transform: translateY(-2px);
+}
+
+/* Container de ações nos cards de material */
+.material-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-mat-action {
+    background: transparent;
+    border: none;
+    color: #64748b;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-mat-action:hover { color: #1a73e8; }
+.btn-mat-action.btn-delete:hover { color: #ef4444; }
+
+/* Cartão de Adicionar Material (Tracejado) */
+.add-material-dashed {
+    width: 100%;
+    border: 2px dashed #cbd5e1;
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.add-material-dashed:hover {
+    border-color: #1a73e8;
+    color: #1a73e8;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.add-material-dashed i { font-size: 1.5rem; }
+.add-material-dashed span { font-weight: 600; font-size: 1rem; }

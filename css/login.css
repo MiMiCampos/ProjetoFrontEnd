@@ -29,7 +29,7 @@ body {
 
 /* --- Painel Lateral Esquerdo (Fixo) --- */
 .sidebar-panel {
-    background-color: #1a6ced;
+    background-color: #1a73e8;
     width: 38%;
     padding: 40px;
     display: flex;
@@ -139,7 +139,7 @@ body {
     width: 24px;
     height: 24px;
     fill: none;
-    stroke: #1a6ced;
+    stroke: #1a73e8;
     stroke-width: 2.2;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -211,7 +211,7 @@ body {
 }
 
 .input-wrapper input:focus {
-    border-color: #1a6ced;
+    border-color: #1a73e8;
     background-color: #fff;
 }
 
@@ -255,7 +255,7 @@ body {
 
 /* --- Botão Azul Padrão --- */
 .btn-primary {
-    background-color: #1a6ced;
+    background-color: #1a73e8;
     color: white;
     border: none;
     padding: 13px;
@@ -310,13 +310,13 @@ body {
 .gov-text .green { color: #39b54a; }
 
 .footer-text { text-align: center; margin-top: 15px; font-size: 0.9rem; color: #555; }
-.footer-text a { color: #1a6ced; font-weight: 600; text-decoration: none; }
+.footer-text a { color: #1a73e8; font-weight: 600; text-decoration: none; }
 
 /* --- Tela de Sucesso --- */
 .success-step { text-align: center; align-items: center; justify-content: center; }
 .success-icon { font-size: 4rem; color: #28a745; margin-bottom: 15px; }
 .loading-dots { display: flex; gap: 6px; margin-top: 20px; }
-.loading-dots span { width: 8px; height: 8px; background-color: #1a6ced; border-radius: 50%; animation: bounce 0.6s infinite alternate; }
+.loading-dots span { width: 8px; height: 8px; background-color: #1a73e8; border-radius: 50%; animation: bounce 0.6s infinite alternate; }
 .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
 .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
 
@@ -359,7 +359,7 @@ body {
     font-size: 0.95rem;
     cursor: pointer;
 }
-.btn-google-next:hover { background-color: #1557b0; }
+.btn-google-next:hover { background-color: #1a73e8; }
 
 /* --- Tela Gov.br --- */
 .gov-header { text-align: center; margin-bottom: 20px; display: flex; flex-direction: column; align-items: center; width: 100%; }
