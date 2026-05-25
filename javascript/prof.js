@@ -150,19 +150,17 @@ function atualizarCorMedia(alunoId) {
     if (!inputNota || !badgeMedia) return;
 
     let valorDigitado = parseFloat(inputNota.value);
-    
     if (isNaN(valorDigitado)) valorDigitado = 0;
-    if (valorDigitado > 10) { valorDigitado = 10; inputNota.value = 10; }
-    if (valorDigitado < 0) { valorDigitado = 0; inputNota.value = 0; }
-
+    
     badgeMedia.textContent = `Média: ${valorDigitado.toFixed(1)}`;
 
+    // Remove as classes antigas antes de aplicar as novas
+    badgeMedia.classList.remove('grade-avg-success', 'grade-avg-danger');
+
     if (valorDigitado >= 7.0) {
-        badgeMedia.style.backgroundColor = '#d4edda';
-        badgeMedia.style.color = '#28a745';
+        badgeMedia.classList.add('grade-avg-success');
     } else {
-        badgeMedia.style.backgroundColor = '#f8d7da';
-        badgeMedia.style.color = '#dc3545';
+        badgeMedia.classList.add('grade-avg-danger');
     }
 }
 
