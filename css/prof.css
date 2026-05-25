@@ -63,9 +63,48 @@ body {
     display: flex;
     justify-content: center;
 }
-.logo-wrapper img { 
-    width: 55px; 
-    height: 55px; 
+/* ==========================================================================
+   LOGO E BLOCOS DE ESTATÍSTICAS (CORREÇÃO)
+   ========================================================================== */
+
+/* Arredonda a logo e coloca fundo branco */
+.logo-wrapper img {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Organiza as estatísticas lado a lado */
+.stats-header-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+    max-width: 500px; /* Impede que os blocos fiquem demasiado esticados no desktop */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Desenha a caixa translúcida de cada estatística */
+.stat-box {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 15px 5px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-box strong {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.stat-box span {
+    font-size: 0.95rem;
+    opacity: 0.9;
 }
 
 .header-title-area {
@@ -234,3 +273,129 @@ body {
     border-color: #cbd5e1; 
 }
 .menu-item i { font-size: 2.5rem; margin-bottom: 15px; color: #8b5cf6; }
+
+/* ==========================================================================
+   ESTRUTURA DAS LINHAS DE ALUNOS (CHAMADA, NOTAS, ETC.)
+   ========================================================================== */
+.student-row {
+    background-color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Sombra 3D restaurada */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.student-row:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12); 
+}
+
+.student-name { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    font-weight: 600; 
+    color: #333; 
+}
+
+.student-avatar { 
+    width: 35px; 
+    height: 35px; 
+    background: #e0e0e0; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+/* ==========================================================================
+   BOTÕES DE PRESENTE / AUSENTE
+   ========================================================================== */
+.toggle-group { 
+    display: flex; 
+    gap: 5px; 
+    background: #e2e8f0; 
+    border-radius: 20px; 
+    padding: 3px; 
+}
+
+.btn-toggle { 
+    padding: 6px 12px; 
+    border: none; 
+    border-radius: 16px; 
+    font-size: 0.8rem; 
+    font-weight: bold; 
+    cursor: pointer; 
+    color: #64748b; 
+    background: transparent; 
+    transition: all 0.2s; 
+}
+
+.btn-toggle.active.present { background-color: #2eb872; color: white; }
+.btn-toggle.active.absent { background-color: #d9534f; color: white; }
+
+/* ==========================================================================
+   BOTÃO DE AÇÃO GLOBAL (SALVAR CHAMADA / PUBLICAR NOTAS)
+   ========================================================================== */
+.btn-action-large {
+    width: calc(100% - 40px); /* Desconta exatamente o espaço lateral da lista */
+    max-width: 760px;         /* Limita para bater exato com os cartões */
+    margin: 20px auto 40px auto; 
+    padding: 15px;
+    background-color: #1a6ced;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(26,108,237,0.3);
+    transition: background-color 0.2s, transform 0.2s;
+    display: block;
+}
+
+.btn-action-large:hover { 
+    background-color: #1455c0; 
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   ESTILIZAÇÃO DAS ABAS DE NOTAS (N1, N2, Final)
+   ========================================================================== */
+.stats-header-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+    max-width: 600px; /* Ajustado para melhor proporção */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-aba {
+    background-color: rgba(255, 255, 255, 0.2); /* Mesmo fundo das estatísticas */
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: center;
+}
+
+/* Efeito ao selecionar a aba */
+.btn-aba.active-aba {
+    background-color: white;
+    color: #1a6ced;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn-aba:hover:not(.active-aba) {
+    background-color: rgba(255, 255, 255, 0.3);
+}

@@ -10,23 +10,27 @@
     <div class="app-container">
         
         <div class="header-blue">
-            <div class="logo-wrapper">
-                <img src="/componentes/logo_ufac.png" alt="UFAC" style="width: 45px; height: 45px; border-radius: 8px;">
-            </div>
             
-            <a href="/html/prof_disciplinas.html" class="btn-back" style="z-index: 999; text-decoration: none; position: absolute; top: 25px; left: 20px; width: 40px; height: 40px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: none; stroke: #1a6ced; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; pointer-events: none;">
-                    <path d="M9 14L4 9l5-5"/>
-                    <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11"/>
-                </svg>
+            <a href="/html/prof_disciplinas.html" class="btn-back">
+                <svg viewBox="0 0 24 24"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11"/></svg>
             </a>
 
-            <h1 class="page-title">Chamada</h1>
-            <p class="page-subtitle">Algoritmos - CCET005</p>
+            <div class="logo-wrapper">
+                <img src="/componentes/logo_ufac.png" alt="UFAC">
+            </div>
 
-            <div style="margin-top: 15px; display: flex; gap: 20px; font-size: 0.9rem;">
-                <span>🟢 Presentes: <span id="contador-presentes">42</span></span>
-                <span>🔴 Ausentes: <span id="contador-ausentes">0</span></span>
+            <div class="header-title-area" style="text-align: center;">
+                <h1 class="page-title">Chamada</h1>
+                <p class="page-subtitle">Algoritmos - CCET005</p>
+                
+                <div style="margin-top: 25px; display: flex; justify-content: center; gap: 20px; font-size: 0.95rem; font-weight: bold;">
+                    <span style="background-color: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">
+                        🟢 Presentes: <span id="contador-presentes">10</span>
+                    </span>
+                    <span style="background-color: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">
+                        🔴 Ausentes: <span id="contador-ausentes">0</span>
+                    </span>
+                </div>
             </div>
         </div>
 

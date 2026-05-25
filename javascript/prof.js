@@ -84,6 +84,16 @@ function setAttendance(studentId, status) {
         btnAbsent.classList.add('active', 'absent');
         btnPresent.classList.remove('active', 'present');
     }
+    
+    // Atualiza os números no topo da tela automaticamente
+    const totalPresentes = document.querySelectorAll('.btn-toggle.present.active').length;
+    const totalAusentes = document.querySelectorAll('.btn-toggle.absent.active').length;
+    
+    const contPres = document.getElementById('contador-presentes');
+    const contAus = document.getElementById('contador-ausentes');
+    
+    if (contPres) contPres.innerText = totalPresentes;
+    if (contAus) contAus.innerText = totalAusentes;
 }
 
 function salvarChamada() {
