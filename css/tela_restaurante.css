@@ -1,92 +1,23 @@
-body {
-    background-color: #1a73e8; /* Azul padrão Ufac */
+body.tela-centralizada {
+    background-color: #1a73e8; /* Você também pode usar var(--azul-ufac) aqui */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center; /* CENTRALIZA TODO O CONTEÚDO VERTICALMENTE NO MEIO DA TELA */
+    align-items: center; 
     padding: 40px 20px;
     position: relative;
 }
 
-/* Informações de Clima e Data (Canto Superior Direito) */
-.top-info {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-    z-index: 10;
-}
-
-.date-badge {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: white;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    backdrop-filter: blur(5px);
-}
-
-.weather-badge {
-    background-color: transparent;
-    border: 2px solid #ffd166;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.weather-badge i {
-    color: #ffd166;
-}
-
-/* ==========================================
-   CONTAINER PRINCIPAL (IGUAL À TELA INICIAL)
-   ========================================== */
-.main-container {
-    width: 100%;
-    max-width: 850px; /* Mesma largura exata máxima da tela inicial */
-    margin-top: 20px;
-}
-
-/* Cabeçalho Centralizado */
-.portal-header {
-    text-align: center;
-    color: white;
-    margin-bottom: 25px;
-    width: 100%;
-}
-
-.logo-ufac {
-    width: 65px;
-    height: auto;
-    margin: 0 auto 8px auto;
-    display: block;
-    background: white;
-    border-radius: 12px;
-    padding: 4px;
-}
-
-.portal-header h1 {
-    font-size: 28px;
-    font-weight: 600;
-}
-
 /* Aba Indicadora "Restaurante Universitário" */
-.section-badge-container {
+.section-badge-container, .tabs-container-lib {
+    display: flex;
     padding: 0;
-    margin-bottom: -1px;
+    margin-bottom: 0px;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
-.section-badge {
+.section-badge-container {
     background-color: #4285f4;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;

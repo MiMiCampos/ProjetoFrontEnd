@@ -1,85 +1,19 @@
-body {
-    background-color: #1a73e8; /* Azul característico do fundo */
+body.tela-centralizada {
+    background-color: #1a73e8; /* Você também pode usar var(--azul-ufac) aqui */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
     padding: 40px 20px;
     position: relative;
 }
 
-/* Info do Canto Superior Direito */
-.top-info {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-}
-
-.date-badge {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: white;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    backdrop-filter: blur(5px);
-}
-
-.weather-badge {
-    background-color: transparent;
-    border: 2px solid #ffd166;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.weather-badge i {
-    color: #ffd166;
-}
-
-/* Container Principal */
-.main-container {
-    width: 100%;
-    max-width: 850px;
-    margin-top: 20px;
-}
-
-/* Cabeçalho do Portal */
-.portal-header {
-    text-align: center;
-    color: white;
-    margin-bottom: 25px;
-}
-
-.logo-ufac {
-    width: 65px;
-    height: auto;
-    margin-bottom: 8px;
-    background: white; /* Fallback caso não haja imagem */
-    border-radius: 12px;
-    padding: 4px;
-}
-
-.portal-header h1 {
-    font-size: 28px;
-    font-weight: 600;
-}
 
 /* Seção Usuário e Mascote */
 .user-section {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 0 10px;
-    margin-bottom: -1px; /* Evita frestas com o card */
+    padding: 0;
+    margin-bottom: 0px;
     position: relative;
     z-index: 1;
 }
@@ -133,9 +67,10 @@ body {
 .content-card {
     background: white;
     border-radius: 16px;
-    border-top-left-radius: 0; /* Alinha com o badge do usuário */
-    padding: 30px;
+    border-top-left-radius: 0;
+    padding: 35px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    width: 100%;
 }
 
 /* Barra de Pesquisa */

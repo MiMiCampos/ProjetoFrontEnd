@@ -8,17 +8,12 @@ body.tela-centralizada {
     position: relative;
 }
 
-/* ==========================================================================
-   3. CABEÇALHO DO PORTAL E ABAS SUPERIORES
-   ========================================================================== */
-
-/* Aba Indicadora da Seção / Abas Superiores */
 .section-badge-container, .tabs-container-lib {
     display: flex;
     padding: 0;
-    margin-bottom: -1px;
+    margin-bottom: 0px;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .section-badge, .tab-lib-blue {

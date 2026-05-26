@@ -16,7 +16,7 @@ body.tela-centralizada {
 .section-badge-container, .tabs-container-lib {
     display: flex;
     padding: 0;
-    margin-bottom: -1px;
+    margin-bottom: 0px;
     position: relative;
     z-index: 2;
 }
