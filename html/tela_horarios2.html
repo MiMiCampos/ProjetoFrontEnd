@@ -3,29 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes Horário - Portal da Ufac</title>
-    <link rel="stylesheet" href="tela_horarios.css">
+    <title>Meus Horários - Portal da Ufac</title>
+    <link rel="stylesheet" href="../css/tela_horarios.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../javascript/components-loader.js" defer></script>
 </head>
-<body>
-
-    <button class="btn-back" onclick="location.href='tela_inicial.html'">
-        <i class="fa-solid fa-arrow-left"></i>
-    </button>
-
-    <div class="top-info">
-        <div class="date-badge">Terça-feira, 26 de maio de 2026</div>
-        <div class="weather-badge">
-            <i class="fa-solid fa-sun"></i> 31°C
-        </div>
-    </div>
+<body class="tela-centralizada">
+    <!-- HEADER -->
+    <div id="header-container"></div>
 
     <div class="main-container">
-        <header class="portal-header">
-            <img src="ufac_logotipo.png" alt="Logo Ufac" class="logo-ufac">
-            <h1>Portal da Ufac</h1>
-        </header>
-
         <div class="tabs-container">
             <div class="tab-blue clickable" onclick="location.href='tela_horarios1.html'">
                 <span>Meus<br>Horários</span>
