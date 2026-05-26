@@ -1,21 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Huninn&display=swap');
-/* Caso não tenha importado a 'Inclusive Sans' no HTML, adicione o import dela também se necessário */
+/* Importação das duas fontes em uma única requisição (Otimiza o carregamento) */
+@import url('https://googleapis.com');
 
-/* 1. Variáveis Nativas: Facilita alterar as cores do site inteiro em um só lugar */
+/* 1. Variáveis Globais (Design Tokens) */
 :root {
   --azul-ufac: #1B6DE1;
   --amarelo-ufac: #e3d530;
   --branco: #ffffff;
+  
+  /* Definição das fontes do seu projeto */
   --fonte-primaria: 'Huninn', sans-serif;
   --fonte-secundaria: 'Inclusive Sans', sans-serif;
 }
 
+/* 2. Reset Global Prático */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* 3. Estilos Base da Aplicação */
 body {
   background-color: var(--azul-ufac);
+  color: var(--branco); /* Define uma cor padrão para os textos do site */
+  min-height: 100vh; /* Garante que o fundo cubra a tela toda em qualquer página */
+  
+  /* Aplica a sua fonte primária como padrão para o site inteiro por herança */
+  font-family: var(--fonte-primaria); 
+}
+
+/* Exemplo de uso da fonte secundária para títulos, se desejar */
+h1, h2, h3 {
+  font-family: var(--fonte-secundaria);
 }

@@ -1,47 +1,12 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-body {
-    background-color: #1a73e8;
+body.tela-centralizada {
+    background-color: #1a73e8; /* Você também pode usar var(--azul-ufac) aqui */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
     padding: 40px 20px;
     position: relative;
 }
-
-/* Header e Logo */
-.portal-header {
-    text-align: center;
-    color: white;
-    margin-bottom: 25px;
-}
-
-.logo-ufac {
-    width: 65px;
-    margin: 0 auto 8px auto;
-    display: block;
-    background: white;
-    border-radius: 12px;
-    padding: 4px;
-}
-
-/* Botões e Badges de topo */
-.btn-back {
-    position: absolute; top: 20px; left: 20px;
-    background: white; border: none; width: 40px; height: 40px;
-    border-radius: 50%; color: #1a73e8; cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.top-info { position: absolute; top: 20px; right: 20px; text-align: right; }
-.date-badge { background: rgba(255,255,255,0.2); color: white; padding: 5px 15px; border-radius: 20px; margin-bottom: 5px; font-size: 13px; }
-.weather-badge { border: 2px solid #ffd166; color: white; padding: 3px 10px; border-radius: 20px; display: inline-block; }
 
 /* Container */
 .main-container { width: 100%; max-width: 850px; }

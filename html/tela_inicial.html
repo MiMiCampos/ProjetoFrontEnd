@@ -4,29 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal da Ufac</title>
-    <link rel="stylesheet" href="tela_inicial.css">
+    <link rel="stylesheet" href="../css/tela_inicial.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../javascript/components-loader.js" defer></script>
+    <script src="../javascript/tela_inicial.js" defer></script>
 </head>
 <body>
-
-    <button class="btn-back" onclick="window.history.back()">
-        <i class="fa-solid fa-arrow-left"></i>
-    </button>
-
-    <div class="top-info">
-        <div class="date-badge">Terça-feira, 26 de maio de 2026</div>
-        <div class="weather-badge">
-            <i class="fa-solid fa-sun"></i> 31°C
-        </div>
-    </div>
+    <!-- HEADER -->
+    <header id="header-container" role="banner"></header>
 
     <div class="main-container">
-        
-        <header class="portal-header">
-            <img src="ufac_logotipo.png" alt="Logo Ufac" class="logo-ufac">
-            <h1>Portal da Ufac</h1>
-        </header>
-
         <div class="user-section">
             <div class="user-badge">
                 <div class="user-icon">
@@ -40,7 +27,7 @@
             
         </div>
 
-        <main class="content-card">
+        <main class="content-card" role="main">
             
             <div class="search-container">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
@@ -82,46 +69,52 @@
                 <span>Últimas notícias</span>
             </div>
 
-            <section class="news-grid">
-                <article class="news-item" onclick="location.href='#enade'">
-                    <img src="noticia1.jpeg" alt="Notícia 1" class="news-img-placeholder">
+            <section class="news-grid" aria-label="Últimas notícias">
+                <article class="news-item" data-anchor="#enade">
+                    <img src="../assets/noticia1.jpeg" alt="Notícia 1" class="news-img-placeholder">
                     <div class="news-content">
-                        <span class="news-date">22/05/2026 04h45</span>
+                        <time class="news-date" datetime="2026-05-22T04:45">22/05/2026 04h45</time>
                         <h3>Ufac celebra desempenho após divulgação dos resultados do Enade 2025</h3>
-                        <div class="news-card" onclick="window.location.href='https://www.ufac.br/site/noticias/2026/ufac-celebra-desempenho-apos-divulgacao-dos-resultados-do-enade-2025'">
-                            <i class="fa-solid fa-link"></i>
-                        </div>
+                        <a class="news-card" href="https://www.ufac.br/site/noticias/2026/ufac-celebra-desempenho-apos-divulgacao-dos-resultados-do-enade-2025" target="_blank" rel="noopener noreferrer" aria-label="Abrir notícia completa">
+                            <i class="fa-solid fa-link" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
 
-                <article class="news-item" onclick="location.href='#recepcao'">
-                    <img src="noticia2.jpeg" alt="Notícia 2" class="news-img-placeholder dark-bg">
+                <article class="news-item" data-anchor="#recepcao">
+                    <img src="../assets/noticia2.jpeg" alt="Notícia 2" class="news-img-placeholder dark-bg">
                     <div class="news-content">
-                        <span class="news-date">15/05/2026 09h01</span>
+                        <time class="news-date" datetime="2026-05-15T09:01">15/05/2026 09h01</time>
                         <h3>Ufac realiza recepção institucional para novos estudantes no Teatro Universitário</h3>
-                        <div class="news-card" onclick="window.location.href='https://www.ufac.br/site/noticias/2026/ufac-realiza-recepcao-institucional-para-novos-estudantes-no-teatro-universitario'">
-                            <i class="fa-solid fa-link"></i>
-                        </div>
+                        <a class="news-card" href="https://www.ufac.br/site/noticias/2026/ufac-realiza-recepcao-institucional-para-novos-estudantes-no-teatro-universitario" target="_blank" rel="noopener noreferrer" aria-label="Abrir notícia completa">
+                            <i class="fa-solid fa-link" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
 
-                <article class="news-item" onclick="location.href='#laboratorio'">
-                    <img src="noticia3.jpeg" alt="Notícia 3" class="news-img-placeholder group-bg">
+                <article class="news-item" data-anchor="#laboratorio">
+                    <img src="../assets/noticia3.jpeg" alt="Notícia 3" class="news-img-placeholder group-bg">
                     <div class="news-content">
-                        <span class="news-date">15/05/2026 08h33</span>
+                        <time class="news-date" datetime="2026-05-15T08:33">15/05/2026 08h33</time>
                         <h3>Ufac celebra trajetória de dez anos do Laboratório de Discriminação Racial</h3>
-                        <div class="news-card" onclick="window.location.href='https://www.ufac.br/site/noticias/2026/ufac-celebra-trajetoria-de-dez-anos-do-laboratorio-de-discriminacao-racial'">
-                            <i class="fa-solid fa-link"></i>
-                        </div>
-                    </div>
-                    <div class="news-content">
+                        <a class="news-card" href="https://www.ufac.br/site/noticias/2026/ufac-celebra-trajetoria-de-dez-anos-do-laboratorio-de-discriminacao-racial" target="_blank" rel="noopener noreferrer" aria-label="Abrir notícia completa">
+                            <i class="fa-solid fa-link" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
             </section>
 
         </main>
     </div>
-
-    <script src="tela_inicial.js"></script>
+    <script>
+    // Delegated handlers: navigate to anchor when article clicked
+    document.addEventListener('click', function(e){
+        var article = e.target.closest('.news-item');
+        if(article && !e.target.closest('.news-card')){
+            var anchor = article.getAttribute('data-anchor');
+            if(anchor) location.href = anchor;
+        }
+    });
+    </script>
 </body>
 </html>

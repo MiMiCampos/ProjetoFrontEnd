@@ -1,117 +1,28 @@
-/* Reset Geral */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
-
-body {
-    background-color: #1a73e8; /* Mesmo azul padrão do portal */
+body.tela-centralizada {
+    background-color: #1a73e8; /* Você também pode usar var(--azul-ufac) aqui */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente igual à tela_restaurante corrigida */
+    align-items: center; 
     padding: 40px 20px;
     position: relative;
 }
 
-/* Botão Voltar (Canto Superior Esquerdo) */
-.btn-back {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+/* ==========================================================================
+   3. CABEÇALHO DO PORTAL E ABAS SUPERIORES
+   ========================================================================== */
+
+/* Aba Indicadora da Seção / Abas Superiores */
+.section-badge-container, .tabs-container-lib {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #1a73e8;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 10;
-}
-
-/* Informações de Clima e Data (Canto Superior Direito) */
-.top-info {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-    z-index: 10;
-}
-
-.date-badge {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: white;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    backdrop-filter: blur(5px);
-}
-
-.weather-badge {
-    background-color: transparent;
-    border: 2px solid #ffd166;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.weather-badge i {
-    color: #ffd166;
-}
-
-/* Container Estrutural (Mesma largura máxima padrão de 850px) */
-.main-container {
-    width: 100%;
-    max-width: 850px;
-    margin-top: 20px;
-}
-
-/* Cabeçalho Centralizado */
-.portal-header {
-    text-align: center;
-    color: white;
-    margin-bottom: 25px;
-    width: 100%;
-}
-
-.logo-ufac {
-    width: 65px;
-    height: auto;
-    margin: 0 auto 8px auto;
-    display: block;
-    background: white;
-    border-radius: 12px;
-    padding: 4px;
-}
-
-.portal-header h1 {
-    font-size: 28px;
-    font-weight: 600;
-}
-
-/* Aba Indicadora da Seção */
-.section-badge-container {
     padding: 0;
     margin-bottom: -1px;
     position: relative;
     z-index: 2;
 }
 
-.section-badge {
+
+.section-badge, .tab-lib-blue {
     background-color: #4285f4;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
@@ -123,7 +34,7 @@ body {
     min-width: 200px;
 }
 
-.section-badge span {
+.section-badge span, .tab-lib-blue span {
     font-size: 14px;
     font-weight: bold;
     line-height: 1.3;
