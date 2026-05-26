@@ -105,9 +105,13 @@ document.getElementById('btn-entrar-dashboard').addEventListener('click', () => 
     if (selectedRole === "Professor") {
         // Redireciona para o painel do professor que criamos
         window.location.href = 'prof_tela_inicial.html';
+    } else if (selectedRole === "Aluno") {
+        // Redireciona para o painel do aluno que criamos
+        window.location.href = 'tela_inicial.html';
     } else {
-        // Alerta provisório para os outros perfis (Aluno, Técnico, Administrador) que ainda não têm tela
-        alert(`O painel para o perfil "${selectedRole}" ainda está em desenvolvimento!`);
+        // Alerta provisório para os outros perfis (Técnico, Administrador) que ainda não têm tela
+        // alert(`O painel para o perfil "${selectedRole}" ainda está em desenvolvimento!`);
+            window.location.href = 'tela_erro.html';
     }
 });
 
