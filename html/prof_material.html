@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Material Didático - Algoritmos</title>
+    <link rel="stylesheet" href="/css/prof.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <div class="header-blue">
+            <a href="/html/prof_disciplinas.html" class="btn-back">
+                <svg viewBox="0 0 24 24"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11"/></svg>
+            </a>
+
+            <div class="logo-wrapper">
+                <img src="/componentes/logo_ufac.png" alt="UFAC">
+            </div>
+
+            <div class="header-title-area" style="text-align: center;">
+                <h1 class="page-title">Material Didático</h1>
+                <p class="page-subtitle">Algoritmos - CCET005</p>
+                
+                <button class="btn-add-header">
+                    <i class="fa-solid fa-plus"></i> Novo Material
+                </button>
+            </div>
+        </div>
+
+        <div class="content-list">
+            
+            <div class="aba-container-horizontal">
+                <button class="btn-aba-pill active-aba" onclick="filtrarMateriais('todos', this)">Todos</button>
+                <button class="btn-aba-pill" onclick="filtrarMateriais('pdf', this)">PDFs</button>
+                <button class="btn-aba-pill" onclick="filtrarMateriais('video', this)">Vídeos</button>
+            </div>
+
+            <div class="card-item material-card" data-categoria="pdf">
+                <div class="card-icon" style="background-color: #ef4444; width: 50px; height: 55px; border-radius: 10px;">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <div class="card-info" style="flex-grow: 1;">
+                    <h3 style="font-size: 1.1rem;">Apostila - Introdução a Algoritmos</h3>
+                    <p style="margin: 2px 0; font-size: 0.85rem; color: #64748b;">PDF &nbsp;•&nbsp; 2.4 MB</p>
+                </div>
+                <div class="material-actions">
+                    <button class="btn-mat-action"><i class="fa-solid fa-download"></i></button>
+                    <button class="btn-mat-action btn-delete"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+            </div>
+
+            <div class="card-item material-card" data-categoria="pdf">
+                <div class="card-icon" style="background-color: #ef4444; width: 50px; height: 55px; border-radius: 10px;">
+                    <i class="fa-solid fa-file-powerpoint"></i>
+                </div>
+                <div class="card-info" style="flex-grow: 1;">
+                    <h3 style="font-size: 1.1rem;">Slides - Aula 01: Variáveis</h3>
+                    <p style="margin: 2px 0; font-size: 0.85rem; color: #64748b;">PDF &nbsp;•&nbsp; 1.8 MB</p>
+                </div>
+                <div class="material-actions">
+                    <button class="btn-mat-action"><i class="fa-solid fa-download"></i></button>
+                    <button class="btn-mat-action btn-delete"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+            </div>
+
+            <div class="card-item material-card" data-categoria="video">
+                <div class="card-icon" style="background-color: #d946ef; width: 50px; height: 55px; border-radius: 10px;">
+                    <i class="fa-solid fa-video"></i>
+                </div>
+                <div class="card-info" style="flex-grow: 1;">
+                    <h3 style="font-size: 1.1rem;">Vídeo Aula - Estruturas Condicionais</h3>
+                    <p style="margin: 2px 0; font-size: 0.85rem; color: #64748b;">Link &nbsp;•&nbsp; YouTube</p>
+                </div>
+                <div class="material-actions">
+                    <button class="btn-mat-action"><i class="fa-solid fa-external-link"></i></button>
+                    <button class="btn-mat-action btn-delete"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+            </div>
+
+            <div class="add-material-dashed">
+                <i class="fa-solid fa-upload"></i>
+                <span>Adicionar Material</span>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function filtrarMateriais(categoria, abaClicada) {
+            // 1. Remove a cor azul de todas as abas
+            const abas = document.querySelectorAll('.btn-aba-pill');
+            abas.forEach(aba => aba.classList.remove('active-aba'));
+
+            // 2. Coloca a cor azul apenas na aba que foi clicada
+            abaClicada.classList.add('active-aba');
+
+            // 3. Filtra os cartões de material
+            const cartoes = document.querySelectorAll('.material-card');
+            
+            cartoes.forEach(cartao => {
+                const categoriaDoCartao = cartao.getAttribute('data-categoria');
+                
+                // Mostra o cartão se a aba for 'todos' ou se a categoria coincidir
+                if (categoria === 'todos' || categoriaDoCartao === categoria) {
+                    cartao.style.display = 'flex';
+                } else {
+                    cartao.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

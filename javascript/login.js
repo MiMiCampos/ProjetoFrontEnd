@@ -99,8 +99,19 @@ document.getElementById('btn-finalizar-cadastro').addEventListener('click', () =
     }, 3500);
 });
 
-// Feedbacks para os botões de ação final
-document.getElementById('btn-entrar-dashboard').addEventListener('click', () => alert(`Validando credenciais de ${selectedRole} no Portal da Ufac...`));
+// === A MÁGICA ACONTECE AQUI ===
+// Redirecionamento real ao clicar em "Entrar"
+document.getElementById('btn-entrar-dashboard').addEventListener('click', () => {
+    if (selectedRole === "Professor") {
+        // Redireciona para o painel do professor que criamos
+        window.location.href = 'prof_tela_inicial.html';
+    } else {
+        // Alerta provisório para os outros perfis (Aluno, Técnico, Administrador) que ainda não têm tela
+        alert(`O painel para o perfil "${selectedRole}" ainda está em desenvolvimento!`);
+    }
+});
+
+// Feedbacks para os botões de ação final (Google/Gov)
 document.getElementById('btn-google-auth').addEventListener('click', () => alert('Sucesso: Conta Google vinculada ao perfil acadêmico!'));
 document.getElementById('btn-gov-auth').addEventListener('click', () => alert('Sucesso: Token de autenticação Gov.br aceito!'));
 

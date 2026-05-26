@@ -1,0 +1,570 @@
+/* ==========================================================================
+   RESET GLOBAL E FONTES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ==========================================================================
+   LAYOUT FULL-SCREEN (TELA INTEIRA)
+   ========================================================================== */
+body {
+    background-color: #8cb4e4; /* Fundo azul claro de todo o monitor */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    /* Removemos bordas, limites e sombras deste contêiner para ele ser a tela toda */
+}
+
+/* ==========================================================================
+   CABEÇALHOS INTERNOS (MINHAS TURMAS, ETC) - SEM 3D
+   ========================================================================== */
+.header-blue {
+    background-color: #1a73e8;
+    width: 100%;
+    padding: 40px 40px 60px 40px; /* Mais espaço embaixo para os cartões sobreporem um pouco */
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+/* Botão Voltar Fixo na Tela */
+.btn-back {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Botão de voltar flutuante */
+    text-decoration: none;
+    z-index: 10;
+}
+.btn-back svg { width: 22px; height: 22px; stroke: #1a6ced; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Logo Mesclada ao Fundo (Sem linha, sem caixa branca) */
+.logo-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+/* ==========================================================================
+   LOGO E BLOCOS DE ESTATÍSTICAS (CORREÇÃO)
+   ========================================================================== */
+
+/* Arredonda a logo e coloca fundo branco */
+.logo-wrapper img {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Organiza as estatísticas lado a lado */
+.stats-header-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+    max-width: 500px; /* Impede que os blocos fiquem demasiado esticados no desktop */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Desenha a caixa translúcida de cada estatística */
+.stat-box {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 15px 5px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-box strong {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.stat-box span {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.header-title-area {
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+.page-title { font-size: 2.2rem; font-weight: bold; margin: 0; }
+.page-subtitle { font-size: 1rem; opacity: 0.9; margin-top: 5px; }
+
+/* ==========================================================================
+   CARTÕES DE TURMAS (EFEITO 3D FORTE RESTAURADO)
+   ========================================================================== */
+.content-list {
+    width: 100%;
+    max-width: 800px;
+    margin: -30px auto 40px auto; /* O -30px faz a lista subir e sobrepor o azul escuro */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.card-item {
+    background-color: white;
+    border-radius: 16px;
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    /* AQUI ESTÁ A SOMBRA 3D QUE HAVIA SIDO PERDIDA */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12); 
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card-item:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18); 
+}
+
+.card-icon {
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 25px;
+}
+
+.card-info h3 { font-size: 1.3rem; color: #111; margin: 0; }
+.card-info p { font-size: 0.95rem; color: #666; margin: 4px 0 10px 0; }
+.card-arrow { margin-left: auto; color: #cbd5e1; font-size: 1.2rem; }
+
+
+/* ==========================================================================
+   TELA INICIAL PORTAL (CORREÇÃO DA SOBREPOSIÇÃO)
+   ========================================================================== */
+.header-portal {
+    background-color: #1a73e8;
+    width: 100%;
+    padding: 30px 40px 100px 40px; /* Muito espaço inferior para apoiar a caixa branca */
+    color: white;
+    position: relative;
+}
+
+.portal-top-bar {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.portal-logo-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.portal-logo-center img { width: 60px; height: 60px; background: white; padding: 5px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.portal-logo-center h1 { font-size: 1.8rem; font-weight: bold; margin: 0; }
+
+.portal-widgets {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    gap: 10px;
+}
+.widget-pill { background-color: rgba(255, 255, 255, 0.15); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; }
+.weather-pill { border: 2px solid #facc15; display: flex; align-items: center; gap: 8px; font-weight: bold; background-color: transparent; }
+
+.portal-user-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.user-profile-badge {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.user-profile-badge .avatar { background-color: white; color: #1a73e8; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.user-profile-badge .info p { margin: 0; font-size: 0.95rem; opacity: 0.9; }
+.user-profile-badge .info h3 { margin: 0; font-size: 1.4rem; font-weight: bold; }
+
+.capybara-mascot { width: 140px; margin-bottom: -100px; z-index: 1; }
+
+/* Quadro Branco Principal (Efeito 3D Forte Restaurado) */
+.white-board {
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: -70px auto 40px auto; /* Sobrepõe o azul */
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 3;
+}
+
+/* ==========================================================================
+   GRID DO PORTAL (ESTILOS RESTAURADOS)
+   ========================================================================== */
+.search-bar { 
+    width: 100%; 
+    padding: 18px 25px; 
+    background-color: #f8fafc; 
+    border: 2px solid #e2e8f0; 
+    border-radius: 15px; 
+    font-size: 1.1rem; 
+    margin-bottom: 35px; 
+    outline: none; 
+    color: #333; 
+    transition: border-color 0.2s; 
+}
+.search-bar:focus { border-color: #1a73e8; }
+
+.grid-menu { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+    gap: 20px; 
+}
+.menu-item { 
+    background-color: white; 
+    border: 1px solid #e2e8f0; 
+    border-radius: 16px; 
+    padding: 30px 15px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-decoration: none; 
+    color: #1a73e8; 
+    font-weight: 600; 
+    text-align: center; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+    transition: transform 0.2s, box-shadow 0.2s; 
+}
+.menu-item:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12); 
+    border-color: #cbd5e1; 
+}
+.menu-item i { font-size: 2.5rem; margin-bottom: 15px; color: #8b5cf6; }
+
+/* ==========================================================================
+   ESTRUTURA DAS LINHAS DE ALUNOS (CHAMADA, NOTAS, ETC.)
+   ========================================================================== */
+.student-row {
+    background-color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Sombra 3D restaurada */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.student-row:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12); 
+}
+
+.student-name { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    font-weight: 600; 
+    color: #333; 
+}
+
+.student-avatar { 
+    width: 35px; 
+    height: 35px; 
+    background: #e0e0e0; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+/* ==========================================================================
+   BOTÕES DE PRESENTE / AUSENTE
+   ========================================================================== */
+.toggle-group { 
+    display: flex; 
+    gap: 5px; 
+    background: #e2e8f0; 
+    border-radius: 20px; 
+    padding: 3px; 
+}
+
+.btn-toggle { 
+    padding: 6px 12px; 
+    border: none; 
+    border-radius: 16px; 
+    font-size: 0.8rem; 
+    font-weight: bold; 
+    cursor: pointer; 
+    color: #64748b; 
+    background: transparent; 
+    transition: all 0.2s; 
+}
+
+.btn-toggle.active.present { background-color: #2eb872; color: white; }
+.btn-toggle.active.absent { background-color: #d9534f; color: white; }
+
+/* ==========================================================================
+   BOTÃO DE AÇÃO GLOBAL (SALVAR CHAMADA / PUBLICAR NOTAS)
+   ========================================================================== */
+.btn-action-large {
+    width: calc(100% - 40px); /* Desconta exatamente o espaço lateral da lista */
+    max-width: 760px;         /* Limita para bater exato com os cartões */
+    margin: 20px auto 40px auto; 
+    padding: 15px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(26,108,237,0.3);
+    transition: background-color 0.2s, transform 0.2s;
+    display: block;
+}
+
+.btn-action-large:hover { 
+    background-color: #1a73e8; 
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   ESTILIZAÇÃO DAS ABAS DE NOTAS (N1, N2, Final)
+   ========================================================================== */
+.stats-header-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+    max-width: 600px; /* Ajustado para melhor proporção */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-aba {
+    background-color: rgba(255, 255, 255, 0.2); /* Mesmo fundo das estatísticas */
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: center;
+}
+
+/* Efeito ao selecionar a aba */
+.btn-aba.active-aba {
+    background-color: white;
+    color: #1a73e8;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn-aba:hover:not(.active-aba) {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================================================
+   MELHORIA DE DESIGN: NOTAS E MÉDIAS ARREDONDADAS
+   ========================================================================== */
+
+/* Campo de Input da Nota (Arredondado e com foco moderno) */
+.grade-input {
+    width: 65px;
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 20px; /* Arredondamento total */
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1e293b;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.grade-input:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 3px rgba(26,108,237,0.1);
+}
+
+/* Etiquetas de Média (Estilo Pílula) */
+.grade-avg {
+    padding: 6px 16px;
+    border-radius: 20px; /* Pílula */
+    font-size: 0.85rem;
+    font-weight: bold;
+    min-width: 90px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cores das Pílulas */
+/* Verde para aprovado */
+.grade-avg-success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+/* Vermelho para reprovado */
+.grade-avg-danger {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Estilo para o selo de data */
+.date-pill {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 15px auto;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Container horizontal para as abas */
+.aba-container-horizontal {
+    display: flex;
+    gap: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 0 10px;
+    justify-content: center;
+    flex-wrap: wrap; /* Quebra linha se a tela for pequena */
+}
+
+/* Estilo individual da pílula */
+.btn-aba-pill {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px; /* Efeito arredondado */
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* Estado ativo */
+.btn-aba-pill.active-aba {
+    background: white;
+    color: #1a73e8;
+}
+
+/* Efeito hover */
+.btn-aba-pill:hover:not(.active-aba) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA MATERIAL DIDÁTICO
+   ========================================================================== */
+
+/* Botão de Adicionar Padronizado (Cabeçalhos)*/
+.btn-add-header {
+    background-color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 20px;
+    color: #1a73e8;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-add-header:hover {
+    background-color: #f1f5f9;
+    transform: translateY(-2px);
+}
+
+/* Container de ações nos cards de material */
+.material-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-mat-action {
+    background: transparent;
+    border: none;
+    color: #64748b;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-mat-action:hover { color: #1a73e8; }
+.btn-mat-action.btn-delete:hover { color: #ef4444; }
+
+/* Cartão de Adicionar Material (Tracejado) */
+.add-material-dashed {
+    width: 100%;
+    border: 2px dashed #cbd5e1;
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.add-material-dashed:hover {
+    border-color: #1a73e8;
+    color: #1a73e8;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.add-material-dashed i { font-size: 1.5rem; }
+.add-material-dashed span { font-weight: 600; font-size: 1rem; }
