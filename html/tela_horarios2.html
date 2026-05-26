@@ -3,26 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus Horários - Portal da Ufac</title>
+    <title>Detalhes da Disciplina - Portal da Ufac</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/tela_horarios.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../javascript/components-loader.js" defer></script>
 </head>
 <body class="tela-centralizada">
-    <!-- HEADER -->
-    <div id="header-container"></div>
+    
+    <header id="header-container" role="banner"></header>
 
     <div class="main-container">
-        <div class="tabs-container">
-            <div class="tab-blue clickable" onclick="location.href='tela_horarios1.html'">
-                <span>Meus<br>Horários</span>
+        
+        <div class="top-bar-container">
+            <div class="tabs-container">
+                <div class="tab-blue clickable" onclick="location.href='tela_horarios1.html'">
+                    <span>Meus<br>Horários</span>
+                </div>
+                <div class="tab-yellow clickable" onclick="location.href='tela_horarios1.html'">
+                    <span>Banco de<br>Dados I</span>
+                </div>
             </div>
-            <div class="tab-yellow clickable" onclick="location.href='tela_horarios1.html'">
-                <span>Banco de<br>Dados I</span>
+
+            <div class="mascot-capivara">
+                <img src="../assets/capi3.png" alt="Mascote Capivara fofa">
             </div>
         </div>
 
         <main class="content-card">
+            
             <div class="subject-item active-detail">
                 <div class="subject-icon">
                     <i class="fa-solid fa-database"></i>
@@ -48,6 +58,7 @@
                     <p><strong>Total de Matrículas:</strong> 39</p>
                 </div>
             </div>
+            
         </main>
     </div>
 

@@ -1,29 +1,32 @@
-body.tela-centralizada {
-    background-color: #1a73e8; /* Você também pode usar var(--azul-ufac) aqui */
-    min-height: 100vh;
+/* ==========================================================================
+   1. CABEÇALHO DA SEÇÃO (ABA E MASCOTE)
+   ========================================================================== */
+
+/* Container para a aba e o mascote */
+.top-bar-container {
     display: flex;
-    flex-direction: column;
-    align-items: center; 
-    padding: 40px 20px;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
     position: relative;
+    z-index: 1; /* Atrás do card principal */
 }
 
+/* Aba Indicadora da Seção */
 .section-badge-container, .tabs-container-lib {
     display: flex;
     padding: 0;
-    margin-bottom: 0px;
-    position: relative;
-    z-index: 1;
+    margin: 0;
 }
 
 .section-badge, .tab-lib-blue {
-    background-color: #4285f4;
+    background-color: #4285f4; /* Ou var(--azul-ufac) */
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     padding: 12px 24px;
-    color: white;
+    color: var(--branco, white);
     display: inline-block;
     min-width: 200px;
 }
@@ -44,16 +47,33 @@ body.tela-centralizada {
     opacity: 0.9;
 }
 
+/* Mascote Capivara */
+.mascot-capivara {
+    width: 130px; 
+    margin-right: 50px;
+    margin-bottom: -2px; /* Puxa para baixo para ser cortada */
+    position: relative;
+    z-index: 0; 
+}
+
+.mascot-capivara img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* ==========================================================================
-   4. CARD BRANCO CENTRAL E BARRA DE BUSCA
+   2. CARD BRANCO CENTRAL E BARRA DE BUSCA
    ========================================================================== */
 .content-card {
-    background: white;
+    background: var(--branco, white);
     border-radius: 16px;
     border-top-left-radius: 0;
     padding: 35px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     width: 100%;
+    position: relative;
+    z-index: 2; /* Sobrepõe a capivara */
 }
 
 /* Barra de Busca Interna */
@@ -80,6 +100,7 @@ body.tela-centralizada {
     width: 100%;
     font-size: 16px;
     color: #202124;
+    font-family: inherit; /* Herda a fonte do projeto */
 }
 
 .search-bar-container input::placeholder {
@@ -87,7 +108,7 @@ body.tela-centralizada {
 }
 
 /* ==========================================================================
-   5. ESTRUTURA DA TELA 1 (MENU LATERAL E FIELDSET DE LIVROS)
+   3. ESTRUTURA DA TELA 1 (MENU LATERAL E FIELDSET DE LIVROS)
    ========================================================================== */
 .library-layout {
     display: flex;
@@ -106,7 +127,7 @@ body.tela-centralizada {
 .menu-btn {
     display: flex;
     align-items: center;
-    background: white;
+    background: var(--branco, white);
     border: 1px solid #e8eaed;
     border-radius: 10px;
     padding: 10px 15px;
@@ -114,6 +135,7 @@ body.tela-centralizada {
     text-align: left;
     box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     transition: background-color 0.2s, transform 0.1s;
+    font-family: inherit;
 }
 
 .menu-btn:hover {
@@ -136,7 +158,7 @@ body.tela-centralizada {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--branco, white);
     font-size: 16px;
 }
 
@@ -180,7 +202,7 @@ body.tela-centralizada {
     justify-content: center;
     padding: 10px;
     text-align: center;
-    color: white;
+    color: var(--branco, white);
     box-shadow: 0 4px 8px rgba(0,0,0,0.12);
 }
 
@@ -205,9 +227,9 @@ body.tela-centralizada {
 .cover-black { background-color: #111111; }
 
 /* ==========================================================================
-   6. ATUALIZAÇÕES DAS TELAS 2 E 3 (RESERVAS E RENOVAÇÃO)
+   4. ATUALIZAÇÕES DAS TELAS 2 E 3 (RESERVAS E RENOVAÇÃO)
    ========================================================================== */
-/* Faixa de cabeçalho interno das seções (Reservas/Renovação) */
+/* (Estilos mantidos como enviados) */
 .sub-section-header {
     display: flex;
     align-items: center;
@@ -224,7 +246,6 @@ body.tela-centralizada {
 .header-green { background-color: #2ecc71; }
 .header-orange { background-color: #f39c12; }
 
-/* Box grande colorido que envelopa os cards internos */
 .status-panel-box {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -236,7 +257,6 @@ body.tela-centralizada {
 .bg-green { background-color: #58d68d; }
 .bg-orange { background-color: #f5b041; }
 
-/* Grid para manter os dois cards alinhados na mesma linha (Tela 3) */
 .cards-inline-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -244,7 +264,6 @@ body.tela-centralizada {
     width: 100%;
 }
 
-/* Card Branco Flutuante dos Livros individuais */
 .book-status-card {
     background: white;
     border-radius: 12px;
@@ -258,7 +277,6 @@ body.tela-centralizada {
     width: 100%;
 }
 
-/* Informações de texto dentro dos cards de status */
 .card-book-details strong {
     display: block;
     font-size: 14px;
@@ -275,14 +293,12 @@ body.tela-centralizada {
     margin-bottom: 3px;
 }
 
-/* Pequena seta cinza no canto */
 .arrow-detail {
     color: #dadce0;
     font-size: 12px;
     margin-top: 4px;
 }
 
-/* Grupo organizador dos botões à direita (Seta + Sincronizar) */
 .action-icons-group {
     display: flex;
     flex-direction: column;
@@ -292,7 +308,6 @@ body.tela-centralizada {
     min-height: 75px;
 }
 
-/* Botões Circulares de Sincronização e Renovação */
 .btn-sync-refresh {
     border: none;
     width: 26px;
@@ -316,30 +331,52 @@ body.tela-centralizada {
 .sync-red { background-color: #e74c3c; }
 
 /* ==========================================================================
-   7. RESPONSIVIDADE (MOBILE / DISPOSITIVOS MENORES)
+   5. RESPONSIVIDADE (MOBILE / DISPOSITIVOS MENORES)
    ========================================================================== */
 @media (max-width: 768px) {
+    /* Ajustes do Topo (Mascote) */
+    .top-bar-container {
+        align-items: flex-end; 
+        margin-bottom: 0;
+    }
+
+    .section-badge-container, .tabs-container-lib {
+        min-width: auto;
+    }
+
+    .section-badge, .tab-lib-blue {
+        padding: 10px 16px;
+    }
+
+    .mascot-capivara {
+        width: 100px; 
+        margin-right: 20px; 
+        margin-bottom: -10px; 
+    }
+
+    /* Ajustes da Biblioteca */
+    .content-card {
+        padding: 20px;
+        border-top-left-radius: 16px;
+    }
+
     .library-layout {
         flex-direction: column;
     }
+    
     .library-menu {
         width: 100%;
     }
+    
     .books-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
     .cards-inline-container {
         grid-template-columns: 1fr; /* Quebra em 1 coluna na tela 3 */
     }
+    
     .book-status-card {
         max-width: 100%;
-    }
-    .top-info {
-        position: static;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-    body {
-        padding: 40px 15px;
     }
 }

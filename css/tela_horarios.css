@@ -1,43 +1,73 @@
-body.tela-centralizada {
-    background-color: #1a73e8; /* Você também pode usar var(--azul-ufac) aqui */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    padding: 40px 20px;
-    position: relative;
-}
+/* ==========================================================================
+   1. CABEÇALHO DA SEÇÃO (ABAS E MASCOTE)
+   ========================================================================== */
 
-/* Container */
-.main-container { width: 100%; max-width: 850px; }
+/* Container superior */
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Atrás do card principal */
+}
 
 /* Abas */
-.tabs-container { display: flex; gap: 2px; }
+.tabs-container { 
+    display: flex; 
+    gap: 2px; 
+}
+
 .tab-blue, .tab-yellow {
-    padding: 12px 25px;
-    color: white;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    padding: 12px 24px; /* Ajustado padding para alinhar com outras telas */
+    color: var(--branco, white);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
     font-weight: bold;
     font-size: 14px;
-    min-width: 160px;
+    min-width: 200px; /* Igualado ao width das outras abas azuis */
+    line-height: 1.3;
 }
-.tab-blue { background-color: #4285f4; }
+
+.tab-blue { background-color: #4285f4; /* Ou var(--azul-ufac) */ }
 .tab-yellow { background-color: #fbc02d; color: white; }
+
 .clickable { cursor: pointer; transition: opacity 0.2s; }
 .clickable:hover { opacity: 0.9; }
 
-/* Card Branco */
+/* Mascote Capivara */
+.mascot-capivara {
+    width: 130px; 
+    margin-right: 50px;
+    margin-bottom: -2px; /* Puxa para baixo para ser cortada */
+    position: relative;
+    z-index: 0; 
+}
+
+.mascot-capivara img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   2. CARD BRANCO E LISTAGEM
+   ========================================================================== */
+
+/* Card Branco Principal */
 .content-card {
-    background: white;
+    background: var(--branco, white);
     border-radius: 16px;
     border-top-left-radius: 0;
     padding: 40px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     min-height: 400px;
+    position: relative;
+    z-index: 2; /* Sobrepõe a base da capivara */
+    width: 100%;
 }
 
-/* Itens da Lista */
+/* Itens da Lista de Disciplinas */
 .subject-item {
     display: flex;
     align-items: center;
@@ -47,35 +77,76 @@ body.tela-centralizada {
     border-radius: 15px;
     margin-bottom: 20px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.1s;
 }
-.subject-item:hover { background-color: #f8f9fa; }
+
+.subject-item:hover { 
+    background-color: #f8f9fa; 
+    transform: translateY(-2px); /* Efeito suave de hover */
+}
+
+.subject-item:last-child {
+    margin-bottom: 0;
+}
 
 .subject-icon {
     width: 60px;
     height: 60px;
-    background-color: #1a73e8;
-    color: white;
+    background-color: #1a73e8; /* Ou var(--azul-ufac) */
+    color: var(--branco, white);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
+    flex-shrink: 0; /* Impede o ícone de amassar em telas pequenas */
 }
 
-.subject-details h3 { font-size: 18px; color: #333; }
-.subject-details .code { font-size: 14px; color: #666; }
-.subject-details .status { font-size: 14px; color: #333; margin-top: 5px; }
-.status span { color: #2ecc71; font-weight: bold; }
+.subject-details h3 { 
+    font-size: 18px; 
+    color: #333; 
+    margin-bottom: 4px;
+    font-family: var(--fonte-secundaria, inherit);
+}
 
-/* Detalhes da Tela 2 */
-.active-detail { border: none; padding: 0; margin-bottom: 30px; cursor: default; }
-.active-detail:hover { background: none; }
+.subject-details .code { 
+    font-size: 14px; 
+    color: #666; 
+}
+
+.subject-details .status { 
+    font-size: 14px; 
+    color: #333; 
+    margin-top: 5px; 
+}
+
+.status span { 
+    color: #2ecc71; 
+    font-weight: bold; 
+}
+
+
+/* ==========================================================================
+   3. DETALHES DA TELA 2 (Para quando você for usar a segunda tela)
+   ========================================================================== */
+
+.active-detail { 
+    border: none; 
+    padding: 0; 
+    margin-bottom: 30px; 
+    cursor: default; 
+}
+
+.active-detail:hover { 
+    background: none; 
+    transform: none;
+}
 
 .details-grid {
     border-top: 1px solid #eee;
     padding-top: 20px;
 }
+
 .detail-row {
     display: flex;
     justify-content: space-between;
@@ -83,4 +154,53 @@ body.tela-centralizada {
     font-size: 15px;
     color: #444;
 }
-.highlight { color: #e74c3c; font-weight: bold; }
+
+.highlight { 
+    color: #e74c3c; 
+    font-weight: bold; 
+}
+
+
+/* ==========================================================================
+   4. RESPONSIVIDADE (Tablets e Celulares)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Ajustes do Topo */
+    .top-bar-container {
+        align-items: flex-end; 
+        margin-bottom: 0;
+    }
+
+    .tab-blue, .tab-yellow {
+        min-width: auto;
+        padding: 10px 16px;
+    }
+
+    .mascot-capivara {
+        width: 100px; 
+        margin-right: 20px; 
+        margin-bottom: -10px; 
+    }
+
+    /* Ajustes do Card e Lista */
+    .content-card {
+        padding: 20px;
+        border-top-left-radius: 16px;
+    }
+
+    .subject-item {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .subject-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .subject-details h3 { 
+        font-size: 16px; 
+    }
+}

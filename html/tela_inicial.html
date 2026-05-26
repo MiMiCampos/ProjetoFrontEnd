@@ -5,27 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal da Ufac</title>
     <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/tela_inicial.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../javascript/components-loader.js" defer></script>
     <script src="../javascript/tela_inicial.js" defer></script>
-</head>
 <body class="tela-centralizada">
-    <!-- HEADER -->
+    
     <header id="header-container" role="banner"></header>
 
     <div class="main-container">
-        <div class="user-section">
-            <div class="user-badge">
-                <div class="user-icon">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <div class="user-info">
-                    <span class="user-title">Aluno(a)</span>
-                    <span class="user-name">João</span>
-                </div>
-            </div> 
+        
+        <div class="portal-title-home">
+            <h1>Portal da Ufac</h1>
+        </div>
+
+        <div class="top-bar-container">
+            <div class="user-section">
+                <div class="user-badge">
+                    <div class="user-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-title">Aluno(a)</span>
+                        <span class="user-name">João</span>
+                    </div>
+                </div> 
+            </div>
             
+            <div class="mascot-capivara">
+                <img src="../assets/capi1.png" alt="Mascote Capivara fofa">
+            </div>
         </div>
 
         <main class="content-card" role="main">
@@ -107,8 +117,9 @@
 
         </main>
     </div>
+
     <script>
-    // Delegated handlers: navigate to anchor when article clicked
+    // Navegação ao clicar no card de notícia
     document.addEventListener('click', function(e){
         var article = e.target.closest('.news-item');
         if(article && !e.target.closest('.news-card')){

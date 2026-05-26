@@ -1,35 +1,32 @@
-body.tela-centralizada {
-    background-color: #1a73e8; /* Você também pode usar var(--azul-ufac) aqui */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    padding: 40px 20px;
-    position: relative;
-}
-
 /* ==========================================================================
-   3. CABEÇALHO DO PORTAL E ABAS SUPERIORES
+   1. CABEÇALHO DA SEÇÃO (ABA E MASCOTE)
    ========================================================================== */
 
-/* Aba Indicadora da Seção / Abas Superiores */
+/* Container para a aba e o mascote (Padrão para todas as telas internas) */
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Atrás do card principal */
+}
+
+/* Aba Indicadora da Seção / Abas Superiores (Biblioteca) */
 .section-badge-container, .tabs-container-lib {
     display: flex;
     padding: 0;
-    margin-bottom: 0px;
-    position: relative;
-    z-index: 2;
+    margin: 0;
 }
 
-
 .section-badge, .tab-lib-blue {
-    background-color: #4285f4;
+    background-color: #4285f4; /* Ou var(--azul-ufac) se for a mesma cor */
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     padding: 12px 24px;
-    color: white;
+    color: var(--branco, white);
     display: inline-block;
     min-width: 200px;
 }
@@ -41,26 +38,48 @@ body.tela-centralizada {
     display: block;
 }
 
+/* Mascote Capivara */
+.mascot-capivara {
+    width: 130px; 
+    margin-right: 50px;
+    margin-bottom: -50px; /* Puxa para baixo para ser cortada */
+    position: relative;
+    z-index: 0; 
+}
+
+.mascot-capivara img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ==========================================================================
+   2. CORPO PRINCIPAL DE DOCUMENTOS
+   ========================================================================== */
+
 /* Card Branco de Fundo */
 .content-card {
-    background: white;
+    background: var(--branco, white);
     border-radius: 16px;
-    border-top-left-radius: 0;
+    border-top-left-radius: 0; /* Conecta com a aba */
     padding: 35px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     width: 100%;
+    position: relative;
+    z-index: 2; /* Sobrepõe a capivara */
 }
 
-/* Grid Organizador dos Documentos (2 colunas perfeitas) */
+/* Grid Organizador dos Documentos */
 .documents-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px 30px; /* Espaçamento idêntico à imagem do layout */
+    gap: 25px 30px; 
 }
 
 /* Elemento Individual de Documento */
 .doc-card {
-    background: #ffffff;
+    background: var(--branco, #ffffff);
     border-radius: 12px;
     overflow: hidden;
     display: flex;
@@ -75,7 +94,7 @@ body.tela-centralizada {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #ffffff;
+    background: var(--branco, #ffffff);
     flex-grow: 1;
     min-height: 85px;
 }
@@ -103,14 +122,14 @@ body.tela-centralizada {
 /* Ícones Laranja */
 .doc-icon {
     font-size: 36px;
-    color: #f2994a; /* Tom dourado/alaranjado dos ícones originais */
+    color: #f2994a; 
     opacity: 0.9;
 }
 
 /* Botão de Download Inferior (Faixa Azul) */
 .btn-download {
-    background-color: #1a73e8;
-    color: white;
+    background-color: #1a73e8; /* Ou var(--azul-ufac) */
+    color: var(--branco, white);
     border: none;
     padding: 10px 16px;
     display: flex;
@@ -121,6 +140,7 @@ body.tela-centralizada {
     font-size: 13px;
     font-weight: 500;
     transition: background-color 0.2s;
+    font-family: inherit;
 }
 
 .btn-download:hover {
@@ -131,50 +151,11 @@ body.tela-centralizada {
     font-size: 11px;
 }
 
-/* Responsividade para telas menores (Tablets e Smartphones) */
-@media (max-width: 768px) {
-    .documents-grid {
-        grid-template-columns: 1fr; /* Transforma em 1 coluna em telas estreitas */
-        gap: 20px;
-    }
-    .top-info {
-        position: static;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-    body {
-        padding: 40px 15px;
-    }
-}
 
 /* ==========================================================================
-   COMPLEMENTO PARA AS TELAS 2 E 3 (RESERVAS E RENOVAÇÃO)
+   3. COMPLEMENTO PARA AS TELAS DE BIBLIOTECA (RESERVAS/RENOVAÇÃO)
    ========================================================================== */
-
-/* Abas superiores da Biblioteca */
-.tabs-container-lib {
-    display: flex;
-    margin-bottom: -1px;
-    position: relative;
-    z-index: 2;
-}
-
-.tab-lib-blue {
-    background-color: #4285f4;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    padding: 12px 24px;
-    color: white;
-    display: inline-block;
-    min-width: 200px;
-}
-
-.tab-lib-blue span {
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 1.3;
-    display: block;
-}
+/* (Mantido como você enviou, sem alterações estruturais) */
 
 .clickable {
     cursor: pointer;
@@ -185,7 +166,6 @@ body.tela-centralizada {
     opacity: 0.9;
 }
 
-/* Faixa de cabeçalho interno das seções (Reservas/Renovação) */
 .sub-section-header {
     display: flex;
     align-items: center;
@@ -202,7 +182,6 @@ body.tela-centralizada {
 .header-green { background-color: #2ecc71; }
 .header-orange { background-color: #f39c12; }
 
-/* Box grande colorido que envelopa os cards */
 .status-panel-box {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -214,7 +193,6 @@ body.tela-centralizada {
 .bg-green { background-color: #58d68d; }
 .bg-orange { background-color: #f5b041; }
 
-/* Grid para alinhar os dois cards lado a lado na tela de Renovação */
 .cards-inline-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -222,7 +200,6 @@ body.tela-centralizada {
     width: 100%;
 }
 
-/* O Card Branco Flutuante dos Livros */
 .book-status-card {
     background: white;
     border-radius: 12px;
@@ -236,7 +213,6 @@ body.tela-centralizada {
     width: 100%;
 }
 
-/* Informações internas de texto do livro */
 .card-book-details strong {
     display: block;
     font-size: 14px;
@@ -253,14 +229,12 @@ body.tela-centralizada {
     margin-bottom: 3px;
 }
 
-/* Pequena seta cinza no canto do card */
 .arrow-detail {
     color: #dadce0;
     font-size: 12px;
     margin-top: 4px;
 }
 
-/* Alinhamento dos botões flutuantes à direita */
 .action-icons-group {
     display: flex;
     flex-direction: column;
@@ -270,7 +244,6 @@ body.tela-centralizada {
     min-height: 75px;
 }
 
-/* Botões Circulares de Sincronização/Renovação (Faixa Inferior Direita) */
 .btn-sync-refresh {
     border: none;
     width: 26px;
@@ -293,11 +266,48 @@ body.tela-centralizada {
 .sync-green { background-color: #2ecc71; }
 .sync-red { background-color: #e74c3c; }
 
-/* Ajuste Responsivo para telas de celulares */
+
+/* ==========================================================================
+   4. RESPONSIVIDADE (Tablets e Smartphones)
+   ========================================================================== */
 @media (max-width: 768px) {
-    .cards-inline-container {
-        grid-template-columns: 1fr; /* Quebra para uma coluna no mobile */
+    
+    /* Ajustes do Topo (Mascote) */
+    .top-bar-container {
+        align-items: flex-end; 
+        margin-bottom: 0;
     }
+
+    .section-badge-container, .tabs-container-lib {
+        min-width: auto;
+    }
+
+    .section-badge, .tab-lib-blue {
+        padding: 10px 16px;
+    }
+
+    .mascot-capivara {
+        width: 100px; 
+        margin-right: 20px; 
+        margin-bottom: -10px; 
+    }
+
+    /* Ajustes do Corpo principal */
+    .content-card {
+        padding: 20px;
+        border-top-left-radius: 16px; /* Borda redonda na esquerda para telas pequenas */
+    }
+
+    .documents-grid {
+        grid-template-columns: 1fr; /* 1 coluna em vez de 2 no celular */
+        gap: 20px;
+    }
+
+    /* Ajustes da Biblioteca */
+    .cards-inline-container {
+        grid-template-columns: 1fr; 
+    }
+    
     .book-status-card {
         max-width: 100%;
     }

@@ -1,9 +1,9 @@
-/* Botão Voltar (Canto Superior Esquerdo) */
+/* --- ELEMENTOS FLUTUANTES DO TOPO --- */
 .btn-back {
     position: absolute;
     top: 20px;
     left: 20px;
-    background: white;
+    background: var(--branco);
     border: none;
     width: 40px;
     height: 40px;
@@ -11,13 +11,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #1a73e8;
+    color: var(--azul-ufac);
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 10;
 }
 
-/* Info do Canto Superior Direito */
 .top-info {
     position: absolute;
     top: 20px;
@@ -26,11 +25,12 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 8px;
+    z-index: 10;
 }
 
 .date-badge {
     background-color: rgba(255, 255, 255, 0.15);
-    color: white;
+    color: var(--branco);
     padding: 6px 16px;
     border-radius: 20px;
     font-size: 14px;
@@ -39,8 +39,8 @@
 
 .weather-badge {
     background-color: transparent;
-    border: 2px solid #ffd166;
-    color: white;
+    border: 2px solid #ffd166; /* Você pode transformar isso na var(--amarelo-ufac) futuramente */
+    color: var(--branco);
     padding: 4px 12px;
     border-radius: 25px;
     font-size: 16px;
@@ -54,17 +54,10 @@
     color: #ffd166;
 }
 
-/* Container Principal */
-.main-container {
-    width: 100%;
-    max-width: 850px;
-    margin-top: 20px;
-}
-
-/* Cabeçalho do Portal */
+/* --- TÍTULO E LOGO (Caso injetados via JS) --- */
 .portal-header {
     text-align: center;
-    color: white;
+    color: var(--branco);
     margin-bottom: 25px;
 }
 
@@ -72,7 +65,7 @@
     width: 65px;
     height: auto;
     margin-bottom: 8px;
-    background: white; /* Fallback caso não haja imagem */
+    background: var(--branco);
     border-radius: 12px;
     padding: 4px;
 }
@@ -82,6 +75,23 @@
     font-weight: 600;
 }
 
+/* --- CONTÊINER PRINCIPAL DA PÁGINA --- */
+/* Este é o "esqueleto" que segura o conteúdo no centro da tela em todas as páginas */
+.main-container {
+    width: 100%;
+    max-width: 850px;
+    margin-top: -10px; /* <--- VALOR REDUZIDO PARA ENCOSTAR MAIS NO TOPO */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ...outros estilos... */
+
+/* Sync Buttons */
+.btn-sync-refresh {
+    transition: transform 0.3s;
+}
+
 .btn-sync-refresh:hover {
     transform: rotate(180deg);
 }
@@ -89,20 +99,16 @@
 .sync-green { background-color: #2ecc71; }
 .sync-red { background-color: #e74c3c; }
 
-/* Responsividade Básica para telas menores */
+/* Responsividade do Header */
 @media (max-width: 768px) {
-    .features-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .news-grid {
-        grid-template-columns: 1fr;
-    }
     .top-info {
         position: static;
         align-items: center;
         margin-bottom: 20px;
+        margin-top: 20px;
     }
-    body {
-        padding-top: 60px;
+    .btn-back {
+        top: 15px;
+        left: 15px;
     }
 }
