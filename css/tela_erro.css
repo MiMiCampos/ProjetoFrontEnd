@@ -1,52 +1,107 @@
 :root {
     --border-radius: 20px;
-    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    --padding-desktop: 24px 40px;
-    --padding-mobile: 20px 15px;
-    --font-size-desktop: 22px;
-    --font-size-mobile: 18px;
+    --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra atualizada para bater com as outras telas */
+    --padding-desktop: 35px 40px;
+    --padding-mobile: 25px 20px;
+    --font-size-desktop: 20px;
+    --font-size-mobile: 16px;
     --max-width-card: 650px;
 }
 
+<<<<<<< HEAD
+=======
+/* Nota: O body.tela-centralizada foi removido pois a página já herda o comportamento do global.css */
+
+/* 1. Container Centralizador */
+.main-container {
+    width: 100%;
+    max-width: var(--max-width-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Preenche o espaço restante da tela verticalmente */
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   2. MASCOTE (TOPO)
+   ========================================================================== */
+
+.top-bar-container {
+    display: flex;
+    justify-content: flex-end; /* Joga a capivara totalmente para a direita, já que não há abas */
+    align-items: flex-end;
+    width: 100%;
+    position: relative;
+    z-index: 1; 
+    margin-top: -150px;
+}
+
+.mascot-capivara {
+    width: 130px; 
+    margin-right: 50px;
+    margin-bottom: -15px; /* Puxa para baixo para cortar a base do desenho no card */
+    position: relative;
+    z-index: 0; 
+}
+
+.mascot-capivara img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   3. CARD DE MENSAGEM
+   ========================================================================== */
+
+>>>>>>> develop
 .maintenance-container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Removido o min-height e max-width duplicados aqui */
+    position: relative;
+    z-index: 2; /* Sobrepõe a capivara */
 }
 
-
 .message-card {
-    background-color: #edf2f9;
+    background-color: #edf2f9; /* Mantido o tom azul clarinho do seu design */
     width: 100%;
     padding: var(--padding-desktop);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     text-align: center;
     line-height: 1.6;
+    border: 2px solid #d1e3fa; /* Borda sutil para dar acabamento */
 }
 
 .message-card p {
-    color: #000000;
+    color: #202124;
     font-size: var(--font-size-desktop);
     font-weight: 500;
     margin: 0;
+    font-family: var(--fonte-secundaria, inherit); /* Herda a fonte de títulos do global */
 }
 
-@media (max-width: 480px) {
+
+/* ==========================================================================
+   4. RESPONSIVIDADE (MOBILE)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .mascot-capivara {
+        width: 100px; 
+        margin-right: 20px; 
+        margin-bottom: -10px; 
+    }
+
     .message-card {
         padding: var(--padding-mobile);
     }
 
     .message-card p {
         font-size: var(--font-size-mobile);
-    }
-
-    .btn-back {
-        top: 15px;
-        left: 15px;
-        width: 40px;
-        height: 40px;
     }
 }

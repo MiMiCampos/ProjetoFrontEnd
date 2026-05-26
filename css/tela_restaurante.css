@@ -1,21 +1,11 @@
-body {
-    background-color: #1a73e8; /* Azul padrão Ufac */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* CENTRALIZA TODO O CONTEÚDO VERTICALMENTE NO MEIO DA TELA */
-    padding: 40px 20px;
-    position: relative;
-}
+/* Aviso: As regras do body foram removidas pois agora são herdadas do global.css */
 
-/* Informações de Clima e Data (Canto Superior Direito) */
-.top-info {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+/* --- TOPO (ABA E MASCOTE) --- */
+.top-bar-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: flex-end;
+<<<<<<< HEAD
     gap: 8px;
     z-index: 10;
 }
@@ -67,24 +57,20 @@ body {
 .portal-header h1 {
     font-size: 28px;
     font-weight: 600;
+=======
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Fica atrás do conteúdo */
+>>>>>>> develop
 }
 
 /* Aba Indicadora "Restaurante Universitário" */
 .section-badge-container {
-    padding: 0;
-    margin-bottom: -1px;
-    position: relative;
-    z-index: 2;
-}
-
-.section-badge {
-    background-color: #4285f4;
+    background-color: #4285f4; /* Se tiver a variável var(--azul-ufac), pode substituir */
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
     padding: 12px 24px;
-    color: white;
+    color: var(--branco, white);
     display: inline-block;
     min-width: 200px;
 }
@@ -96,17 +82,46 @@ body {
     display: block;
 }
 
+/* Mascote Capivara */
+.mascot-capivara {
+    width: 130px; 
+    margin-right: 50px;
+    margin-bottom: -1px; /* Puxa para baixo para ser cortada pelos cards */
+    position: relative;
+    z-index: 0; 
+}
+
+.mascot-capivara img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* ==========================================
    ESTRUTURA DOS CARDS FLUIDOS (FLEXBOX)
    ========================================== */
-/* Substituído o 'display: table' por Flexbox para alinhar perfeitamente */
 .flex-layout {
     display: flex;
     gap: 20px;
     width: 100%;
     align-items: flex-start;
+    position: relative;
+    z-index: 2; /* Joga os cards para frente, cobrindo a base do mascote */
 }
 
+<<<<<<< HEAD
+=======
+/* Card Principal Branco (Esquerda - Cardápio) */
+.content-card {
+    flex: 1; 
+    background: var(--branco, white);
+    border-radius: 16px;
+    border-top-left-radius: 0; /* Emenda com a aba azul */
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+>>>>>>> develop
 /* Seções de Refeição (Café, Almoço, Jantar) */
 .meal-section {
     margin-bottom: 25px;
@@ -116,15 +131,14 @@ body {
     margin-bottom: 0;
 }
 
-/* Barra de Título das Refeições */
 .meal-title-bar {
     display: flex;
     align-items: center;
     border-radius: 8px;
-    color: white;
+    color: var(--branco, white);
     overflow: hidden;
     width: 100%;
-    max-width: 160px; /* Mantém compacto como no app original */
+    max-width: 160px; 
 }
 
 .meal-icon {
@@ -140,14 +154,13 @@ body {
     font-size: 16px;
     font-weight: 500;
     padding-left: 12px;
+    font-family: var(--fonte-secundaria, inherit);
 }
 
-/* Cores específicas de cada refeição */
 .meal-title-bar.cafe { background-color: #f2994a; }
 .meal-title-bar.almoco { background-color: #27ae60; }
 .meal-title-bar.jantar { background-color: #a25ddc; }
 
-/* Caixa cinza com a listagem dos alimentos */
 .meal-list-box {
     background-color: #f1f3f4;
     border-radius: 8px;
@@ -176,12 +189,12 @@ body {
 
 /* Sidebar do Saldo (Direita) */
 .ticket-sidebar {
-    width: 240px; /* Largura fixa ideal para o card de saldo não esticar */
-    align-self: flex-end; /* Alinha o card do saldo fixado no fundo, como na imagem */
+    width: 240px; 
+    align-self: flex-start; /* Fixa a sidebar no topo ao invés do fundo */
 }
 
 .sidebar-card {
-    background: white;
+    background: var(--branco, white);
     border-radius: 16px;
     padding: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -206,7 +219,7 @@ body {
 }
 
 .qrcode-placeholder {
-    background: white;
+    background: var(--branco, white);
     padding: 10px;
     border-radius: 8px;
     display: inline-block;
@@ -229,8 +242,8 @@ body {
 
 /* Botão Recarregar Ticket */
 .btn-recharge {
-    background-color: #1a73e8;
-    color: white;
+    background-color: #1a73e8; /* Ajuste para var(--azul-ufac) se desejar */
+    color: var(--branco, white);
     border: none;
     width: 100%;
     padding: 12px 10px;
@@ -239,6 +252,7 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s, transform 0.1s;
+    font-family: inherit;
 }
 
 .btn-recharge:hover {
@@ -253,21 +267,35 @@ body {
    RESPONSIVIDADE (PARA TELAS MENORES)
    ========================================== */
 @media (max-width: 800px) {
+    .top-bar-container {
+        align-items: flex-end; 
+        margin-bottom: 0;
+    }
+
+    .section-badge-container {
+        min-width: auto;
+        padding: 10px 16px;
+    }
+
+    .mascot-capivara {
+        width: 100px; 
+        margin-right: 20px; 
+        margin-bottom: -10px; 
+    }
+
     .flex-layout {
         flex-direction: column;
         align-items: center;
     }
+
     .content-card {
         width: 100%;
+        border-top-left-radius: 16px; /* Adiciona borda pois a aba ficou menor */
     }
+
     .ticket-sidebar {
         width: 100%;
-        max-width: 300px;
+        max-width: 320px;
         align-self: center;
-    }
-    .top-info {
-        position: static;
-        align-items: center;
-        margin-bottom: 20px;
     }
 }
