@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1e70e6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 10px;
+}
+
+/* Header Superior */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+.btn-back {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+    text-decoration: none;
+}
+
+.btn-back:hover {
+    transform: scale(1.05);
+}
+
+.btn-back svg {
+    width: 24px;
+    height: 24px;
+    fill: #1e70e6;
+}
+
+.logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-box {
+    background-color: #ffffff;
+    border-radius: 12px;
+    width: 54px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 8px;
+}
+
+.shield {
+    width: 32px;
+    height: 36px;
+    border-radius: 4px 4px 16px 16px;
+    border: 2px solid #002d72;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.shield-quadrant.top-left { background-color: #ffffff; }
+.shield-quadrant.top-right { background-color: #002d72; }
+.shield-quadrant.bottom-left { background-color: #ffc72c; }
+.shield-quadrant.bottom-right { background-color: #ffffff; }
+
+.logo-area h1 {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+}
+
+.datetime-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #ffffff;
+}
+
+.date-text {
+    font-size: 13px;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.weather-box {
+    border: 2px solid #ffc72c;
+    border-radius: 20px;
+    padding: 3px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sun-icon {
+    width: 18px;
+    height: 18px;
+    color: #ffc72c;
+}
+
+.temp-text {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Aba do Usuário Logado */
+.user-tab {
+    background-color: #3b82f6;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 24px 8px 16px;
+    border-radius: 14px 14px 0 0;
+    margin-left: 15px;
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-bottom: none;
+}
+
+.avatar-icon svg {
+    width: 32px;
+    height: 32px;
+    fill: #ffffff;
+}
+
+.user-info-tab {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info-tab .role {
+    font-size: 11px;
+    opacity: 0.9;
+}
+
+.user-info-tab .username {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Painel Principal (Card Branco) */
+.profile-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 35px 40px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    border-top-left-radius: 0; /* Alinha perfeitamente com a aba do usuário */
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+}
+
+/* Campos de Entrada e Labels */
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label, .metric-group label {
+    display: block;
+    color: #333333;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.input-field {
+    background-color: #e5e5e5;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #6d6d6d;
+    font-size: 14px;
+    width: 100%;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.text-muted {
+    color: #888888;
+}
+
+/* Linha de Métricas (Período e Frequência) */
+.row-metrics {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+.metric-group {
+    flex: 1;
+}
+
+.metric-box {
+    background-color: #e5e5e5;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #6d6d6d;
+    font-size: 14px;
+    min-height: 42px;
+}
+
+.box-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.highlight-gray {
+    background-color: #dbdbdb;
+    color: #4a4a4a;
+    font-weight: bold;
+}
+
+/* Coluna Direita e Tabela */
+.right-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title-right {
+    display: block;
+    text-align: right;
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.table-container {
+    border: 1px solid #b5b5b5;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fafdff;
+}
+
+.table-header-main {
+    background-color: #dbdbdb;
+    color: #6d6d6d;
+    padding: 10px 15px;
+    font-size: 13px;
+    font-weight: 500;
+    border-bottom: 1px solid #b5b5b5;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    color: #555555;
+}
+
+th {
+    background-color: #e8e8e8;
+    color: #444444;
+    font-weight: 600;
+    text-align: left;
+    padding: 10px 15px;
+    border-bottom: 1px solid;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #fcfcfc;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Responsividade Básica */
+@media (max-width: 850px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .section-title-right {
+        text-align: left;
+    }
+    .logo-area h1 {
+        font-size: 20px;
+    }
+}

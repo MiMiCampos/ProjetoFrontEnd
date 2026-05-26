@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal da Ufac - Perfil</title>
+    <link rel="stylesheet" href="../css/tela_perfil.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Superior -->
+        <header class="header-top">
+            <a href="tela_inicial.html" class="btn-back" title="Voltar para a tela inicial">
+                <!-- SVG seta de retorno curvada similar ao print -->
+                <svg viewBox="0 0 24 24">
+                    <path d="M12.5 19.5c4.97 0 9-4.03 9-9s-4.03-9-9-9c-3.12 0-5.88 1.59-7.5 4L2 2v6h6L5.6 5.6C6.93 3.96 8.94 3 11.25 3c4.28 0 7.75 3.47 7.75 7.75S15.53 18.5 11.25 18.5c-2.88 0-5.4-1.57-6.74-3.9l-1.3 1.3C5.02 18.3 8.43 19.5 12.5 19.5z"/>
+                </svg>
+            </a>
+            
+            <div class="logo-area">
+                <div class="logo-box">
+                    <!-- Escudo estilizado azul e amarelo -->
+                    <div class="shield">
+                        <div class="shield-quadrant top-left"></div>
+                        <div class="shield-quadrant top-right"></div>
+                        <div class="shield-quadrant bottom-left"></div>
+                        <div class="shield-quadrant bottom-right"></div>
+                    </div>
+                </div>
+                <h1>Portal da Ufac</h1>
+            </div>
+
+            <div class="datetime-weather">
+                <span class="date-text">Terça-feira, 26 de maio de 2026</span>
+                <div class="weather-box">
+                    <svg class="sun-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="temp-text">31°C</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Aba Ativa do Usuário -->
+        <div class="user-tab">
+            <div class="avatar-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                </svg>
+            </div>
+            <div class="user-info-tab">
+                <span class="role">Aluno(a)</span>
+                <span class="username">João</span>
+            </div>
+        </div>
+
+        <!-- Painel Principal de Conteúdo -->
+        <main class="profile-card">
+            <div class="form-grid">
+                
+                <!-- Coluna da Esquerda (Formulário e Detalhes) -->
+                <div class="left-column">
+                    <div class="input-group">
+                        <label>Nome Completo:</label>
+                        <div class="input-field">João Luís Silva</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email:</label>
+                        <div class="input-field">joao.luis@sou.ufac.br</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Matrícula:</label>
+                        <div class="input-field">202X03000XX</div>
+                    </div>
+
+                    <div class="row-metrics">
+                        <div class="metric-group">
+                            <label>Período Atual:</label>
+                            <div class="metric-box box-center">X</div>
+                        </div>
+                        <div class="metric-group">
+                            <label>Frequência:</label>
+                            <div class="metric-box box-center highlight-gray">92,7%</div>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Curso:</label>
+                        <div class="input-field text-muted">Bacharelado em Sistemas de Informação</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Período de Matrícula:</label>
+                        <div class="input-field text-muted">1º Semestre / 202Z</div>
+                    </div>
+                </div>
+
+                <!-- Coluna da Direita (Grade de Semestre Atual) -->
+                <div class="right-column">
+                    <div class="semester-section">
+                        <span class="section-title-right">Semestre Atual:</span>
+                        
+                        <div class="table-container">
+                            <div class="table-header-main">1º Semestre / 202X</div>
+                            <table>
+                               <thead>
+                                   <tr>
+                                       <th>Disciplina</th>
+                                       <th>Situação</th>
+                                       <th>Turma</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <tr>
+                                       <td>Banco de Dados</td>
+                                       <td>Matrícula</td>
+                                       <td>TS30-5P</td>
+                                   </tr>
+                                   <tr>
+                                       <td>Comunicação e Redes</td>
+                                       <td>Matrícula</td>
+                                       <td>TS30-5P</td>
+                                   </tr>
+                                   <tr>
+                                       <td>Contabilidade e Custos</td>
+                                       <td>Matrícula</td>
+                                       <td>TS30-5P</td>
+                                   </tr>
+                               </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
