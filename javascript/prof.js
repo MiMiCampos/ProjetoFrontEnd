@@ -98,7 +98,7 @@ function setAttendance(studentId, status) {
 
 function salvarChamada() {
     alert("✅ Sucesso! A chamada foi salva e registrada no sistema.");
-    window.location.href = './prof_disciplina.html';
+    window.location.href = './prof_disciplinas.html';
 }
 
 // ==========================================
@@ -167,6 +167,6 @@ function atualizarCorMedia(alunoId) {
 function publicarNotas() {
     const abaAtual = document.querySelector('.active-aba').innerText;
     alert(`✅ Sucesso! As notas da etapa [${abaAtual}] foram publicadas no sistema.`);
-    window.location.href = './prof_disciplina.html';
+    window.location.href = './prof_disciplinas.html';
 }
 
