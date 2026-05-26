@@ -1,14 +1,12 @@
-// Armazenará o papel temporário escolhido pelo usuário ("Aluno", "Professor", etc.)
+// Armazena o papel temporário escolhido pelo usuário ("Aluno", "Professor", etc.)
 let selectedRole = "";
 
-// Mapeamento completo dos Passos do Painel Direito
+// Mapeamento dos Passos do Painel Direito
 const steps = {
     roles: document.getElementById('step-role-selection'),
     login: document.getElementById('step-login'),
     register: document.getElementById('step-register'),
-    success: document.getElementById('step-success'),
-    google: document.getElementById('step-google'),
-    gov: document.getElementById('step-gov')
+    success: document.getElementById('step-success')
 };
 
 // Subtítulo descritivo do Painel Esquerdo (Azul)
@@ -16,31 +14,17 @@ const sidebarSubtitle = document.getElementById('sidebar-subtitle');
 
 function switchStep(targetStep) {
     // Esconde todas as telas ativas
-    Object.values(steps).forEach(step => step.classList.remove('active'));
+    Object.values(steps).forEach(step => {
+        if(step) step.classList.remove('active');
+    });
     
     // Ativa a tela solicitada
-    steps[targetStep].classList.add('active');
+    if(steps[targetStep]) {
+        steps[targetStep].classList.add('active');
+    }
 
-    // Manipulação visual inteligente da sidebar baseado no contexto da tela ativa
-    const sidebar = document.querySelector('.sidebar-panel');
-    const brandTitle = document.querySelector('.sidebar-panel .brand-title');
-    
-    if (targetStep === 'google') {
-        sidebar.style.backgroundColor = '#f8f9fa';
-        sidebar.style.color = '#333';
-        brandTitle.style.color = '#0b51b7';
-        sidebarSubtitle.textContent = "Autenticação externa simplificada via Google.";
-    } else if (targetStep === 'gov') {
-        sidebar.style.backgroundColor = '#13315c';
-        sidebar.style.color = '#fff';
-        brandTitle.style.color = '#fff';
-        sidebarSubtitle.textContent = "Provedor de identidade unificada do Governo Federal.";
-    } else {
-        // Padrão de Cores Oficial UFAC
-        sidebar.style.backgroundColor = '#1a6ced';
-        sidebar.style.color = '#fff';
-        brandTitle.style.color = '#fff';
-        
+    // Manipulação dinâmica do texto da sidebar baseado na tela ativa
+    if (sidebarSubtitle) {
         if (targetStep === 'roles') {
             sidebarSubtitle.textContent = "Seja bem-vindo(a) ao aplicativo oficial da UFAC!";
         } else if (targetStep === 'login') {
@@ -53,80 +37,98 @@ function switchStep(targetStep) {
     }
 }
 
-// Interceptando a escolha de perfil inicial (Ação dos 4 botões)
+// 1. Interceptando a escolha de perfil (Ação dos 4 botões iniciais)
 document.querySelectorAll('.btn-profile').forEach(button => {
     button.addEventListener('click', (e) => {
         selectedRole = e.target.getAttribute('data-role');
         
-        // Customiza os textos da tela de login/cadastro com base no papel escolhido
+        // Customiza os textos da tela com base no papel escolhido
         document.getElementById('login-title').textContent = `Acesso do ${selectedRole}`;
-        document.getElementById('register-role-badge').textContent = selectedRole;
+        const badge = document.getElementById('register-role-badge');
+        if(badge) badge.textContent = selectedRole;
         
         switchStep('login');
     });
 });
 
-// Voltar da tela de Login para a Seleção de Perfis inicial
-document.getElementById('btn-back-to-roles').addEventListener('click', () => {
-    selectedRole = "";
-    switchStep('roles');
-});
+// 2. Voltar da tela de Login para a Seleção de Perfis inicial
+const btnBackToRoles = document.getElementById('btn-back-to-roles');
+if(btnBackToRoles) {
+    btnBackToRoles.addEventListener('click', () => {
+        selectedRole = "";
+        switchStep('roles');
+    });
+}
 
-// Navegações secundárias de Ida
-document.getElementById('go-to-register').addEventListener('click', (e) => { e.preventDefault(); switchStep('register'); });
-document.getElementById('go-to-google').addEventListener('click', () => switchStep('google'));
-document.getElementById('go-to-gov').addEventListener('click', () => switchStep('gov'));
+// 3. Navegações de Ida e Volta entre Login e Cadastro
+const btnGoToRegister = document.getElementById('go-to-register');
+if(btnGoToRegister) {
+    btnGoToRegister.addEventListener('click', (e) => { 
+        e.preventDefault(); 
+        switchStep('register'); 
+    });
+}
 
-// Botões "Voltar" padrões retornando sempre ao Login do perfil
 document.querySelectorAll('.btn-back-to-login').forEach(btn => {
     btn.addEventListener('click', () => switchStep('login'));
 });
 
-// Finalização do Cadastro simulada
-document.getElementById('btn-finalizar-cadastro').addEventListener('click', () => {
-    const agree = document.getElementById('agree-terms').checked;
-    if(!agree) {
-        alert("Você precisa aceitar os Termos de Uso antes de continuar.");
-        return;
-    }
-    switchStep('success');
-    
-    // Simula processamento e retorna à tela inicial de perfis após 3.5 segundos
-    setTimeout(() => {
-        alert(`Conta de ${selectedRole} ativada com sucesso no banco de dados local!`);
-        selectedRole = "";
-        switchStep('roles');
-    }, 3500);
-});
+// 4. Finalização do Cadastro simulada
+const btnFinalCadastro = document.getElementById('btn-finalizar-cadastro');
+if(btnFinalCadastro) {
+    btnFinalCadastro.addEventListener('click', () => {
+        const agree = document.getElementById('agree-terms');
+        if(agree && !agree.checked) {
+            alert("Você precisa aceitar os Termos de Uso antes de continuar.");
+            return;
+        }
+        
+        switchStep('success');
+        
+        // Simula processamento e retorna à tela inicial de perfis
+        setTimeout(() => {
+            alert(`Conta de ${selectedRole} ativada com sucesso! Você já pode fazer login.`);
+            selectedRole = "";
+            switchStep('roles');
+        }, 3000);
+    });
+}
 
-// === A MÁGICA ACONTECE AQUI ===
-// Redirecionamento real ao clicar em "Entrar"
-document.getElementById('btn-entrar-dashboard').addEventListener('click', () => {
-    if (selectedRole === "Professor") {
-        // Redireciona para o painel do professor que criamos
-        window.location.href = 'prof_tela_inicial.html';
-    } else if (selectedRole === "Aluno") {
-        // Redireciona para o painel do aluno que criamos
-        window.location.href = 'tela_inicial.html';
-    } else {
-        // Alerta provisório para os outros perfis (Técnico, Administrador) que ainda não têm tela
-        // alert(`O painel para o perfil "${selectedRole}" ainda está em desenvolvimento!`);
+// 5. REDIRECIONAMENTO DE LOGIN REAL 
+const btnEntrar = document.getElementById('btn-entrar-dashboard');
+if(btnEntrar) {
+    btnEntrar.addEventListener('click', () => {
+        if (selectedRole === "Professor") {
+            window.location.href = 'prof_tela_inicial.html'; // Rota Professor
+        } else if (selectedRole === "Aluno") {
+            window.location.href = 'tela_inicial.html';      // Rota Aluno
+        } else {
+            // Técnico e Administrador
             window.location.href = 'tela_erro.html';
-    }
-});
+        }
+    });
+}
 
-// Feedbacks para os botões de ação final (Google/Gov)
-document.getElementById('btn-google-auth').addEventListener('click', () => alert('Sucesso: Conta Google vinculada ao perfil acadêmico!'));
-document.getElementById('btn-gov-auth').addEventListener('click', () => alert('Sucesso: Token de autenticação Gov.br aceito!'));
-
-// Alternador dinâmico de visibilidade de senha (o clássico "olhinho")
-function togglePass(inputId, iconElement) {
+// 6. Alternador dinâmico de visibilidade de senha (Olhinho)
+// Exportado como função global para funcionar via 'onclick' no HTML que você enviou
+window.togglePass = function(inputId, iconElement) {
     const input = document.getElementById(inputId);
-    if (input.type === "password") {
-        input.type = "text";
-        iconElement.classList.replace('fa-eye-slash', 'fa-eye');
-    } else {
-        input.type = "password";
-        iconElement.classList.replace('fa-eye', 'fa-eye-slash');
+    if (input) {
+        if (input.type === "password") {
+            input.type = "text";
+            iconElement.classList.replace('fa-eye-slash', 'fa-eye');
+        } else {
+            input.type = "password";
+            iconElement.classList.replace('fa-eye', 'fa-eye-slash');
+        }
     }
+};
+
+// Adiciona o evento de clique no olhinho da tela de login (que não tinha 'onclick' no seu HTML)
+const loginEye = document.querySelector('#step-login .toggle-password');
+if(loginEye) {
+    // Como no seu HTML o ícone está depois do input, localizamos o input pelo ID fixo 'login-senha'
+    loginEye.addEventListener('click', function() {
+        togglePass('login-senha', this);
+    });
 }

@@ -1,25 +1,27 @@
 body {
-    background-color: #1e1e1e;
+    background-color: #1a73e8; /* Ajustado para a cor padrão do projeto */
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    margin: 0;
+    font-family: Arial, sans-serif; /* Mude para a var(--fonte-primaria) se estiver usando o global.css */
 }
 
-/* --- Container Web Principal --- */
+/* --- Container Web Principal (Duas Colunas) --- */
 .login-container {
     background-color: #ffffff;
     width: 100%;
     max-width: 1050px;
-    height: 680px;
+    height: 600px; /* Reduzido um pouco já que há menos conteúdo */
     border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
     display: flex;
     overflow: hidden;
 }
 
-/* --- Painel Lateral Esquerdo (Fixo) --- */
+/* --- Painel Lateral Esquerdo (Fixo e Azul) --- */
 .sidebar-panel {
     background-color: #1a73e8;
     width: 38%;
@@ -33,7 +35,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Container que centraliza o logotipo e elementos */
 .logo-container {
     display: flex;
     flex-direction: column;
@@ -43,19 +44,14 @@ body {
     margin-bottom: 20px;
 }
 
-/* Classe customizada para a imagem da logo enviada */
 .ufac-logo {
     width: 120px;
     height: auto;
     object-fit: contain;
     margin-bottom: 10px;
     border-radius: 16px;
-    overflow: hidden;
-}
-
-.ufac-logo.small-logo {
-    width: 60px;
-    margin-bottom: 5px;
+    background: white;
+    padding: 10px;
 }
 
 .brand-title {
@@ -66,13 +62,14 @@ body {
 
 #sidebar-subtitle {
     font-size: 1rem;
-    opacity: 0.85;
+    opacity: 0.9;
     margin-top: 10px;
     line-height: 1.4;
     max-width: 240px;
+    transition: opacity 0.3s;
 }
 
-/* --- Painel Direito de Ações --- */
+/* --- Painel Direito de Ações (Formulários) --- */
 .main-panel {
     width: 62%;
     padding: 50px 70px;
@@ -93,9 +90,9 @@ body {
 }
 
 .main-panel h2 {
-    color: #0b51b7;
+    color: #1a73e8;
     font-size: 1.8rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .subtitle {
@@ -104,7 +101,7 @@ body {
     margin-bottom: 25px;
 }
 
-/* --- Botão de Voltar Quarto de Círculo (Quina Superior Esquerda) --- */
+/* --- Botão de Voltar Quarto de Círculo --- */
 .back-button {
     position: absolute;
     top: 0;
@@ -120,12 +117,10 @@ body {
     justify-content: flex-start;
     padding: 18px 0 0 18px;
     z-index: 10;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.2s;
 }
 
-.back-button:hover {
-    background-color: #e2eefe;
-}
+.back-button:hover { background-color: #e2eefe; }
 
 .back-button svg {
     width: 24px;
@@ -211,14 +206,19 @@ body {
     left: auto !important;
     right: 15px;
     cursor: pointer;
+    z-index: 2;
 }
 
+/* Formulário de Cadastro (Scroll) */
 .scroll-form {
-    max-height: 340px;
+    max-height: 320px;
     overflow-y: auto;
     padding-right: 10px;
     margin-bottom: 15px;
 }
+
+.scroll-form::-webkit-scrollbar { width: 6px; }
+.scroll-form::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
 
 /* --- Opções e Links --- */
 .form-options {
@@ -238,9 +238,9 @@ body {
 }
 
 .form-link {
-    color: #1a6ced;
+    color: #1a73e8;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .form-link:hover { text-decoration: underline; }
@@ -250,9 +250,9 @@ body {
     background-color: #1a73e8;
     color: white;
     border: none;
-    padding: 13px;
+    padding: 14px;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     cursor: pointer;
     width: 100%;
@@ -260,48 +260,7 @@ body {
 }
 .btn-primary:hover { background-color: #0b51b7; }
 
-.divider {
-    text-align: center;
-    margin: 18px 0;
-    position: relative;
-}
-.divider::before {
-    content: "";
-    position: absolute;
-    top: 50%; left: 0; width: 100%; height: 1px;
-    background-color: #ddd; z-index: 1;
-}
-.divider span {
-    background: #fff; padding: 0 15px;
-    color: #777; font-size: 0.9rem; position: relative; z-index: 2;
-}
-
-/* SSO Botões Largos Padrão */
-.btn-sso {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 12px;
-    background-color: #fff;
-    transition: background-color 0.2s;
-}
-.btn-sso:hover { background-color: #f8f9fa; }
-
-.btn-govbr { background-color: #13315c; border: none; }
-.btn-govbr:hover { background-color: #0b1f3f; }
-.gov-text { font-size: 1.1rem; font-weight: bold; color: #fff; }
-.gov-text .blue { color: #00a8e8; }
-.gov-text .green { color: #39b54a; }
-
-.footer-text { text-align: center; margin-top: 15px; font-size: 0.9rem; color: #555; }
+.footer-text { text-align: center; margin-top: 15px; font-size: 0.95rem; color: #555; }
 .footer-text a { color: #1a73e8; font-weight: 600; text-decoration: none; }
 
 /* --- Tela de Sucesso --- */
@@ -312,55 +271,13 @@ body {
 .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
 .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
 
-/* --- Tela Interna Google --- */
-.google-step { padding: 10px 40px; }
-.google-big-logo { display: flex; justify-content: center; margin-bottom: 15px; }
-.google-step h3 { text-align: center; font-weight: 400; font-size: 1.5rem; color: #202124; margin-bottom: 8px; }
-.google-subtitle { text-align: center; margin-bottom: 35px; color: #5f6368; font-size: 1rem; }
-
-.google-input-container { width: 100%; margin-bottom: 10px; }
-.google-input {
-    width: 100%;
-    padding: 14px 15px !important;
-    border: 1px solid #747775 !important;
-    border-radius: 4px !important;
-    font-size: 1rem !important;
-    color: #1f1f1f !important;
-    background: #fff !important;
-    transition: padding 0.1s, border 0.1s;
-}
-.google-input:focus {
-    border: 2px solid #1a73e8 !important;
-    padding: 13px 14px !important;
-    outline: none;
-}
-
-.google-link-forgot { display: block; color: #1a73e8; text-decoration: none; font-weight: 600; font-size: 0.95rem; margin-bottom: 40px; text-align: left; }
-.google-info { font-size: 0.9rem; color: #5f6368; margin-bottom: 40px; line-height: 1.5; text-align: left; }
-.google-info a { color: #1a73e8; text-decoration: none; font-weight: 600; }
-.google-footer { display: flex; justify-content: space-between; align-items: center; }
-.google-link { color: #1a73e8; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
-
-.btn-google-next {
-    background-color: #1a73e8;
-    color: white;
-    border: none;
-    padding: 10px 24px;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-}
-.btn-google-next:hover { background-color: #1a73e8; }
-
-/* --- Tela Gov.br --- */
-.gov-header { text-align: center; margin-bottom: 20px; display: flex; flex-direction: column; align-items: center; width: 100%; }
-.btn-gov-blue { background-color: #13315c; }
-.btn-gov-outline { width: 100%; padding: 12px; border: 1px solid #13315c; background: transparent; color: #13315c; border-radius: 8px; font-weight: 600; margin-bottom: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
-
-/* --- Animações --- */
+/* --- Animações e Responsividade --- */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes bounce { to { transform: translateY(-6px); } }
 
-.scroll-form::-webkit-scrollbar { width: 6px; }
-.scroll-form::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
+@media (max-width: 850px) {
+    .login-container { flex-direction: column; height: auto; border-radius: 0; min-height: 100vh; }
+    .sidebar-panel { width: 100%; padding: 30px 20px; }
+    .main-panel { width: 100%; padding: 40px 25px; }
+    .profile-grid { grid-template-columns: 1fr; }
+}
