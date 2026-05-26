@@ -36,11 +36,7 @@
     color: #ffd166;
 }
 
-<<<<<<< HEAD
 /* Cabeçalho do Portal */
-=======
-/* --- TÍTULO E LOGO (Caso injetados via JS) --- */
->>>>>>> develop
 .portal-header {
     text-align: center;
     color: var(--branco);
