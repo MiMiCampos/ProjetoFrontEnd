@@ -23,7 +23,6 @@ body.tela-centralizada {
     font-family: var(--fonte-secundaria); /* Usa a fonte padrão para títulos */
 }
 
-<<<<<<< HEAD
 /* Cabeçalho do Portal */
 .portal-header {
     text-align: center;
@@ -32,10 +31,6 @@ body.tela-centralizada {
 }
 
 .logo-ufac {
-=======
-/* Caso decida usar a imagem da logo */
-.portal-title-home .logo-ufac {
->>>>>>> develop
     width: 65px;
     height: auto;
     margin-bottom: 8px;
@@ -115,23 +110,7 @@ body.tela-centralizada {
     display: block;
 }
 
-<<<<<<< HEAD
 /* Barra de Pesquisa */
-=======
-/* --- CARD BRANCO DE CONTEÚDO --- */
-.content-card {
-    background: var(--branco); /* Usando variável */
-    border-radius: 16px;
-    border-top-left-radius: 0;
-    padding: 35px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    width: 100%;
-    position: relative;
-    z-index: 2;
-}
-
-/* --- BARRA DE PESQUISA --- */
->>>>>>> develop
 .search-container {
     position: relative;
     width: 100%;

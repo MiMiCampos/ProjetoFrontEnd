@@ -22,23 +22,12 @@
 
 /* 3. Estilos Base da Aplicação */
 body {
-<<<<<<< HEAD
   /* background-color: var(--azul-ufac); */
   color: var(--branco); /* Define uma cor padrão para os textos do site */
   min-height: 100vh; /* Garante que o fundo cubra a tela toda em qualquer página */
   
   /* Aplica a sua fonte primária como padrão para o site inteiro por herança */
   font-family: var(--fonte-primaria); 
-=======
-  background-color: var(--azul-ufac);
-  color: var(--branco);
-  min-height: 100vh;
-  font-family: var(--fonte-primaria);
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  padding: 40px 20px 40px 20px;
->>>>>>> develop
 }
 
 /* Tipografia Básica */
@@ -46,7 +35,6 @@ h1, h2, h3 {
   font-family: var(--fonte-secundaria);
 }
 
-<<<<<<< HEAD
 body.tela-centralizada {
     background-color: #1a73e8; /* ou var(--azul-ufac) */
     min-height: 100vh;
@@ -107,9 +95,4 @@ body.tela-centralizada {
 /* Se a tela for roxa (ex: Cálculo II), a setinha fica roxa automaticamente */
 .bg-purple .btn-back i {
     color: #8b5cf6;
-=======
-/* Inputs e Botões herdam a fonte primária por padrão */
-input, button {
-  font-family: inherit;
->>>>>>> develop
 }

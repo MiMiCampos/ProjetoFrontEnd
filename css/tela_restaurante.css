@@ -5,7 +5,6 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-<<<<<<< HEAD
     gap: 8px;
     z-index: 10;
 }
@@ -57,11 +56,6 @@
 .portal-header h1 {
     font-size: 28px;
     font-weight: 600;
-=======
-    width: 100%;
-    position: relative;
-    z-index: 1; /* Fica atrás do conteúdo */
->>>>>>> develop
 }
 
 /* Aba Indicadora "Restaurante Universitário" */
@@ -109,19 +103,6 @@
     z-index: 2; /* Joga os cards para frente, cobrindo a base do mascote */
 }
 
-<<<<<<< HEAD
-=======
-/* Card Principal Branco (Esquerda - Cardápio) */
-.content-card {
-    flex: 1; 
-    background: var(--branco, white);
-    border-radius: 16px;
-    border-top-left-radius: 0; /* Emenda com a aba azul */
-    padding: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
->>>>>>> develop
 /* Seções de Refeição (Café, Almoço, Jantar) */
 .meal-section {
     margin-bottom: 25px;
