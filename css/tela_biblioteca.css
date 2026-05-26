@@ -1,16 +1,4 @@
-body.tela-centralizada {
-    background-color: #1a73e8; /* Você também pode usar var(--azul-ufac) aqui */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    padding: 40px 20px;
-    position: relative;
-}
-
-/* ==========================================================================
-   3. CABEÇALHO DO PORTAL E ABAS SUPERIORES
-   ========================================================================== */
+/* CABEÇALHO DO PORTAL E ABAS SUPERIORES */
 
 /* Aba Indicadora da Seção / Abas Superiores */
 .section-badge-container, .tabs-container-lib {
@@ -47,18 +35,6 @@ body.tela-centralizada {
 
 .clickable:hover {
     opacity: 0.9;
-}
-
-/* ==========================================================================
-   4. CARD BRANCO CENTRAL E BARRA DE BUSCA
-   ========================================================================== */
-.content-card {
-    background: white;
-    border-radius: 16px;
-    border-top-left-radius: 0;
-    padding: 35px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    width: 100%;
 }
 
 /* Barra de Busca Interna */

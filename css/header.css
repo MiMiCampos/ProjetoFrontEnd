@@ -35,13 +35,6 @@
     color: #ffd166;
 }
 
-/* Container Principal */
-.main-container {
-    width: 100%;
-    max-width: 850px;
-    margin-top: 20px;
-}
-
 /* Cabeçalho do Portal */
 .portal-header {
     text-align: center;

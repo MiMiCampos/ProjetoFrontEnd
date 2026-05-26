@@ -45,13 +45,6 @@ body {
     color: #ffd166;
 }
 
-/* Container Principal */
-.main-container {
-    width: 100%;
-    max-width: 850px;
-    margin-top: 20px;
-}
-
 /* Cabeçalho do Portal */
 .portal-header {
     text-align: center;
@@ -127,15 +120,6 @@ body {
     width: 110px;
     height: auto;
     margin-bottom: -5px;
-}
-
-/* Card Branco de Conteúdo */
-.content-card {
-    background: white;
-    border-radius: 16px;
-    border-top-left-radius: 0; /* Alinha com o badge do usuário */
-    padding: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* Barra de Pesquisa */

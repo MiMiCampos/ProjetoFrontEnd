@@ -34,6 +34,30 @@ h1, h2, h3 {
   font-family: var(--fonte-secundaria);
 }
 
+body.tela-centralizada {
+    background-color: #1a73e8; /* ou var(--azul-ufac) */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 40px 20px;
+    position: relative;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 850px;
+    margin-top: 20px; /* Adicionado para padronizar */
+}
+
+.content-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px; /* Uma média entre os 30px e 40px que você usou */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    /* border-top-left-radius: 0; (Deixe isso no CSS específico se precisar) */
+}
+
 /* BOTÃO DE VOLTAR GLOBAL (PADRÃO PARA TODAS AS TELAS) */
 .btn-back {
     position: absolute;
