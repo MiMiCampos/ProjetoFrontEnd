@@ -5,3 +5,4 @@ Curso Web Academy
 
 - @MiMiCampos
 - @mvs105
+- @arthurdenovo
