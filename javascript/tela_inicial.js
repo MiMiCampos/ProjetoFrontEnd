@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
     // ==============================================================
     // 2. GERENCIAMENTO DOS CARDS GRANDES (FUNCIONALIDADES)
     // ==============================================================
@@ -45,11 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (featureName === 'Documentos') {
                 window.location.href = './tela_documentos.html';
             }
-            // Dentro da função dos featureCards no seu tela_inicial.js
+            // Redirecionamento para a Tela de Horários
             else if (featureName === 'Horários') {
                 window.location.href = './tela_horarios1.html';
             }
-            // Adicione essa verificação dentro do bloco de cliques do featureCards no seu tela_inicial.js
+            // Redirecionamento para a Tela da Biblioteca
             else if (featureName === 'Biblioteca') {
                 window.location.href = './tela_biblioteca1.html';
             }
@@ -59,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
 
     // ==============================================================
     // 3. BARRA DE PESQUISA (INTERATIVIDADE ADICIONAL)
@@ -71,6 +69,20 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Enter' && searchInput.value.trim() !== '') {
                 alert(`Buscando por: "${searchInput.value}" no Portal...`);
             }
+        });
+    }
+
+    // ==============================================================
+    // 4. ACESSO AO PERFIL DO USUÁRIO
+    // ==============================================================
+    const userBadge = document.querySelector('.user-badge');
+    
+    if (userBadge) {
+        // Adiciona a "mãozinha" no cursor via JS para mostrar que é clicável
+        userBadge.style.cursor = 'pointer'; 
+        
+        userBadge.addEventListener('click', () => {
+            window.location.href = './tela_perfil.html';
         });
     }
 

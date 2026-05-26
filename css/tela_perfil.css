@@ -1,0 +1,249 @@
+/* ==========================================================================
+   1. AJUSTES DO CONTAINER E TOPO DA TELA
+   ========================================================================== */
+
+/* A tela de perfil precisa de um pouco mais de largura para a tabela e o form caberem lado a lado */
+.profile-container {
+    max-width: 1050px; 
+}
+
+/* Container do Topo */
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Aba do Usuário Logado */
+.user-tab {
+    background-color: #3b82f6; /* Se quiser, pode trocar por var(--azul-ufac) */
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    border-radius: 16px 16px 0 0;
+    color: var(--branco, #ffffff);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-bottom: none;
+    min-width: 200px;
+}
+
+.avatar-icon svg {
+    width: 35px;
+    height: 35px;
+    fill: var(--branco, #ffffff);
+}
+
+.user-info-tab {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.user-info-tab .role {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.user-info-tab .username {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Mascote Capivara */
+.mascot-capivara {
+    width: 130px; 
+    margin-right: 50px;
+    margin-bottom: -2px; /* Puxa para baixo para ser cortada */
+    position: relative;
+    z-index: 0; 
+}
+
+.mascot-capivara img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   2. PAINEL PRINCIPAL (CARD BRANCO)
+   ========================================================================== */
+.profile-card {
+    background-color: var(--branco, #ffffff);
+    border-radius: 16px;
+    padding: 35px 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border-top-left-radius: 0; /* Alinha com a aba do usuário */
+    width: 100%;
+    position: relative;
+    z-index: 2; /* Cobre a capivara */
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+}
+
+/* Campos de Entrada e Labels */
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label, .metric-group label {
+    display: block;
+    color: #333333;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.input-field {
+    background-color: #e5e5e5;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #6d6d6d;
+    font-size: 14px;
+    width: 100%;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.text-muted {
+    color: #888888;
+}
+
+/* Linha de Métricas (Período e Frequência) */
+.row-metrics {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+.metric-group {
+    flex: 1;
+}
+
+.metric-box {
+    background-color: #e5e5e5;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #6d6d6d;
+    font-size: 14px;
+    min-height: 42px;
+}
+
+.box-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.highlight-gray {
+    background-color: #dbdbdb;
+    color: #4a4a4a;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   3. COLUNA DIREITA E TABELA
+   ========================================================================== */
+.right-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title-right {
+    display: block;
+    text-align: right;
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.table-container {
+    border: 1px solid #b5b5b5;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fafdff;
+}
+
+.table-header-main {
+    background-color: #dbdbdb;
+    color: #6d6d6d;
+    padding: 10px 15px;
+    font-size: 13px;
+    font-weight: 500;
+    border-bottom: 1px solid #b5b5b5;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    color: #555555;
+}
+
+th {
+    background-color: #e8e8e8;
+    color: #444444;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #b5b5b5;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #fcfcfc;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==========================================================================
+   4. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 850px) {
+    /* Ajustes da barra do topo e mascote */
+    .top-bar-container {
+        align-items: flex-end;
+        margin-bottom: 0;
+    }
+
+    .user-tab {
+        min-width: auto;
+        padding: 10px 16px;
+    }
+
+    .mascot-capivara {
+        width: 100px;
+        margin-right: 20px;
+        margin-bottom: -10px;
+    }
+
+    /* Quebra o formulário e a tabela em duas linhas */
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .profile-card {
+        padding: 25px 20px;
+        border-top-left-radius: 16px; /* Borda volta no celular */
+    }
+
+    .section-title-right {
+        text-align: left;
+    }
+}
