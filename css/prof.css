@@ -39,24 +39,6 @@ body {
     text-align: center;
 }
 
-/* Botão Voltar Fixo na Tela */
-.btn-back {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    width: 45px;
-    height: 45px;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Botão de voltar flutuante */
-    text-decoration: none;
-    z-index: 10;
-}
-.btn-back svg { width: 22px; height: 22px; stroke: #1a6ced; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-
 /* Logo Mesclada ao Fundo (Sem linha, sem caixa branca) */
 .logo-wrapper {
     margin-bottom: 20px;
