@@ -8,28 +8,6 @@
     --max-width-card: 650px;
 }
 
-body.tela-centralizada {
-    background-color: #1a73e8;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-    position: relative;
-}
-
-/* 2. Correção Crítica dos Containers */
-.main-container {
-    width: 100%;
-    max-width: var(--max-width-card);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Altera de '100vh' para 'flex: 1' para ocupar APENAS o espaço que sobra abaixo do Header */
-    flex: -1; 
-    margin-top: 10px; /* Dá um recuo saudável entre o Header e o Card de erro */
-}
-
 .maintenance-container {
     width: 100%;
     display: flex;
