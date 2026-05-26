@@ -364,3 +364,47 @@ body {
 
 .scroll-form::-webkit-scrollbar { width: 6px; }
 .scroll-form::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
+
+/* ==========================================================================
+   RESPONSIVIDADE - TELA DE LOGIN (MOBILE FORTE)
+   ========================================================================== */
+@media (max-width: 850px) {
+    .login-container {
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: 100% !important;
+        width: 100% !important;
+        border-radius: 16px;
+    }
+    
+    .sidebar-panel {
+        width: 100% !important;
+        padding: 40px 20px !important;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    
+    .main-panel {
+        width: 100% !important;
+        padding: 40px 20px !important;
+        box-sizing: border-box; /* Garante que o padding não expande a tela */
+    }
+
+    /* Força o texto a quebrar e não ultrapassar a tela */
+    .subtitle, h2, p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr !important; /* 1 coluna apenas */
+        gap: 10px;
+    }
+
+    .form-step h2 { margin-top: 30px; }
+    
+    /* Ajusta os botões de voltar no mobile */
+    .btn-back { top: 15px; left: 15px; }
+}

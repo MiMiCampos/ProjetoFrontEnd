@@ -21,7 +21,7 @@
 
 /* 3. Estilos Base da Aplicação */
 body {
-  background-color: var(--azul-ufac);
+  /* background-color: var(--azul-ufac); */
   color: var(--branco); /* Define uma cor padrão para os textos do site */
   min-height: 100vh; /* Garante que o fundo cubra a tela toda em qualquer página */
   
