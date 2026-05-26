@@ -1,4 +1,6 @@
-/* CABEÇALHO DO PORTAL E ABAS SUPERIORES */
+/* ==========================================================================
+   1. CABEÇALHO DA SEÇÃO (ABA E MASCOTE)
+   ========================================================================== */
 
 /* Container para a aba e o mascote (Padrão para todas as telas internas) */
 .top-bar-container {
@@ -36,7 +38,39 @@
     display: block;
 }
 
-/* Grid Organizador dos Documentos (2 colunas perfeitas) */
+/* Mascote Capivara */
+.mascot-capivara {
+    width: 130px; 
+    margin-right: 50px;
+    margin-bottom: -50px; /* Puxa para baixo para ser cortada */
+    position: relative;
+    z-index: 0; 
+}
+
+.mascot-capivara img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ==========================================================================
+   2. CORPO PRINCIPAL DE DOCUMENTOS
+   ========================================================================== */
+
+/* Card Branco de Fundo */
+.content-card {
+    background: var(--branco, white);
+    border-radius: 16px;
+    border-top-left-radius: 0; /* Conecta com a aba */
+    padding: 35px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    width: 100%;
+    position: relative;
+    z-index: 2; /* Sobrepõe a capivara */
+}
+
+/* Grid Organizador dos Documentos */
 .documents-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

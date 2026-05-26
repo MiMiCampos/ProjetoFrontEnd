@@ -22,12 +22,14 @@
 
 /* 3. Estilos Base da Aplicação */
 body {
-  /* background-color: var(--azul-ufac); */
-  color: var(--branco); /* Define uma cor padrão para os textos do site */
-  min-height: 100vh; /* Garante que o fundo cubra a tela toda em qualquer página */
-  
-  /* Aplica a sua fonte primária como padrão para o site inteiro por herança */
-  font-family: var(--fonte-primaria); 
+  background-color: var(--azul-ufac);
+  color: var(--branco);
+  min-height: 100vh;
+  font-family: var(--fonte-primaria);
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding: 40px 20px 40px 20px;
 }
 
 /* Tipografia Básica */
@@ -35,64 +37,7 @@ h1, h2, h3 {
   font-family: var(--fonte-secundaria);
 }
 
-body.tela-centralizada {
-    background-color: #1a73e8; /* ou var(--azul-ufac) */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    padding: 40px 20px;
-    position: relative;
-}
-
-.main-container {
-    width: 100%;
-    max-width: 850px;
-    margin-top: 20px; /* Adicionado para padronizar */
-}
-
-.content-card {
-    background: white;
-    border-radius: 16px;
-    padding: 30px; /* Uma média entre os 30px e 40px que você usou */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    /* border-top-left-radius: 0; (Deixe isso no CSS específico se precisar) */
-}
-
-/* BOTÃO DE VOLTAR GLOBAL (PADRÃO PARA TODAS AS TELAS) */
-.btn-back {
-    position: absolute;
-    top: 25px; /* Distância do topo */
-    left: 25px; /* Distância da esquerda */
-    width: 45px;
-    height: 45px;
-    background-color: #ffffff; /* Fundo branco do círculo */
-    border: none;
-    border-radius: 50%; /* Faz virar um círculo perfeito */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra 3D */
-    text-decoration: none;
-    cursor: pointer;
-    z-index: 999; /* Garante que fica por cima de tudo */
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-/* Efeito ao passar o mouse */
-.btn-back:hover {
-    background-color: #f8fafc;
-    transform: scale(1.05);
-}
-
-/* O ícone da setinha dentro do botão */
-.btn-back i {
-    font-size: 1.2rem;
-    color: #1a73e8; /* Azul da Ufac */
-    margin: 0;
-}
-
-/* Se a tela for roxa (ex: Cálculo II), a setinha fica roxa automaticamente */
-.bg-purple .btn-back i {
-    color: #8b5cf6;
+/* Inputs e Botões herdam a fonte primária por padrão */
+input, button {
+  font-family: inherit;
 }

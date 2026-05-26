@@ -5,57 +5,9 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 8px;
-    z-index: 10;
-}
-
-.date-badge {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: white;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    backdrop-filter: blur(5px);
-}
-
-.weather-badge {
-    background-color: transparent;
-    border: 2px solid #ffd166;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.weather-badge i {
-    color: #ffd166;
-}
-
-/* Cabeçalho Centralizado */
-.portal-header {
-    text-align: center;
-    color: white;
-    margin-bottom: 25px;
     width: 100%;
-}
-
-.logo-ufac {
-    width: 65px;
-    height: auto;
-    margin: 0 auto 8px auto;
-    display: block;
-    background: white;
-    border-radius: 12px;
-    padding: 4px;
-}
-
-.portal-header h1 {
-    font-size: 28px;
-    font-weight: 600;
+    position: relative;
+    z-index: 1; /* Fica atrás do conteúdo */
 }
 
 /* Aba Indicadora "Restaurante Universitário" */
@@ -101,6 +53,16 @@
     align-items: flex-start;
     position: relative;
     z-index: 2; /* Joga os cards para frente, cobrindo a base do mascote */
+}
+
+/* Card Principal Branco (Esquerda - Cardápio) */
+.content-card {
+    flex: 1; 
+    background: var(--branco, white);
+    border-radius: 16px;
+    border-top-left-radius: 0; /* Emenda com a aba azul */
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* Seções de Refeição (Café, Almoço, Jantar) */

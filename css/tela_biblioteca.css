@@ -1,4 +1,6 @@
-/* CABEÇALHO DO PORTAL E ABAS SUPERIORES */
+/* ==========================================================================
+   1. CABEÇALHO DA SEÇÃO (ABA E MASCOTE)
+   ========================================================================== */
 
 /* Container para a aba e o mascote */
 .top-bar-container {
@@ -43,6 +45,35 @@
 
 .clickable:hover {
     opacity: 0.9;
+}
+
+/* Mascote Capivara */
+.mascot-capivara {
+    width: 130px; 
+    margin-right: 50px;
+    margin-bottom: -2px; /* Puxa para baixo para ser cortada */
+    position: relative;
+    z-index: 0; 
+}
+
+.mascot-capivara img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   2. CARD BRANCO CENTRAL E BARRA DE BUSCA
+   ========================================================================== */
+.content-card {
+    background: var(--branco, white);
+    border-radius: 16px;
+    border-top-left-radius: 0;
+    padding: 35px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    width: 100%;
+    position: relative;
+    z-index: 2; /* Sobrepõe a capivara */
 }
 
 /* Barra de Busca Interna */
