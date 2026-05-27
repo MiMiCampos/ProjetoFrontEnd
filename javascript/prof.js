@@ -1,27 +1,43 @@
 // Aguarda a página carregar completamente
 document.addEventListener('DOMContentLoaded', () => {
+    // Funções existentes
     if (document.getElementById('lista-chamada')) { renderizarChamada(); }
     if (document.getElementById('lista-notas')) { renderizarNotas('N1'); }
     if (document.getElementById('lista-alunos-geral')) { renderizarListaAlunos(); }
+
+    // NOVA LÓGICA: Gerenciamento de Navegação dos Menus (RU e Biblioteca)
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            const texto = item.textContent.toLowerCase();
+            
+            if (texto.includes('cardápio ru')) {
+                e.preventDefault();
+                window.location.href = 'tela_restaurante.html';
+            } 
+            else if (texto.includes('biblioteca')) {
+                e.preventDefault();
+                window.location.href = 'tela_biblioteca1.html';
+            }
+            // Se tiver um href válido no HTML, o link padrão funcionará normalmente
+        });
+    });
 });
 
-// Exatamente 10 nomes base para a demonstração
+// ==========================================
+// LÓGICA DA LISTA DE ALUNOS GERAL
+// ==========================================
 const nomesBase = [
     "Ana Beatriz Silva", "Bruno Henrique Costa", "Carla Miranda Souza",
     "Daniel Vieira", "Edmundo Alves", "Élida Campos", "Paula Fernandes",
     "Pedro Henrique", "Pietro Machado", "Rafaela Mendes"
 ];
 
-// ==========================================
-// LÓGICA DA LISTA DE ALUNOS GERAL
-// ==========================================
 function renderizarListaAlunos() {
     const container = document.getElementById('lista-alunos-geral');
     if (!container) return;
 
     let htmlCompleto = '';
-
-    // Loop alterado para 10 alunos
     for (let i = 1; i <= 10; i++) {
         let nomeAluno = nomesBase[i - 1];
         let matriculaSimulada = 202601000 + i;
@@ -38,10 +54,8 @@ function renderizarListaAlunos() {
                 </div>
             </div>
             <i class="fa-solid fa-message" style="color: #1a6ced; cursor: pointer;" onclick="alert('Abrindo chat privado com: ${nomeAluno}')"></i>
-        </div>
-        `;
+        </div>`;
     }
-
     container.innerHTML = htmlCompleto;
 }
 
@@ -53,8 +67,6 @@ function renderizarChamada() {
     if (!container) return; 
 
     let htmlCompleto = '';
-    
-    // Loop alterado para 10 alunos
     for (let i = 1; i <= 10; i++) {
         let nomeAluno = nomesBase[i - 1];
         htmlCompleto += `
@@ -67,8 +79,7 @@ function renderizarChamada() {
                 <button id="pres-${i}" class="btn-toggle active present" onclick="setAttendance(${i}, 'present')">Presente</button>
                 <button id="abs-${i}" class="btn-toggle" onclick="setAttendance(${i}, 'absent')">Ausente</button>
             </div>
-        </div>
-        `;
+        </div>`;
     }
     container.innerHTML = htmlCompleto;
 }
@@ -85,31 +96,27 @@ function setAttendance(studentId, status) {
         btnPresent.classList.remove('active', 'present');
     }
     
-    // Atualiza os números no topo da tela automaticamente
-    const totalPresentes = document.querySelectorAll('.btn-toggle.present.active').length;
-    const totalAusentes = document.querySelectorAll('.btn-toggle.absent.active').length;
-    
+    // Atualiza contadores
     const contPres = document.getElementById('contador-presentes');
     const contAus = document.getElementById('contador-ausentes');
-    
-    if (contPres) contPres.innerText = totalPresentes;
-    if (contAus) contAus.innerText = totalAusentes;
+    if (contPres) contPres.innerText = document.querySelectorAll('.btn-toggle.present.active').length;
+    if (contAus) contAus.innerText = document.querySelectorAll('.btn-toggle.absent.active').length;
 }
 
 function salvarChamada() {
-    alert("✅ Sucesso! A chamada foi salva e registrada no sistema.");
-    window.location.href = './prof_disciplinas.html';
+    alert("✅ Sucesso! A chamada foi salva.");
+    window.location.href = 'prof_turmas.html';
 }
 
 // ==========================================
 // LÓGICA DA TELA DE NOTAS
 // ==========================================
 function mudarAba(abaSelecionada) {
-    document.querySelectorAll('.btn-aba').forEach(btn => {
+    document.querySelectorAll('.btn-aba-pill').forEach(btn => {
         btn.classList.remove('active-aba');
     });
-    const idMap = { 'N1': 'tab-n1', 'N2': 'tab-n2', 'Final': 'tab-final' };
-    document.getElementById(idMap[abaSelecionada]).classList.add('active-aba');
+    // Identifica o botão clicado e aplica a classe ativa
+    event.target.classList.add('active-aba');
     renderizarNotas(abaSelecionada);
 }
 
@@ -118,8 +125,6 @@ function renderizarNotas(aba) {
     if (!container) return;
 
     let htmlCompleto = '';
-    
-    // Loop alterado para 10 alunos
     for (let i = 1; i <= 10; i++) {
         let nomeAluno = nomesBase[i - 1];
         let notaSimulada = (Math.random() * 5 + 5).toFixed(1); 
@@ -129,44 +134,26 @@ function renderizarNotas(aba) {
             <div class="student-name">${nomeAluno}</div>
             <div style="display: flex; align-items: center; gap: 10px;">
                 <input type="number" id="nota-${i}" class="grade-input" value="${notaSimulada}" step="0.1" min="0" max="10" oninput="atualizarCorMedia(${i})">
-                <input type="checkbox" checked style="width: 18px; height: 18px; accent-color: #1a6ced; cursor: pointer;">
                 <div id="badge-${i}" class="grade-avg">Média: ${notaSimulada}</div>
             </div>
-        </div>
-        `;
+        </div>`;
     }
     container.innerHTML = htmlCompleto;
-
-    // Loop de cores alterado para 10
-    for (let i = 1; i <= 10; i++) {
-        atualizarCorMedia(i);
-    }
+    for (let i = 1; i <= 10; i++) atualizarCorMedia(i);
 }
 
 function atualizarCorMedia(alunoId) {
     const inputNota = document.getElementById(`nota-${alunoId}`);
     const badgeMedia = document.getElementById(`badge-${alunoId}`);
-    
     if (!inputNota || !badgeMedia) return;
 
-    let valorDigitado = parseFloat(inputNota.value);
-    if (isNaN(valorDigitado)) valorDigitado = 0;
-    
-    badgeMedia.textContent = `Média: ${valorDigitado.toFixed(1)}`;
-
-    // Remove as classes antigas antes de aplicar as novas
+    let valor = parseFloat(inputNota.value) || 0;
+    badgeMedia.textContent = `Média: ${valor.toFixed(1)}`;
     badgeMedia.classList.remove('grade-avg-success', 'grade-avg-danger');
-
-    if (valorDigitado >= 7.0) {
-        badgeMedia.classList.add('grade-avg-success');
-    } else {
-        badgeMedia.classList.add('grade-avg-danger');
-    }
+    badgeMedia.classList.add(valor >= 7.0 ? 'grade-avg-success' : 'grade-avg-danger');
 }
 
 function publicarNotas() {
-    const abaAtual = document.querySelector('.active-aba').innerText;
-    alert(`✅ Sucesso! As notas da etapa [${abaAtual}] foram publicadas no sistema.`);
-    window.location.href = './prof_disciplinas.html';
+    alert("✅ Sucesso! Notas publicadas.");
+    window.location.href = 'prof_turmas.html';
 }
-
