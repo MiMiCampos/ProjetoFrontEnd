@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividades - Algoritmos</title>
+    <link rel="stylesheet" href="/css/prof.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="/css/global.css"> -->
+</head>
+<body>
+    <div class="app-container">
+        
+        <div class="header-blue">
+            
+            <div class="logo-wrapper">
+                <img src="/componentes/logo_ufac.png" alt="UFAC">
+            </div>
+
+            <a href="/html/prof_disciplinas.html" class="btn-back">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            
+            <div class="header-title-area" style="text-align: center;">
+                <h1 class="page-title">Atividades</h1>
+                <p class="page-subtitle">Algoritmos - CCET005</p>
+                
+                <button class="btn-add-header">
+                    <i class="fa-solid fa-plus"></i> Nova Atividade
+                </button>
+            </div>
+        </div>
+
+        <div class="content-list">
+            
+            <div class="aba-container-horizontal">
+                <button class="btn-aba-pill active-aba" onclick="filtrarAtividades('todas', this)">Todas</button>
+                <button class="btn-aba-pill" onclick="filtrarAtividades('corrigir', this)">A corrigir</button>
+                <button class="btn-aba-pill" onclick="filtrarAtividades('agendadas', this)">Agendadas</button>
+                <button class="btn-aba-pill" onclick="filtrarAtividades('finalizadas', this)">Finalizadas</button>
+            </div>
+
+            <a href="#" class="card-item atividade-card" data-status="corrigir" style="border-left: 5px solid #ef4444;">
+                <div class="card-icon" style="background-color: #ef4444; width: 55px; height: 55px;"><i class="fa-solid fa-file-code"></i></div>
+                <div class="card-info" style="flex-grow: 1;">
+                    <h3 style="font-size: 1.1rem;">Prova 1 - Estruturas de Repetição</h3>
+                    <p style="margin: 3px 0; color: #666;">Entrega: 20/05/2026 | Tipo: Loops</p>
+                    <span style="background: #fee2e2; color: #991b1b; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold;">12 para corrigir</span>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </a>
+
+            <a href="#" class="card-item atividade-card" data-status="agendadas" style="border-left: 5px solid #1a6ced;">
+                <div class="card-icon" style="background-color: #1a6ced; width: 55px; height: 55px;"><i class="fa-solid fa-calendar-alt"></i></div>
+                <div class="card-info" style="flex-grow: 1;">
+                    <h3 style="font-size: 1.1rem;">Projeto Final: Caminho Mínimo (Grafos)</h3>
+                    <p style="margin: 3px 0; color: #666;">Data de Liberação: 10/06/2026 | Tipo: Agendada</p>
+                    <span style="background: #e0eefe; color: #1a6ced; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold;">Bloqueada até a data</span>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </a>
+
+            <a href="#" class="card-item atividade-card" data-status="finalizadas" style="border-left: 5px solid #2eb872; opacity: 0.85;">
+                <div class="card-icon" style="background-color: #2eb872; width: 55px; height: 55px;"><i class="fa-solid fa-check-circle"></i></div>
+                <div class="card-info" style="flex-grow: 1;">
+                    <h3 style="font-size: 1.1rem;">Lista 1: Condicionais e Lógica Booleana</h3>
+                    <p style="margin: 3px 0; color: #666;">Finalizada em: 05/05/2026 | Tipo: Histórico</p>
+                    <span style="background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold;">Concluída e Publicada</span>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </a>
+
+        </div>
+    </div>
+
+    <script>
+        function filtrarAtividades(categoria, abaClicada) {
+            // 1. Limpa o estado ativo (cor branca) de todos os botões de abas
+            const abas = document.querySelectorAll('.btn-aba-pill');
+            abas.forEach(aba => aba.classList.remove('active-aba'));
+
+            // 2. Define o botão clicado como o ativo
+            abaClicada.classList.add('active-aba');
+
+            // 3. Filtra os cartões com base no atributo data-status
+            const cartoes = document.querySelectorAll('.atividade-card');
+            cartoes.forEach(cartao => {
+                const statusDoCartao = cartao.getAttribute('data-status');
+                
+                // Exibe se for a aba 'todas' ou se corresponder ao status selecionado
+                if (categoria === 'todas' || statusDoCartao === categoria) {
+                    cartao.style.display = 'flex';
+                } else {
+                    cartao.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

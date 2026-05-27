@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renovação - Portal da Ufac</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/tela_biblioteca.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../javascript/components-loader.js" defer></script>
+</head>
+<body class="tela-centralizada">
+    
+    <header id="header-container" role="banner"></header>
+
+    <div class="main-container">
+        
+        <div class="top-bar-container">
+            <div class="tabs-container-lib">
+                <div class="tab-lib-blue clickable" onclick="location.href='tela_biblioteca1.html'">
+                    <span>Minha<br>Biblioteca</span>
+                </div>
+            </div>
+
+            <div class="mascot-capivara">
+                <img src="../assets/capi4.png" alt="Mascote Capivara fofa">
+            </div>
+        </div>
+
+        <main class="content-card">
+            
+            <div class="search-bar-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Estou buscando por livros, periódicos...">
+            </div>
+
+            <div class="sub-section-header header-orange">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Renovação</span>
+            </div>
+
+            <div class="status-panel-box bg-orange">
+                <div class="cards-inline-container">
+                    
+                    <div class="book-status-card">
+                        <div class="card-book-details">
+                            <strong>Guimarães, Angelo de Moura, Algoritmos e...</strong>
+                            <p>Data da retirada: 13/05/2026</p>
+                            <p>Código: 2052070</p>
+                        </div>
+                        <div class="action-icons-group">
+                            <i class="fa-solid fa-chevron-right arrow-detail"></i>
+                            <button class="btn-sync-refresh sync-green"><i class="fa-solid fa-arrows-rotate"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="book-status-card">
+                        <div class="card-book-details">
+                            <strong>Tanenbaum, Andrew S., Sistemas operacionais...</strong>
+                            <p>Data da retirada: 01/05/2026</p>
+                            <p>Código: 000191</p>
+                        </div>
+                        <div class="action-icons-group">
+                            <i class="fa-solid fa-chevron-right arrow-detail"></i>
+                            <button class="btn-sync-refresh sync-red"><i class="fa-solid fa-arrows-rotate"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+</body>
+</html>

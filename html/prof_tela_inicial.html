@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal da Ufac - Professor</title>
+    <!-- <link rel="stylesheet" href="../css/global.css"> -->
+    <!-- <link rel="stylesheet" href="../css/header.css"> -->
+    <link rel="stylesheet" href="../css/prof.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../javascript/components-loader.js" defer></script>
+</head>
+<body class="tela-centralizada">
+    
+    <header id="header-container" role="banner"></header>
+    <a href="login.html" class="btn-back" title="Voltar para a tela inicial">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <div class="main-container">
+        
+        <div class="top-bar-container">
+            <div class="user-profile-badge">
+                <div class="avatar"><i class="fa-regular fa-user"></i></div>
+                <div class="info">
+                    <p>Professor(a)</p>
+                    <h3>Maria Clara</h3>
+                </div>
+            </div>
+        </div>
+
+        <main class="content-card white-board">
+            
+            <input type="text" class="search-bar" placeholder="🔍 O que você deseja buscar hoje?">
+            
+            <div class="grid-menu">
+                <a href="prof_turmas.html" class="menu-item">
+                    <i class="fa-solid fa-chalkboard-user"></i> Minhas Turmas
+                </a>
+                <a href="prof_chamada.html" class="menu-item">
+                    <i class="fa-solid fa-pen-to-square"></i> Chamada Rápida
+                </a>
+                <a href="portal_atividades.html" class="menu-item">
+                    <i class="fa-solid fa-file-lines"></i> Atividades
+                </a>
+                <a href="tela_restaurante.html" class="menu-item">
+                    <i class="fa-solid fa-utensils"></i> Cardápio RU
+                </a>
+                <a href="tela_biblioteca1.html" class="menu-item">
+                    <i class="fa-solid fa-building-columns"></i> Biblioteca
+                </a>
+
+                
+            </div>
+            
+
+            <div class="news-divider">
+                <span>Últimas notícias</span>
+            </div>
+
+            <section class="news-grid" aria-label="Últimas notícias">
+                <article class="news-item" data-anchor="#enade">
+                    <img src="../assets/noticia1.jpeg" alt="Notícia 1" class="news-img-placeholder">
+                    <div class="news-content">
+                        <time class="news-date" datetime="2026-05-22T04:45">22/05/2026 04h45</time>
+                        <h3>Ufac celebra desempenho após divulgação dos resultados do Enade 2025</h3>
+                        <a class="news-card" href="https://www.ufac.br/site/noticias/2026/ufac-celebra-desempenho-apos-divulgacao-dos-resultados-do-enade-2025" target="_blank" rel="noopener noreferrer" aria-label="Abrir notícia completa">
+                            <i class="fa-solid fa-link" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="news-item" data-anchor="#recepcao">
+                    <img src="../assets/noticia2.jpeg" alt="Notícia 2" class="news-img-placeholder dark-bg">
+                    <div class="news-content">
+                        <time class="news-date" datetime="2026-05-15T09:01">15/05/2026 09h01</time>
+                        <h3>Ufac realiza recepção institucional para novos estudantes no Teatro Universitário</h3>
+                        <a class="news-card" href="https://www.ufac.br/site/noticias/2026/ufac-realiza-recepcao-institucional-para-novos-estudantes-no-teatro-universitario" target="_blank" rel="noopener noreferrer" aria-label="Abrir notícia completa">
+                            <i class="fa-solid fa-link" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="news-item" data-anchor="#laboratorio">
+                    <img src="../assets/noticia3.jpeg" alt="Notícia 3" class="news-img-placeholder group-bg">
+                    <div class="news-content">
+                        <time class="news-date" datetime="2026-05-15T08:33">15/05/2026 08h33</time>
+                        <h3>Ufac celebra trajetória de dez anos do Laboratório de Discriminação Racial</h3>
+                        <a class="news-card" href="https://www.ufac.br/site/noticias/2026/ufac-celebra-trajetoria-de-dez-anos-do-laboratorio-de-discriminacao-racial" target="_blank" rel="noopener noreferrer" aria-label="Abrir notícia completa">
+                            <i class="fa-solid fa-link" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+    // Navegação ao clicar no card de notícia
+    document.addEventListener('click', function(e){
+        var article = e.target.closest('.news-item');
+        if(article && !e.target.closest('.news-card')){
+            var anchor = article.getAttribute('data-anchor');
+            if(anchor) location.href = anchor;
+        }
+    });
+    </script>
+        </main>
+        
+    </div>
+    
+</body>
+</html>

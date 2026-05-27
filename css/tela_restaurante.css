@@ -1,0 +1,244 @@
+/* Aviso: As regras do body foram removidas pois agora são herdadas do global.css */
+
+/* --- TOPO (ABA E MASCOTE) --- */
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Fica atrás do conteúdo */
+}
+
+/* Aba Indicadora "Restaurante Universitário" */
+.section-badge-container {
+    background-color: #4285f4; /* Se tiver a variável var(--azul-ufac), pode substituir */
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 12px 24px;
+    color: var(--branco, white);
+    display: inline-block;
+    min-width: 200px;
+}
+
+.section-badge span {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.3;
+    display: block;
+}
+
+/* Mascote Capivara */
+.mascot-capivara {
+    width: 130px; 
+    margin-right: 50px;
+    margin-bottom: -1px; /* Puxa para baixo para ser cortada pelos cards */
+    position: relative;
+    z-index: 0; 
+}
+
+.mascot-capivara img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================
+   ESTRUTURA DOS CARDS FLUIDOS (FLEXBOX)
+   ========================================== */
+.flex-layout {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2; /* Joga os cards para frente, cobrindo a base do mascote */
+}
+
+/* Card Principal Branco (Esquerda - Cardápio) */
+.content-card {
+    flex: 1; 
+    background: var(--branco, white);
+    border-radius: 16px;
+    border-top-left-radius: 0; /* Emenda com a aba azul */
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Seções de Refeição (Café, Almoço, Jantar) */
+.meal-section {
+    margin-bottom: 25px;
+}
+
+.meal-section:last-child {
+    margin-bottom: 0;
+}
+
+.meal-title-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    color: var(--branco, white);
+    overflow: hidden;
+    width: 100%;
+    max-width: 160px; 
+}
+
+.meal-icon {
+    padding: 8px 12px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.meal-title-bar h2 {
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 12px;
+    font-family: var(--fonte-secundaria, inherit);
+}
+
+.meal-title-bar.cafe { background-color: #f2994a; }
+.meal-title-bar.almoco { background-color: #27ae60; }
+.meal-title-bar.jantar { background-color: #a25ddc; }
+
+.meal-list-box {
+    background-color: #f1f3f4;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-top: 8px;
+}
+
+.meal-list-box ul {
+    list-style: none;
+}
+
+.meal-list-box li {
+    font-size: 15px;
+    color: #333333;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 15px;
+}
+
+.meal-list-box li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    color: #333333;
+}
+
+/* Sidebar do Saldo (Direita) */
+.ticket-sidebar {
+    width: 240px; 
+    align-self: flex-start; /* Fixa a sidebar no topo ao invés do fundo */
+}
+
+.sidebar-card {
+    background: var(--branco, white);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.balance-title {
+    font-size: 16px;
+    color: #202124;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Box do QR Code */
+.qrcode-container {
+    background-color: #e8eaed;
+    border-radius: 12px;
+    padding: 15px;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.qrcode-placeholder {
+    background: var(--branco, white);
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.qrcode-placeholder img {
+    display: block;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+}
+
+.qrcode-number {
+    display: block;
+    font-size: 11px;
+    color: #5f6368;
+    margin-top: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* Botão Recarregar Ticket */
+.btn-recharge {
+    background-color: #1a73e8; /* Ajuste para var(--azul-ufac) se desejar */
+    color: var(--branco, white);
+    border: none;
+    width: 100%;
+    padding: 12px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    font-family: inherit;
+}
+
+.btn-recharge:hover {
+    background-color: #1557b0;
+}
+
+.btn-recharge:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================
+   RESPONSIVIDADE (PARA TELAS MENORES)
+   ========================================== */
+@media (max-width: 800px) {
+    .top-bar-container {
+        align-items: flex-end; 
+        margin-bottom: 0;
+    }
+
+    .section-badge-container {
+        min-width: auto;
+        padding: 10px 16px;
+    }
+
+    .mascot-capivara {
+        width: 100px; 
+        margin-right: 20px; 
+        margin-bottom: -10px; 
+    }
+
+    .flex-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-card {
+        width: 100%;
+        border-top-left-radius: 16px; /* Adiciona borda pois a aba ficou menor */
+    }
+
+    .ticket-sidebar {
+        width: 100%;
+        max-width: 320px;
+        align-self: center;
+    }
+}

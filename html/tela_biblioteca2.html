@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Portal da Ufac</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/tela_biblioteca.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../javascript/components-loader.js" defer></script>
+</head>
+<body class="tela-centralizada">
+    
+    <header id="header-container" role="banner"></header>
+
+    <div class="main-container">
+        
+        <div class="top-bar-container">
+            <div class="tabs-container-lib">
+                <div class="tab-lib-blue clickable" onclick="location.href='tela_biblioteca1.html'">
+                    <span>Minha<br>Biblioteca</span>
+                </div>
+            </div>
+
+            <div class="mascot-capivara">
+                <img src="../assets/capi4.png" alt="Mascote Capivara fofa">
+            </div>
+        </div>
+
+        <main class="content-card">
+            
+            <div class="search-bar-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Estou buscando por livros, periódicos...">
+            </div>
+
+            <div class="sub-section-header header-green">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Reservas</span>
+            </div>
+
+            <div class="status-panel-box bg-green">
+                <div class="book-status-card">
+                    <div class="card-book-details">
+                        <strong>BOLDRINI, Jose Luiz et al., Algebra linear.</strong>
+                        <p>Reservado para: 13/05/2026</p>
+                        <p>Código: 78929</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-detail"></i>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+</body>
+</html>

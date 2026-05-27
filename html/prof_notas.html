@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lançar Notas - UFAC</title>
+    <link rel="stylesheet" href="/css/prof.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="/css/global.css"> -->
+</head>
+<body>
+    <div class="app-container">
+        
+        <div class="header-blue">
+            <div class="logo-wrapper">
+                <img src="/componentes/logo_ufac.png" alt="UFAC">
+            </div>
+            
+            <a href="/html/prof_disciplinas.html" class="btn-back" style="z-index: 999; text-decoration: none; position: absolute; top: 25px; left: 20px; width: 40px; height: 40px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+            <h1 class="page-title">Lançar Notas</h1>
+            <p class="page-subtitle">Algoritmos - CCET005</p>
+
+            <div class="stats-header-grid" style="margin-top: 20px;">
+                <button id="tab-n1" class="btn-aba active-aba" onclick="mudarAba('N1')">N1</button>
+                <button id="tab-n2" class="btn-aba" onclick="mudarAba('N2')">N2</button>
+                <button id="tab-final" class="btn-aba" onclick="mudarAba('Final')">Final</button>
+            </div>
+        </div>
+
+        <div class="content-list" id="lista-notas">
+            </div>
+
+        <button class="btn-action-large" onclick="publicarNotas()">Publicar Notas</button>
+
+    </div>
+
+    <script src="/javascript/prof.js"></script>
+</body>
+</html>

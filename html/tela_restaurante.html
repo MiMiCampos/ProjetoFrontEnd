@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Universitário - Portal da Ufac</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/header.css"> <link rel="stylesheet" href="../css/tela_restaurante.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../javascript/components-loader.js" defer></script>
+</head>
+<body class="tela-centralizada">
+    <header id="header-container" role="banner"></header>
+
+    <div class="main-container">
+        
+        <div class="top-bar-container">
+            <div class="section-badge-container">
+                <div class="section-badge">
+                    <span>Restaurante<br>Universitário</span>
+                </div>
+            </div>
+            
+            <div class="mascot-capivara">
+                <img src="../assets/capi2.png" alt="Mascote Capivara fofa">
+            </div>
+        </div>
+
+        <div class="flex-layout">
+            
+            <main class="content-card">
+                
+                <section class="meal-section">
+                    <div class="meal-title-bar cafe">
+                        <div class="meal-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                        <h2>Café</h2>
+                    </div>
+                    <div class="meal-list-box">
+                        <ul>
+                            <li>Leite integral;</li>
+                            <li>Café preto;</li>
+                            <li>Pão francês com manteiga;</li>
+                            <li>Mingau.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="meal-section">
+                    <div class="meal-title-bar almoco">
+                        <div class="meal-icon"><i class="fa-solid fa-utensils"></i></div>
+                        <h2>Almoço</h2>
+                    </div>
+                    <div class="meal-list-box">
+                        <ul>
+                            <li>Rabo bovino com couve;</li>
+                            <li>Arroz com banana frita;</li>
+                            <li>Feijão carioca;</li>
+                            <li>Salada de cenoura.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="meal-section">
+                    <div class="meal-title-bar jantar">
+                        <div class="meal-icon"><i class="fa-solid fa-bowl-food"></i></div>
+                        <h2>Jantar</h2>
+                    </div>
+                    <div class="meal-list-box">
+                        <ul>
+                            <li>Coxa e sobrecoxa;</li>
+                            <li>Arroz branco;</li>
+                            <li>Feijão preto;</li>
+                            <li>Sopa de legumes.</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </main>
+
+            <aside class="ticket-sidebar">
+                <div class="sidebar-card">
+                    <h3 class="balance-title">Seu saldo: R$ 10,00</h3>
+                    
+                    <div class="qrcode-container">
+                        <div class="qrcode-placeholder">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=20260000000" alt="QR Code E-ticket">
+                        </div>
+                        <span class="qrcode-number">20260000000</span>
+                    </div>
+
+                    <button class="btn-recharge" onclick="location.href='tela_erro.html'">
+                        Recarregar e-ticket
+                    </button>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+</body>
+</html>

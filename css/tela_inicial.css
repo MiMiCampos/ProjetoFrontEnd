@@ -1,0 +1,371 @@
+body.tela-centralizada {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 40px 20px 40px 20px; /* Removido o padding top de 40px para respeitar o header */
+    position: relative;
+    /* Removidas as cores, margens e fontes (herdando do global) */
+}
+
+/* --- TÍTULO EXCLUSIVO DA TELA INICIAL --- */
+.portal-title-home {
+    text-align: center;
+    color: var(--branco);
+    /* margin-bottom: 0px; Dá um respiro e empurra o perfil/capivara um pouco para baixo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portal-title-home h1 {
+    font-size: 28px;
+    font-weight: 600;
+    font-family: var(--fonte-secundaria); /* Usa a fonte padrão para títulos */
+}
+
+/* Caso decida usar a imagem da logo */
+.portal-title-home .logo-ufac {
+    width: 65px;
+    height: auto;
+    margin-bottom: 8px;
+    background: var(--branco);
+    border-radius: 12px;
+    padding: 4px;
+}
+
+/* --- TOPO (SEÇÃO DO USUÁRIO E MASCOTE) --- */
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.user-section {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.user-badge {
+    /* Sugestão: Você pode usar uma variável global se tiver, ou manter essa cor fixa */
+    background-color: #4285f4; 
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--branco); /* Usando variável do global.css */
+    min-width: 200px;
+}
+
+.user-icon {
+    background: var(--branco); /* Usando variável */
+    color: #4285f4;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-title {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Mascote Capivara */
+.mascot-capivara {
+    width: 130px; 
+    margin-right: 50px;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 0; 
+}
+
+.mascot-capivara img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- CARD BRANCO DE CONTEÚDO --- */
+.content-card {
+    background: var(--branco); /* Usando variável */
+    border-radius: 16px;
+    border-top-left-radius: 0;
+    padding: 35px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- BARRA DE PESQUISA --- */
+.search-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #757575;
+    font-size: 18px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 14px 14px 14px 50px;
+    border: none;
+    background-color: #f1f3f4;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    transition: background-color 0.2s;
+    font-family: inherit; /* Herda a fonte do global */
+}
+
+#search-input:focus {
+    background-color: #e8eaed;
+    box-shadow: inset 0 0 0 1px var(--azul-ufac); /* Usando variável */
+}
+
+/* --- TAGS RÁPIDAS --- */
+.quick-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.tag-btn {
+    background-color: #1967d2;
+    color: var(--branco);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    font-family: inherit; /* Herda a fonte primária */
+}
+
+.tag-btn:hover {
+    background-color: #1557b0;
+}
+
+.tag-btn:active {
+    transform: scale(0.97);
+}
+
+/* --- GRID DE FUNCIONALIDADES --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.feature-card {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.2s;
+    font-family: inherit;
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+}
+
+.icon-box {
+    width: 100%;
+    aspect-ratio: 1;
+    border: 3px solid #b3ccff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #0066ff; 
+    background: linear-gradient(145deg, #ffffff, #f5f7ff);
+    margin-bottom: 8px;
+    transition: border-color 0.2s;
+}
+
+.feature-card:hover .icon-box {
+    border-color: var(--azul-ufac); /* Usando variável */
+}
+
+.feature-card span {
+    font-size: 13px;
+    color: #1967d2;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* --- DIVISOR DE NOTÍCIAS --- */
+.news-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.news-divider::before, .news-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #dadce0;
+}
+
+.news-divider span {
+    padding: 0 15px;
+    color: #70757a;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- GRID DE NOTÍCIAS --- */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.news-item {
+    background: var(--branco); /* Usando variável */
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.news-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.news-img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.news-content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-grow: 1;
+}
+
+.news-date {
+    font-size: 10px;
+    color: #70757a;
+}
+
+.news-content h3 {
+    font-size: 12px;
+    color: #202124;
+    font-weight: bold;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-family: var(--fonte-secundaria); /* Usa a fonte de títulos do global! */
+}
+
+/* ... [Mantenha todo o seu código até a linha: font-family: var(--fonte-secundaria); ] ... */
+
+/* --- RESPONSIVIDADE ESPECÍFICA DA TELA INICIAL --- */
+@media (max-width: 768px) {
+    /* 1. Ajuste do Topo (Mascote e Usuário) */
+    .top-bar-container {
+        /* Em telas muito pequenas, pode ser necessário empilhar ou apenas reduzir os itens */
+        align-items: flex-end; 
+        margin-bottom: 0;
+    }
+    
+    .user-badge {
+        min-width: auto; /* Remove a largura mínima para caber em telas pequenas */
+        padding: 10px 16px;
+    }
+
+    .mascot-capivara {
+        width: 100px; /* Reduz o tamanho da capivara no celular */
+        margin-right: 20px; /* Reduz a distância da borda */
+        margin-bottom: -10px; /* Ajusta o "corte" para o novo tamanho */
+    }
+
+    /* 2. Ajuste do Card de Conteúdo */
+    .content-card {
+        padding: 20px; /* Reduz o padding interno para dar mais espaço ao conteúdo */
+        border-top-left-radius: 16px; /* Volta a ter borda arredondada na esquerda já que o badge diminuiu */
+    }
+
+    /* 3. Ajuste do Grid de Funcionalidades */
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr); /* Muda de 5 para 3 colunas em tablets/celulares grandes */
+        gap: 10px;
+    }
+
+    .icon-box {
+        font-size: 24px; /* Ícones levemente menores */
+    }
+
+    .feature-card span {
+        font-size: 11px; /* Texto levemente menor */
+    }
+
+    /* 4. Ajuste do Grid de Notícias */
+    .news-grid {
+        grid-template-columns: 1fr; /* Empilha as notícias em uma única coluna no celular */
+    }
+}
+
+/* Para telas MUITO pequenas (ex: iPhone SE) */
+@media (max-width: 480px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr); /* Muda para 2 colunas em celulares muito estreitos */
+    }
+}
+
+/* Responsividade do título */
+@media (max-width: 768px) {
+    .portal-title-home {
+        margin-bottom: 25px;
+    }
+    .portal-title-home h1 {
+        font-size: 24px;
+    }
+}

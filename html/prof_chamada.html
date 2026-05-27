@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Chamada - UFAC</title>
+    <link rel="stylesheet" href="/css/prof.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="/css/global.css"> -->
+</head>
+<body>
+    <div class="app-container">
+        
+        <div class="header-blue">
+            
+            <a href="/html/prof_disciplinas.html" class="btn-back">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+            <div class="logo-wrapper">
+                <img src="/componentes/logo_ufac.png" alt="UFAC">
+            </div>
+
+            <div class="header-title-area" style="text-align: center;">
+                <h1 class="page-title">Chamada</h1>
+                <p class="page-subtitle">Algoritmos - CCET005</p>
+
+                <div class="date-pill">
+                    <i class="fa-regular fa-calendar-days" style="margin-right: 8px;"></i>
+                    26 de Maio de 2026
+                </div>
+
+                <div style="margin-top: 25px; display: flex; justify-content: center; gap: 20px; font-size: 0.95rem; font-weight: bold;">
+                    <span style="background-color: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">
+                        🟢 Presentes: <span id="contador-presentes">10</span>
+                    </span>
+                    <span style="background-color: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">
+                        🔴 Ausentes: <span id="contador-ausentes">0</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-list" id="lista-chamada">
+            </div>
+
+        <button class="btn-action-large" onclick="salvarChamada()">Salvar Chamada</button>
+
+    </div>
+
+    <script>
+        const dataAtual = new Date().toLocaleDateString('pt-BR', { 
+            day: 'numeric', month: 'long', year: 'numeric' 
+        });
+    </script>
+    
+    <script src="/javascript/prof.js"></script>
+</body>
+</html>
