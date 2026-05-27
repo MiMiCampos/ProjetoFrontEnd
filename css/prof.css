@@ -645,3 +645,43 @@ body {
         margin-top: 15px;
     }
 }
+
+/* ==========================================================================
+   BOTÃO DE VOLTAR GLOBAL - CÍRCULO BRANCO E SETA AZUL
+   ========================================================================== */
+.btn-back {
+    position: absolute;
+    top: 25px; 
+    left: 25px; 
+    width: 45px;
+    height: 45px;
+    background-color: #ffffff !important; /* Fundo branco puro */
+    border: none;
+    border-radius: 50%; /* Faz o círculo perfeito */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra 3D para destacar do fundo */
+    text-decoration: none !important; 
+    cursor: pointer;
+    z-index: 999;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Efeito suave ao passar o rato */
+.btn-back:hover {
+    background-color: #f8fafc !important;
+    transform: scale(1.05);
+}
+
+/* A cor do ícone da setinha (Azul Ufac) */
+.btn-back i {
+    font-size: 1.2rem;
+    color: #1a73e8 !important; /* Seta azul */
+    margin: 0;
+}
+
+/* Se estiver na tela roxa (ex: Cálculo II), a setinha fica roxa */
+.bg-purple .btn-back i {
+    color: #8b5cf6 !important;
+}
